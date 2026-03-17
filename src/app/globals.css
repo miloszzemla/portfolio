@@ -1,0 +1,79 @@
+@import "tailwindcss";
+
+@theme {
+  --color-cream: #f1efed;
+  --color-dark: #151515;
+  --color-cream-light: #eee9cc;
+
+  --font-space: "Space Grotesk", sans-serif;
+  --font-inter: "Inter", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-space);
+  background-color: var(--color-cream);
+  color: var(--color-dark);
+  font-feature-settings: "ss03", "ss04";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::selection {
+  background-color: var(--color-dark);
+  color: var(--color-cream);
+}
+
+/* Vertical lines background pattern — 6 equal columns within 92% container */
+.grid-bg {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 4%;
+  right: 4%;
+  opacity: 0.05;
+  background-image: linear-gradient(to right, var(--color-dark) 1px, transparent 1px);
+  background-size: calc(100% / 11) 100%;
+  border-right: 1px solid var(--color-dark);
+  pointer-events: none;
+}
+
+/* Hide scrollbar for carousel */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Ticker animation */
+@keyframes ticker {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.ticker-animate {
+  animation: ticker 30s linear infinite;
+}
+
+/* Footer marquee */
+@keyframes footer-marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.footer-marquee {
+  animation: footer-marquee 40s linear infinite;
+}
