@@ -38,6 +38,39 @@ export const metadata: Metadata = {
   },
 };
 
+// Set to false when portfolio is ready to go live
+const COMING_SOON = true;
+
+function ComingSoon() {
+  return (
+    <div className="flex min-h-screen flex-col items-center justify-center bg-cream px-6">
+      <div className="flex max-w-[600px] flex-col items-center gap-8 text-center">
+        <h1 className="text-[64px] font-bold leading-[1.1] tracking-[-3px] text-dark">
+          Milosz Zemla
+        </h1>
+        <div className="h-[2px] w-24 bg-dark" />
+        <p className="text-[24px] font-medium leading-[1.5] tracking-[-0.8px] text-dark/60">
+          Portfolio coming soon
+        </p>
+        <div className="flex flex-col items-center gap-3">
+          <a
+            href="mailto:miloszzemla@gmail.com"
+            className="text-[20px] font-medium leading-[1.5] tracking-[-0.6px] text-dark transition-opacity hover:opacity-60"
+          >
+            miloszzemla@gmail.com
+          </a>
+          <a
+            href="tel:+48698205063"
+            className="text-[20px] font-medium leading-[1.5] tracking-[-0.6px] text-dark transition-opacity hover:opacity-60"
+          >
+            +48 698 205 063
+          </a>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 export default function RootLayout({
   children,
 }: {
@@ -45,7 +78,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${spaceGrotesk.variable} ${inter.variable}`}>
-      <body>{children}</body>
+      <body>{COMING_SOON ? <ComingSoon /> : children}</body>
     </html>
   );
 }
