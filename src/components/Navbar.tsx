@@ -22,38 +22,38 @@ export default function Navbar() {
   return (
     <nav className="sticky top-0 z-50 w-full bg-cream overflow-hidden">
       <div className="grid-bg" />
-      <div className="relative mx-auto flex w-[92%] items-center justify-between pt-5 pb-5">
-        <div className="w-1/3 flex justify-start">
+      <div className="relative mx-auto flex w-[92%] items-center justify-between pt-4 pb-4 md:pt-5 md:pb-5">
+        <div className="flex justify-start md:w-1/3">
           <a
             href="/"
-            className="text-[22px] font-bold leading-[1.5] tracking-[-0.6px] text-dark"
+            className="text-[18px] md:text-[20px] lg:text-[22px] font-bold leading-[1.5] tracking-[-0.6px] text-dark"
           >
             Milosz Zemla
           </a>
         </div>
 
-        <div className="w-1/3 flex items-center justify-center gap-8">
+        <div className="hidden md:flex md:w-1/3 items-center justify-center gap-6 lg:gap-8">
           <a
             href="/#about"
-            className="text-[20px] font-medium leading-[1.5] tracking-[-0.6px] text-dark transition-opacity hover:opacity-60"
+            className="text-[18px] lg:text-[20px] font-medium leading-[1.5] tracking-[-0.6px] text-dark transition-opacity hover:opacity-60"
           >
             About
           </a>
           <a
             href="/#work"
-            className="text-[20px] font-medium leading-[1.5] tracking-[-0.6px] text-dark transition-opacity hover:opacity-60"
+            className="text-[18px] lg:text-[20px] font-medium leading-[1.5] tracking-[-0.6px] text-dark transition-opacity hover:opacity-60"
           >
             Projects
           </a>
           <a
             href="/contact"
-            className="text-[20px] font-medium leading-[1.5] tracking-[-0.6px] text-dark transition-opacity hover:opacity-60"
+            className="text-[18px] lg:text-[20px] font-medium leading-[1.5] tracking-[-0.6px] text-dark transition-opacity hover:opacity-60"
           >
             Contact
           </a>
         </div>
 
-        <div className="w-1/3 flex items-center justify-end gap-1">
+        <div className="hidden lg:flex lg:w-1/3 items-center justify-end gap-1">
           <span className="text-[20px] font-medium leading-[1.5] tracking-[-0.6px] text-dark">
             Warsaw
           </span>

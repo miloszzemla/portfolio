@@ -27,7 +27,7 @@ body {
   color: var(--color-cream);
 }
 
-/* Vertical lines background pattern — 6 equal columns within 92% container */
+/* Vertical lines background pattern — responsive columns within 92% container */
 .grid-bg {
   position: absolute;
   top: 0;
@@ -36,9 +36,23 @@ body {
   right: 4%;
   opacity: 0.05;
   background-image: linear-gradient(to right, var(--color-dark) 1px, transparent 1px);
-  background-size: calc(100% / 11) 100%;
+  background-size: calc(100% / 4) 100%;
   border-right: 1px solid var(--color-dark);
   pointer-events: none;
+}
+
+/* 700–1024px: 6 columns */
+@media (min-width: 700px) {
+  .grid-bg {
+    background-size: calc(100% / 6) 100%;
+  }
+}
+
+/* 1025px+: 11 columns */
+@media (min-width: 1025px) {
+  .grid-bg {
+    background-size: calc(100% / 11) 100%;
+  }
 }
 
 /* Hide scrollbar for carousel */

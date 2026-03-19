@@ -23,16 +23,16 @@ const slides = [
 
 export default function Slider() {
   return (
-    <section className="relative w-full bg-cream overflow-hidden py-[100px] pb-[150px]">
+    <section className="relative w-full bg-cream overflow-hidden py-[60px] pb-[80px] md:py-[80px] md:pb-[120px] lg:py-[100px] lg:pb-[150px]">
       <div className="grid-bg" />
 
       <div className="relative z-10 w-full overflow-hidden">
-        <div className="ticker-animate flex gap-8">
+        <div className="ticker-animate flex gap-4 md:gap-6 lg:gap-8">
           {/* Duplicate for infinite scroll */}
           {[...slides, ...slides].map((slide, i) => (
             <div
               key={i}
-              className="h-[403px] w-[600px] flex-shrink-0 overflow-hidden"
+              className="h-[200px] w-[300px] md:h-[268px] md:w-[400px] lg:h-[403px] lg:w-[600px] flex-shrink-0 overflow-hidden"
               style={{ aspectRatio: "1.488" }}
             >
               {slide.type === "video" ? (

@@ -36,11 +36,11 @@ export default function ContactPage() {
     <>
       <Navbar />
 
-      {/* Header — 40vh */}
-      <header className="relative flex h-[40vh] w-full flex-col justify-end bg-cream overflow-hidden">
+      {/* Header */}
+      <header className="relative flex h-[30vh] md:h-[35vh] lg:h-[40vh] w-full flex-col justify-end bg-cream overflow-hidden">
         <div className="grid-bg" />
         <div className="relative z-10 mx-auto flex w-[92%] flex-col gap-2">
-          <h1 className="font-bold text-[120px] leading-[1.12] tracking-[-5px] text-dark">
+          <h1 className="font-bold text-[48px] md:text-[72px] lg:text-[96px] xl:text-[120px] leading-[1.12] tracking-[-2px] md:tracking-[-3px] lg:tracking-[-5px] text-dark">
             Contact
           </h1>
           <div className="h-[2px] w-full bg-dark" />
@@ -48,19 +48,19 @@ export default function ContactPage() {
       </header>
 
       {/* Content */}
-      <section className="relative w-full bg-cream overflow-hidden pt-[88px] pb-[150px]">
+      <section className="relative w-full bg-cream overflow-hidden pt-[48px] md:pt-[64px] lg:pt-[88px] pb-[80px] md:pb-[100px] lg:pb-[150px]">
         <div className="grid-bg" />
-        <div className="relative z-10 mx-auto flex w-[92%] flex-col items-end gap-20">
+        <div className="relative z-10 mx-auto flex w-[92%] flex-col items-end gap-12 md:gap-16 lg:gap-20">
           {/* Intro text + email */}
-          <div className="flex w-[60%] flex-col items-start gap-6">
-            <p className="text-[34px] font-medium leading-[1.5] tracking-[-1px] text-dark">
+          <div className="flex w-full md:w-[80%] lg:w-[60%] flex-col items-start gap-4 md:gap-6">
+            <p className="text-[24px] md:text-[28px] lg:text-[34px] font-medium leading-[1.5] tracking-[-0.6px] lg:tracking-[-1px] text-dark">
               I&apos;m looking forward to hearing from you! If you prefer not to fill
               out forms, feel free to email me directly and let&apos;s talk about
               the next big thing!
             </p>
             <a
               href="mailto:hello@miloszzemla.com"
-              className="text-[22px] font-medium leading-[1.5] tracking-[-0.6px] text-dark transition-opacity hover:opacity-60"
+              className="text-[18px] md:text-[20px] lg:text-[22px] font-medium leading-[1.5] tracking-[-0.4px] md:tracking-[-0.6px] text-dark transition-opacity hover:opacity-60"
             >
               hello@miloszzemla.com ↗
             </a>
@@ -69,11 +69,11 @@ export default function ContactPage() {
           {/* Form */}
           <form
             onSubmit={handleSubmit}
-            className="flex w-[60%] flex-col items-start gap-6 bg-[#e5e1dc] p-8"
+            className="flex w-full md:w-[80%] lg:w-[60%] flex-col items-start gap-5 md:gap-6 bg-[#e5e1dc] p-6 md:p-8"
           >
             {/* Name */}
             <div className="flex w-full flex-col gap-2">
-              <label className="text-[18px] font-medium leading-[1.5] tracking-[-0.4px] text-dark">
+              <label className="text-[16px] md:text-[18px] font-medium leading-[1.5] tracking-[-0.4px] text-dark">
                 Name
               </label>
               <input
@@ -81,14 +81,14 @@ export default function ContactPage() {
                 value={name}
                 onChange={(e) => setName(e.target.value)}
                 required
-                className="w-full border-b-2 border-dark/20 bg-transparent py-3 text-[18px] font-medium leading-[1.5] tracking-[-0.4px] text-dark outline-none transition-colors focus:border-dark placeholder:text-dark/30"
+                className="w-full border-b-2 border-dark/20 bg-transparent py-3 text-[16px] md:text-[18px] font-medium leading-[1.5] tracking-[-0.4px] text-dark outline-none transition-colors focus:border-dark placeholder:text-dark/30"
                 placeholder="Your name"
               />
             </div>
 
             {/* Email */}
             <div className="flex w-full flex-col gap-2">
-              <label className="text-[18px] font-medium leading-[1.5] tracking-[-0.4px] text-dark">
+              <label className="text-[16px] md:text-[18px] font-medium leading-[1.5] tracking-[-0.4px] text-dark">
                 Email
               </label>
               <input
@@ -96,17 +96,17 @@ export default function ContactPage() {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 required
-                className="w-full border-b-2 border-dark/20 bg-transparent py-3 text-[18px] font-medium leading-[1.5] tracking-[-0.4px] text-dark outline-none transition-colors focus:border-dark placeholder:text-dark/30"
+                className="w-full border-b-2 border-dark/20 bg-transparent py-3 text-[16px] md:text-[18px] font-medium leading-[1.5] tracking-[-0.4px] text-dark outline-none transition-colors focus:border-dark placeholder:text-dark/30"
                 placeholder="your@email.com"
               />
             </div>
 
             {/* Project Type */}
-            <div className="flex w-full flex-col gap-5">
-              <label className="text-[18px] font-medium leading-[1.5] tracking-[-0.4px] text-dark">
+            <div className="flex w-full flex-col gap-4 md:gap-5">
+              <label className="text-[16px] md:text-[18px] font-medium leading-[1.5] tracking-[-0.4px] text-dark">
                 What&apos;s Your Project About?
               </label>
-              <div className="flex flex-col gap-4">
+              <div className="flex flex-col gap-3 md:gap-4">
                 {projectTypes.map((type) => (
                   <label
                     key={type}
@@ -136,7 +136,7 @@ export default function ContactPage() {
                         </svg>
                       )}
                     </div>
-                    <span className="text-[18px] font-medium leading-[1.5] tracking-[-0.4px] text-dark">
+                    <span className="text-[16px] md:text-[18px] font-medium leading-[1.5] tracking-[-0.4px] text-dark">
                       {type}
                     </span>
                   </label>
@@ -146,28 +146,28 @@ export default function ContactPage() {
 
             {/* Budget */}
             <div className="flex w-full flex-col gap-2">
-              <label className="text-[18px] font-medium leading-[1.5] tracking-[-0.4px] text-dark">
+              <label className="text-[16px] md:text-[18px] font-medium leading-[1.5] tracking-[-0.4px] text-dark">
                 Your Budget
               </label>
               <input
                 type="text"
                 value={budget}
                 onChange={(e) => setBudget(e.target.value)}
-                className="w-full border-b-2 border-dark/20 bg-transparent py-3 text-[18px] font-medium leading-[1.5] tracking-[-0.4px] text-dark outline-none transition-colors focus:border-dark placeholder:text-dark/30"
+                className="w-full border-b-2 border-dark/20 bg-transparent py-3 text-[16px] md:text-[18px] font-medium leading-[1.5] tracking-[-0.4px] text-dark outline-none transition-colors focus:border-dark placeholder:text-dark/30"
                 placeholder="e.g. $5,000 - $10,000"
               />
             </div>
 
             {/* Details */}
             <div className="flex w-full flex-col gap-2">
-              <label className="text-[18px] font-medium leading-[1.5] tracking-[-0.4px] text-dark">
+              <label className="text-[16px] md:text-[18px] font-medium leading-[1.5] tracking-[-0.4px] text-dark">
                 Share More Details
               </label>
               <textarea
                 value={details}
                 onChange={(e) => setDetails(e.target.value)}
                 rows={4}
-                className="w-full resize-none border-b-2 border-dark/20 bg-transparent py-3 text-[18px] font-medium leading-[1.5] tracking-[-0.4px] text-dark outline-none transition-colors focus:border-dark placeholder:text-dark/30"
+                className="w-full resize-none border-b-2 border-dark/20 bg-transparent py-3 text-[16px] md:text-[18px] font-medium leading-[1.5] tracking-[-0.4px] text-dark outline-none transition-colors focus:border-dark placeholder:text-dark/30"
                 placeholder="Tell me about your project..."
               />
             </div>
@@ -176,7 +176,7 @@ export default function ContactPage() {
             <button
               type="submit"
               disabled={status === "loading"}
-              className={`flex h-[50px] min-w-[120px] items-center justify-center rounded-[2px] px-6 text-[16px] font-semibold leading-[1.5] tracking-[-0.4px] transition-opacity hover:opacity-80 ${
+              className={`flex h-[46px] md:h-[50px] min-w-[120px] items-center justify-center rounded-[2px] px-6 text-[15px] md:text-[16px] font-semibold leading-[1.5] tracking-[-0.4px] transition-opacity hover:opacity-80 ${
                 status === "success"
                   ? "bg-dark text-cream"
                   : status === "error"

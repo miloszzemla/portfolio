@@ -1,22 +1,74 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { useRef } from "react";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
 
 export default function Hero() {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const logoRef = useRef<HTMLDivElement>(null);
+
+  useGSAP(
+    () => {
+      const tl = gsap.timeline({ defaults: { ease: "power3.out" } });
+
+      // Lines reveal — clip from bottom
+      tl.from(".hero-line", {
+        yPercent: 120,
+        duration: 1.2,
+        stagger: 0.12,
+      });
+
+      // Description fades in slightly later
+      tl.from(
+        ".hero-description",
+        {
+          opacity: 0,
+          y: 20,
+          duration: 0.8,
+        },
+        "-=0.6"
+      );
+
+      // Logo spins in
+      tl.from(
+        logoRef.current,
+        {
+          rotation: -180,
+          scale: 0,
+          opacity: 0,
+          duration: 1,
+          ease: "power2.out",
+        },
+        0.15
+      );
+
+      // Subtle continuous rotation on logo
+      gsap.to(logoRef.current, {
+        rotation: 360,
+        duration: 60,
+        repeat: -1,
+        ease: "none",
+      });
+    },
+    { scope: containerRef }
+  );
+
   return (
-    <section className="relative flex h-[80vh] flex-col items-center justify-center bg-cream overflow-hidden">
+    <section
+      ref={containerRef}
+      className="relative flex h-[70vh] md:h-[75vh] lg:h-[80vh] flex-col items-center justify-center bg-cream overflow-hidden"
+    >
       <div className="grid-bg" />
 
-      <div className="relative z-10 flex w-[92%] flex-col items-center gap-4">
-        {/* Line 1: logo circle + "I'm Milosz Zemla" */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, ease: "easeOut" }}
-          className="flex w-full items-center justify-center gap-6"
-        >
-          <div className="h-[110px] w-[110px] flex-shrink-0 overflow-hidden flex items-center justify-center">
-            <svg viewBox="0 0 110 110" className="h-[110px] w-[110px]">
+      <div className="relative z-10 flex w-[92%] flex-col items-start md:items-center gap-2 md:gap-3 lg:gap-4">
+        {/* Line 1: logo + "I'm Milosz Zemla" */}
+        <div className="flex w-full items-center justify-start md:justify-center gap-3 md:gap-4 lg:gap-6">
+          <div
+            ref={logoRef}
+            className="h-[40px] w-[40px] md:h-[80px] md:w-[80px] lg:h-[110px] lg:w-[110px] flex-shrink-0 overflow-hidden flex items-center justify-center"
+          >
+            <svg viewBox="0 0 110 110" className="h-full w-full">
               <path d="M 0 0 L 110 0 L 110 110 L 0 110 Z" fill="transparent" />
               <path
                 d="M 58.929 0 L 51.071 0 L 51.071 45.516 L 18.887 13.331 L 13.332 18.887 L 45.516 51.071 L 0 51.071 L 0 58.929 L 45.515 58.929 L 13.332 91.113 L 18.888 96.669 L 51.072 64.484 L 51.072 110 L 58.929 110 L 58.929 64.484 L 91.114 96.669 L 96.669 91.113 L 64.485 58.929 L 110 58.929 L 110 51.071 L 64.484 51.071 L 96.669 18.887 L 91.113 13.331 L 58.929 45.515 Z"
@@ -24,47 +76,55 @@ export default function Hero() {
               />
             </svg>
           </div>
-          <h1
-            className="font-light leading-[1.12] tracking-[-9px]"
-            style={{ fontSize: "clamp(60px, 9.7vw, 140px)" }}
-          >
-            I&apos;m Milosz Zemla
-          </h1>
-        </motion.div>
+          <div className="overflow-hidden">
+            <h1
+              className="hero-line font-light leading-[1.12] tracking-[-2px] md:tracking-[-6px] lg:tracking-[-9px] text-[36px] md:text-[70px] lg:text-[100px] xl:text-[140px]"
+            >
+              I&apos;m Milosz Zemla
+            </h1>
+          </div>
+        </div>
 
-        {/* Line 2: description + "A designer" */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.15, ease: "easeOut" }}
-          className="flex w-full items-center justify-center gap-10"
-        >
-          <p className="max-w-[34%] text-[22px] font-medium leading-[1.5] tracking-[-0.6px] text-dark">
+        {/* Line 2: "A designer" + description */}
+        {/* Desktop: description + "A designer" in one row */}
+        <div className="hidden md:flex w-full items-center justify-center gap-6 lg:gap-10">
+          <p className="hero-description max-w-[34%] text-[18px] lg:text-[22px] font-medium leading-[1.5] tracking-[-0.6px] text-dark text-left">
             I ask the necessary (and sometimes the difficult questions) to
             create brands and products that focus on and prioritize people
           </p>
-          <span
-            className="font-bold leading-[1.12] tracking-[-8px]"
-            style={{ fontSize: "clamp(60px, 9.7vw, 140px)" }}
-          >
-            A designer
-          </span>
-        </motion.div>
+          <div className="overflow-hidden">
+            <span
+              className="hero-line block font-bold leading-[1.12] tracking-[-5px] lg:tracking-[-8px] text-[70px] lg:text-[100px] xl:text-[140px]"
+            >
+              A designer
+            </span>
+          </div>
+        </div>
+        {/* Mobile: "A designer" centered, description left-aligned */}
+        <div className="flex md:hidden w-full flex-col gap-2">
+          <div className="overflow-hidden w-full text-center">
+            <span
+              className="hero-line block font-bold leading-[1.12] tracking-[-2px] text-[36px]"
+            >
+              A designer
+            </span>
+          </div>
+          <p className="hero-description text-[16px] font-medium leading-[1.5] tracking-[-0.4px] text-dark text-left">
+            I ask the necessary (and sometimes the difficult questions) to
+            create brands and products that focus on and prioritize people
+          </p>
+        </div>
 
         {/* Line 3: "lives by design" */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.3, ease: "easeOut" }}
-          className="flex w-full items-center justify-center gap-8"
-        >
-          <span
-            className="font-light leading-[1.12] tracking-[-9px]"
-            style={{ fontSize: "clamp(60px, 9.7vw, 140px)" }}
-          >
-            lives by design
-          </span>
-        </motion.div>
+        <div className="flex w-full items-center justify-start md:justify-center gap-4 md:gap-6 lg:gap-8">
+          <div className="overflow-hidden">
+            <span
+              className="hero-line block font-light leading-[1.12] tracking-[-2px] md:tracking-[-6px] lg:tracking-[-9px] text-[36px] md:text-[70px] lg:text-[100px] xl:text-[140px]"
+            >
+              lives by design
+            </span>
+          </div>
+        </div>
       </div>
     </section>
   );
