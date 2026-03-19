@@ -1,0 +1,204 @@
+"use client";
+
+import { useState } from "react";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
+
+const projectTypes = [
+  "Multipage Website Design",
+  "Landing Page Design",
+  "Framer Website Development",
+  "Framer Landing Page Development",
+];
+
+export default function ContactPage() {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [selectedTypes, setSelectedTypes] = useState<string[]>([]);
+  const [budget, setBudget] = useState("");
+  const [details, setDetails] = useState("");
+  const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
+
+  const toggleType = (type: string) => {
+    setSelectedTypes((prev) =>
+      prev.includes(type) ? prev.filter((t) => t !== type) : [...prev, type]
+    );
+  };
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    setStatus("loading");
+    // Simulate submission
+    setTimeout(() => setStatus("success"), 1000);
+  };
+
+  return (
+    <>
+      <Navbar />
+
+      {/* Header — 40vh */}
+      <header className="relative flex h-[40vh] w-full flex-col justify-end bg-cream overflow-hidden">
+        <div className="grid-bg" />
+        <div className="relative z-10 mx-auto flex w-[92%] flex-col gap-2">
+          <h1 className="font-bold text-[120px] leading-[1.12] tracking-[-5px] text-dark">
+            Contact
+          </h1>
+          <div className="h-[2px] w-full bg-dark" />
+        </div>
+      </header>
+
+      {/* Content */}
+      <section className="relative w-full bg-cream overflow-hidden pt-[88px] pb-[150px]">
+        <div className="grid-bg" />
+        <div className="relative z-10 mx-auto flex w-[92%] flex-col items-end gap-20">
+          {/* Intro text + email */}
+          <div className="flex w-[60%] flex-col items-start gap-6">
+            <p className="text-[34px] font-medium leading-[1.5] tracking-[-1px] text-dark">
+              I&apos;m looking forward to hearing from you! If you prefer not to fill
+              out forms, feel free to email me directly and let&apos;s talk about
+              the next big thing!
+            </p>
+            <a
+              href="mailto:hello@miloszzemla.com"
+              className="text-[22px] font-medium leading-[1.5] tracking-[-0.6px] text-dark transition-opacity hover:opacity-60"
+            >
+              hello@miloszzemla.com ↗
+            </a>
+          </div>
+
+          {/* Form */}
+          <form
+            onSubmit={handleSubmit}
+            className="flex w-[60%] flex-col items-start gap-6 bg-[#e5e1dc] p-8"
+          >
+            {/* Name */}
+            <div className="flex w-full flex-col gap-2">
+              <label className="text-[18px] font-medium leading-[1.5] tracking-[-0.4px] text-dark">
+                Name
+              </label>
+              <input
+                type="text"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+                required
+                className="w-full border-b-2 border-dark/20 bg-transparent py-3 text-[18px] font-medium leading-[1.5] tracking-[-0.4px] text-dark outline-none transition-colors focus:border-dark placeholder:text-dark/30"
+                placeholder="Your name"
+              />
+            </div>
+
+            {/* Email */}
+            <div className="flex w-full flex-col gap-2">
+              <label className="text-[18px] font-medium leading-[1.5] tracking-[-0.4px] text-dark">
+                Email
+              </label>
+              <input
+                type="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                required
+                className="w-full border-b-2 border-dark/20 bg-transparent py-3 text-[18px] font-medium leading-[1.5] tracking-[-0.4px] text-dark outline-none transition-colors focus:border-dark placeholder:text-dark/30"
+                placeholder="your@email.com"
+              />
+            </div>
+
+            {/* Project Type */}
+            <div className="flex w-full flex-col gap-5">
+              <label className="text-[18px] font-medium leading-[1.5] tracking-[-0.4px] text-dark">
+                What&apos;s Your Project About?
+              </label>
+              <div className="flex flex-col gap-4">
+                {projectTypes.map((type) => (
+                  <label
+                    key={type}
+                    className="flex cursor-pointer items-center gap-3"
+                  >
+                    <div
+                      className={`flex h-5 w-5 shrink-0 items-center justify-center rounded-sm border-2 transition-colors ${
+                        selectedTypes.includes(type)
+                          ? "border-dark bg-dark"
+                          : "border-dark/30 bg-transparent"
+                      }`}
+                    >
+                      {selectedTypes.includes(type) && (
+                        <svg
+                          width="12"
+                          height="12"
+                          viewBox="0 0 12 12"
+                          fill="none"
+                        >
+                          <path
+                            d="M2 6L5 9L10 3"
+                            stroke="#f1efed"
+                            strokeWidth="2"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                          />
+                        </svg>
+                      )}
+                    </div>
+                    <span className="text-[18px] font-medium leading-[1.5] tracking-[-0.4px] text-dark">
+                      {type}
+                    </span>
+                  </label>
+                ))}
+              </div>
+            </div>
+
+            {/* Budget */}
+            <div className="flex w-full flex-col gap-2">
+              <label className="text-[18px] font-medium leading-[1.5] tracking-[-0.4px] text-dark">
+                Your Budget
+              </label>
+              <input
+                type="text"
+                value={budget}
+                onChange={(e) => setBudget(e.target.value)}
+                className="w-full border-b-2 border-dark/20 bg-transparent py-3 text-[18px] font-medium leading-[1.5] tracking-[-0.4px] text-dark outline-none transition-colors focus:border-dark placeholder:text-dark/30"
+                placeholder="e.g. $5,000 - $10,000"
+              />
+            </div>
+
+            {/* Details */}
+            <div className="flex w-full flex-col gap-2">
+              <label className="text-[18px] font-medium leading-[1.5] tracking-[-0.4px] text-dark">
+                Share More Details
+              </label>
+              <textarea
+                value={details}
+                onChange={(e) => setDetails(e.target.value)}
+                rows={4}
+                className="w-full resize-none border-b-2 border-dark/20 bg-transparent py-3 text-[18px] font-medium leading-[1.5] tracking-[-0.4px] text-dark outline-none transition-colors focus:border-dark placeholder:text-dark/30"
+                placeholder="Tell me about your project..."
+              />
+            </div>
+
+            {/* Submit */}
+            <button
+              type="submit"
+              disabled={status === "loading"}
+              className={`flex h-[50px] min-w-[120px] items-center justify-center rounded-[2px] px-6 text-[16px] font-semibold leading-[1.5] tracking-[-0.4px] transition-opacity hover:opacity-80 ${
+                status === "success"
+                  ? "bg-dark text-cream"
+                  : status === "error"
+                    ? "bg-[rgba(255,34,68,0.15)] text-dark"
+                    : status === "loading"
+                      ? "bg-dark text-cream opacity-70"
+                      : "bg-dark text-cream"
+              }`}
+            >
+              {status === "loading"
+                ? "Sending..."
+                : status === "success"
+                  ? "Sent!"
+                  : status === "error"
+                    ? "Error, try again"
+                    : "Submit"}
+            </button>
+          </form>
+        </div>
+      </section>
+
+      <Footer />
+    </>
+  );
+}
