@@ -43,7 +43,8 @@ const COMING_SOON = true;
 
 function ComingSoon() {
   return (
-    <div className="flex min-h-screen flex-col items-center justify-center bg-cream px-6">
+    <div className="relative flex min-h-screen flex-col items-center justify-center bg-cream px-6">
+      <div className="grid-bg" />
       <div className="flex max-w-[600px] flex-col items-center gap-8 text-center">
         <h1 className="text-[64px] font-bold leading-[1.1] tracking-[-3px] text-dark">
           Milosz Zemla
