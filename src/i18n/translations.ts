@@ -235,7 +235,7 @@ export const translations = {
       learnings: "Wnioski",
     },
   },
-} as const;
+};
 
 export type Language = "en" | "pl";
 export type Translations = typeof translations.en;
