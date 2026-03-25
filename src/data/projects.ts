@@ -31,6 +31,33 @@ export interface Testimonial {
   role: string;
 }
 
+export interface UserQuote {
+  text: string;
+  author: string;
+}
+
+export interface ResearchInsight {
+  text: string;
+  stat?: string;
+}
+
+export interface Iteration {
+  version: string;
+  title: string;
+  description: string;
+  wins: string[];
+  fails: string[];
+}
+
+export interface TeamMember {
+  name: string;
+  role: string;
+}
+
+export interface Learning {
+  text: string;
+}
+
 export interface Project {
   slug: string;
   title: string;
@@ -41,11 +68,23 @@ export interface Project {
   heroImage: string;
   meta: string;
   liveUrl?: string;
+  // Role & Team
+  role?: string;
+  team?: TeamMember[];
+  timeline?: string;
+  platform?: string;
+  services?: string;
   // Problem
   problemStatement: string;
   problemMetrics?: string;
   designQuestion: string;
-  // Process
+  userQuote?: UserQuote;
+  // Research
+  researchMethods?: string[];
+  researchInsights?: ResearchInsight[];
+  // Iterations
+  iterations?: Iteration[];
+  // Process (legacy — kept for backward compat)
   process: ProcessStep[];
   // Solution
   solutions: SolutionScreen[];
@@ -54,6 +93,8 @@ export interface Project {
   resultsNote?: string;
   // Testimonial
   testimonial?: Testimonial;
+  // Learnings
+  learnings?: Learning[];
 }
 
 export const projects: Project[] = [
@@ -67,11 +108,72 @@ export const projects: Project[] = [
     heroImage: "/assets/images/project-lisek.png",
     meta: "Lisek  ·  Q-Commerce  ·  2026  ·  Product Design",
     liveUrl: "#",
+    // Role & Team
+    role: "Product Designer",
+    team: [
+      { name: "Miłosz", role: "Product Designer" },
+      // TODO: dodaj prawdziwy zespół
+    ],
+    timeline: "3 miesiące",
+    platform: "iOS & Android",
+    services: "Product Design, Mobile Design",
+    // Problem
     problemStatement:
       "Lisek traci użytkowników po pierwszym zamówieniu. Retention 30d spada, a cart abandonment rośnie — użytkownicy nie wracają, bo powtarzalne zakupy wymagają za dużo kroków.",
     problemMetrics: "Retention 30d: 18%  ·  Cart abandonment: 67%",
     designQuestion:
       "Jak uprościć powtarzalne zakupy, żeby użytkownicy wracali?",
+    userQuote: {
+      text: "Robię zakupy co 2-3 dni, zawsze to samo. A i tak za każdym razem muszę szukać od zera.",
+      author: "Ania, 32 lata, matka dwójki dzieci",
+    },
+    // Research
+    researchMethods: [
+      "Analiza konkurencji — 5 aplikacji q-commerce (Jokr, Gorillas, Getir, Żabka, Glovo)",
+      "8 wywiadów z użytkownikami (heavy grocery shoppers, 25-40 lat)",
+      "Analiza drop-off w funnelu zakupowym + heatmapy",
+    ],
+    researchInsights: [
+      { text: "Kupują te same ~15 produktów w kółko", stat: "7/8" },
+      { text: "Przeglądanie kategorii to największa frustracja", stat: "6/8" },
+      { text: "Chcą widzieć gdzie jest kurier w real-time", stat: "8/8" },
+      { text: "Wolą listę niż katalog jako punkt wejścia", stat: "5/8" },
+    ],
+    // Iterations
+    iterations: [
+      {
+        version: "V1",
+        title: "Catalog-first — klasyczny sklep",
+        description: "Standardowy e-commerce flow: kategorie → produkty → koszyk → checkout.",
+        wins: ["Znajomy wzorzec, niski próg wejścia"],
+        fails: [
+          "Za dużo tapów do powtarzalnych zakupów",
+          "Użytkownicy: 'to jest jak każda inna apka'",
+        ],
+      },
+      {
+        version: "V2",
+        title: "List-first + Quick Reorder",
+        description: "Punkt wejścia to lista zakupów, nie katalog. Smart reorder na podstawie historii.",
+        wins: [
+          "Średni czas zamówienia: 48s (vs 90s w V1)",
+          "Użytkownicy: 'o to mi chodziło'",
+        ],
+        fails: ["Nowi użytkownicy bez historii nie wiedzieli od czego zacząć"],
+      },
+      {
+        version: "V3",
+        title: "Hybrid — smart onboarding + list-first",
+        description: "Nowi użytkownicy dostają popularne koszyki jako starter. Powracający widzą swoje listy.",
+        wins: [
+          "Rozwiązuje problem cold start",
+          "Task completion rate: 93%",
+          "Zachowuje szybkość V2 dla powracających",
+        ],
+        fails: [],
+      },
+    ],
+    // Process (legacy summary)
     process: [
       { label: "Discovery", text: "8 wywiadów z użytkownikami, analiza drop-off w funnelu zakupowym" },
       { label: "Insight", text: "Użytkownicy kupują te same produkty co tydzień, ale muszą szukać od zera" },
@@ -106,6 +208,11 @@ export const projects: Project[] = [
       author: "Jan Kowalski",
       role: "CPO at Lisek",
     },
+    learnings: [
+      { text: "W q-commerce 'prosty' ≠ 'mało funkcji' — prosty = zero decyzji do podjęcia" },
+      { text: "Personalizacja > discovery w kontekście powtarzalnych zakupów" },
+      { text: "Cold start problem jest realny — popular baskets jako starter rozwiązują go elegancko" },
+    ],
   },
   {
     slug: "playmaker",
@@ -117,6 +224,8 @@ export const projects: Project[] = [
     heroImage: "/assets/images/project-playmaker.webp",
     meta: "Playmaker  ·  HR Tech  ·  2025  ·  Product Design",
     liveUrl: "#",
+    role: "Product Designer",
+    services: "UX/UI Design, Product Strategy",
     problemStatement:
       "Job seekers spend hours scrolling irrelevant listings. Matching accuracy was low, leading to high bounce rates and poor engagement.",
     problemMetrics: "Avg. session: 2.1 min  ·  Match rate: 12%",
@@ -167,6 +276,8 @@ export const projects: Project[] = [
     heroImage: "/assets/images/project-wishdrop.png",
     meta: "Wishdrop  ·  E-Commerce  ·  2025  ·  Mobile Design",
     liveUrl: "#",
+    role: "Product Designer",
+    services: "Mobile Design, Product Design",
     problemStatement:
       "Gift-giving is stressful — people buy things recipients don't want. Existing wishlists are scattered across platforms and hard to share.",
     designQuestion:
@@ -211,6 +322,8 @@ export const projects: Project[] = [
     heroImage: "/assets/images/project-olimpia.webp",
     meta: "Olimpia  ·  Fitness  ·  2024  ·  Web Design",
     liveUrl: "#",
+    role: "Web Designer",
+    services: "Web Design, Conversion Optimization",
     problemStatement:
       "Olimpia's landing page had high traffic but low conversion — visitors weren't signing up for memberships.",
     problemMetrics: "Conversion rate: 1.8%  ·  Bounce rate: 72%",
@@ -255,6 +368,8 @@ export const projects: Project[] = [
     heroImage: "/assets/images/project-roomzilla.webp",
     meta: "Roomzilla  ·  SaaS  ·  2024  ·  Web Design",
     liveUrl: "#",
+    role: "Product Designer",
+    services: "Product Design, Web Design",
     problemStatement:
       "Booking a meeting room in a large office takes too many clicks. Employees default to ad-hoc room grabs, causing conflicts.",
     designQuestion:
@@ -297,4 +412,39 @@ export function getProject(slug: string): Project | undefined {
 export function getNextProject(slug: string): Project {
   const idx = projects.findIndex((p) => p.slug === slug);
   return projects[(idx + 1) % projects.length];
+}
+
+// --- i18n helpers ---
+import { projectTranslations } from "@/i18n/project-translations";
+import type { Language } from "@/i18n/translations";
+
+function deepMerge<T>(base: T, override: Partial<T>): T {
+  const result = { ...base } as Record<string, unknown>;
+  for (const key of Object.keys(override)) {
+    const val = (override as Record<string, unknown>)[key];
+    if (val === undefined) continue;
+    if (Array.isArray(val)) {
+      result[key] = val;
+    } else if (val && typeof val === "object" && !Array.isArray(val)) {
+      result[key] = deepMerge(
+        (base as Record<string, unknown>)[key] as object,
+        val as Partial<object>
+      );
+    } else {
+      result[key] = val;
+    }
+  }
+  return result as T;
+}
+
+export function getTranslatedProject(project: Project, lang: Language): Project {
+  const t = projectTranslations[project.slug];
+  if (!t) return project;
+  const override = t[lang];
+  if (!override) return project;
+  return deepMerge(project, override as Partial<Project>);
+}
+
+export function getTranslatedProjects(lang: Language): Project[] {
+  return projects.map((p) => getTranslatedProject(p, lang));
 }

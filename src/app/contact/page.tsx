@@ -3,13 +3,7 @@
 import { useState } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-
-const projectTypes = [
-  "Multipage Website Design",
-  "Landing Page Design",
-  "Framer Website Development",
-  "Framer Landing Page Development",
-];
+import { useLanguage } from "@/i18n/LanguageContext";
 
 export default function ContactPage() {
   const [name, setName] = useState("");
@@ -18,6 +12,7 @@ export default function ContactPage() {
   const [budget, setBudget] = useState("");
   const [details, setDetails] = useState("");
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
+  const { t } = useLanguage();
 
   const toggleType = (type: string) => {
     setSelectedTypes((prev) =>
@@ -41,7 +36,7 @@ export default function ContactPage() {
         <div className="grid-bg" />
         <div className="relative z-10 mx-auto flex w-[92%] flex-col gap-2">
           <h1 className="font-bold text-[48px] md:text-[72px] lg:text-[96px] xl:text-[120px] leading-[1.12] tracking-[-2px] md:tracking-[-3px] lg:tracking-[-5px] text-dark">
-            Contact
+            {t.contact.title}
           </h1>
           <div className="h-[2px] w-full bg-dark" />
         </div>
@@ -54,9 +49,7 @@ export default function ContactPage() {
           {/* Intro text + email */}
           <div className="flex w-full md:w-[80%] lg:w-[60%] flex-col items-start gap-4 md:gap-6">
             <p className="text-[24px] md:text-[28px] lg:text-[34px] font-medium leading-[1.5] tracking-[-0.6px] lg:tracking-[-1px] text-dark">
-              I&apos;m looking forward to hearing from you! If you prefer not to fill
-              out forms, feel free to email me directly and let&apos;s talk about
-              the next big thing!
+              {t.contact.intro}
             </p>
             <a
               href="mailto:hello@miloszzemla.com"
@@ -74,40 +67,40 @@ export default function ContactPage() {
             {/* Name */}
             <div className="flex w-full flex-col gap-2">
               <label className="text-[16px] md:text-[18px] font-medium leading-[1.5] tracking-[-0.4px] text-dark">
-                Name
+                {t.contact.name}
               </label>
               <input
                 type="text"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
                 required
-                className="w-full border-b-2 border-dark/20 bg-transparent py-3 text-[16px] md:text-[18px] font-medium leading-[1.5] tracking-[-0.4px] text-dark outline-none transition-colors focus:border-dark placeholder:text-dark/30"
-                placeholder="Your name"
+                className="w-full rounded-[4px] border border-dark/10 bg-white px-4 py-3 text-[16px] md:text-[18px] font-medium leading-[1.5] tracking-[-0.4px] text-dark outline-none transition-colors focus:border-dark/40 placeholder:text-dark/30"
+                placeholder={t.contact.namePlaceholder}
               />
             </div>
 
             {/* Email */}
             <div className="flex w-full flex-col gap-2">
               <label className="text-[16px] md:text-[18px] font-medium leading-[1.5] tracking-[-0.4px] text-dark">
-                Email
+                {t.contact.email}
               </label>
               <input
                 type="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 required
-                className="w-full border-b-2 border-dark/20 bg-transparent py-3 text-[16px] md:text-[18px] font-medium leading-[1.5] tracking-[-0.4px] text-dark outline-none transition-colors focus:border-dark placeholder:text-dark/30"
-                placeholder="your@email.com"
+                className="w-full rounded-[4px] border border-dark/10 bg-white px-4 py-3 text-[16px] md:text-[18px] font-medium leading-[1.5] tracking-[-0.4px] text-dark outline-none transition-colors focus:border-dark/40 placeholder:text-dark/30"
+                placeholder={t.contact.emailPlaceholder}
               />
             </div>
 
             {/* Project Type */}
             <div className="flex w-full flex-col gap-4 md:gap-5">
               <label className="text-[16px] md:text-[18px] font-medium leading-[1.5] tracking-[-0.4px] text-dark">
-                What&apos;s Your Project About?
+                {t.contact.projectType}
               </label>
               <div className="flex flex-col gap-3 md:gap-4">
-                {projectTypes.map((type) => (
+                {t.contact.projectTypes.map((type) => (
                   <label
                     key={type}
                     className="flex cursor-pointer items-center gap-3"
@@ -147,28 +140,28 @@ export default function ContactPage() {
             {/* Budget */}
             <div className="flex w-full flex-col gap-2">
               <label className="text-[16px] md:text-[18px] font-medium leading-[1.5] tracking-[-0.4px] text-dark">
-                Your Budget
+                {t.contact.budget}
               </label>
               <input
                 type="text"
                 value={budget}
                 onChange={(e) => setBudget(e.target.value)}
-                className="w-full border-b-2 border-dark/20 bg-transparent py-3 text-[16px] md:text-[18px] font-medium leading-[1.5] tracking-[-0.4px] text-dark outline-none transition-colors focus:border-dark placeholder:text-dark/30"
-                placeholder="e.g. $5,000 - $10,000"
+                className="w-full rounded-[4px] border border-dark/10 bg-white px-4 py-3 text-[16px] md:text-[18px] font-medium leading-[1.5] tracking-[-0.4px] text-dark outline-none transition-colors focus:border-dark/40 placeholder:text-dark/30"
+                placeholder={t.contact.budgetPlaceholder}
               />
             </div>
 
             {/* Details */}
             <div className="flex w-full flex-col gap-2">
               <label className="text-[16px] md:text-[18px] font-medium leading-[1.5] tracking-[-0.4px] text-dark">
-                Share More Details
+                {t.contact.details}
               </label>
               <textarea
                 value={details}
                 onChange={(e) => setDetails(e.target.value)}
                 rows={4}
-                className="w-full resize-none border-b-2 border-dark/20 bg-transparent py-3 text-[16px] md:text-[18px] font-medium leading-[1.5] tracking-[-0.4px] text-dark outline-none transition-colors focus:border-dark placeholder:text-dark/30"
-                placeholder="Tell me about your project..."
+                className="w-full resize-none rounded-[4px] border border-dark/10 bg-white px-4 py-3 text-[16px] md:text-[18px] font-medium leading-[1.5] tracking-[-0.4px] text-dark outline-none transition-colors focus:border-dark/40 placeholder:text-dark/30"
+                placeholder={t.contact.detailsPlaceholder}
               />
             </div>
 
@@ -187,12 +180,12 @@ export default function ContactPage() {
               }`}
             >
               {status === "loading"
-                ? "Sending..."
+                ? t.contact.sending
                 : status === "success"
-                  ? "Sent!"
+                  ? t.contact.sent
                   : status === "error"
-                    ? "Error, try again"
-                    : "Submit"}
+                    ? t.contact.error
+                    : t.contact.submit}
             </button>
           </form>
         </div>

@@ -3,9 +3,13 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
-import { projects } from "@/data/projects";
+import { getTranslatedProjects } from "@/data/projects";
+import { useLanguage } from "@/i18n/LanguageContext";
 
 export default function FeaturedWork() {
+  const { t, lang } = useLanguage();
+  const projects = getTranslatedProjects(lang);
+
   return (
     <section
       id="work"
@@ -18,10 +22,10 @@ export default function FeaturedWork() {
         <div className="flex w-full flex-col gap-4">
           <div className="flex w-full items-center justify-between">
             <h2 className="text-[20px] md:text-[22px] lg:text-[24px] font-medium leading-[1.4] tracking-[-0.8px] text-dark">
-              Featured work
+              {t.featuredWork.title}
             </h2>
             <span className="text-[16px] md:text-[18px] lg:text-[20px] font-medium leading-[1.5] tracking-[-0.6px] text-dark">
-              Scroll ↓
+              {t.featuredWork.scroll}
             </span>
           </div>
           <div className="h-[2px] w-full bg-dark" />

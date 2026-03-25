@@ -2,8 +2,11 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
+import { useLanguage } from "@/i18n/LanguageContext";
 
 export default function About() {
+  const { t } = useLanguage();
+
   return (
     <section
       id="about"
@@ -16,7 +19,7 @@ export default function About() {
         <div className="flex w-full flex-col gap-4">
           <div className="flex w-full items-center justify-between">
             <h2 className="text-[20px] md:text-[22px] lg:text-[24px] font-medium leading-[1.4] tracking-[-0.8px] text-dark">
-              About
+              {t.about.title}
             </h2>
           </div>
           <div className="h-[2px] w-full bg-dark" />
@@ -32,12 +35,7 @@ export default function About() {
             className="flex w-full lg:w-[60%] flex-col gap-8"
           >
             <p className="text-[24px] md:text-[28px] lg:text-[34px] font-medium leading-[1.5] tracking-[-0.6px] lg:tracking-[-1px] text-dark">
-              Hi, I&apos;m Martin Taylor, an art director and product designer
-              based in London. With my background in visual arts and technology,
-              I specialize in creating engaging user experiences through
-              interactive design. I am deeply passionate about using my creative
-              skills to collaborate on innovative and meaningful projects that
-              make a genuine impact.
+              {t.about.bio}
             </p>
           </motion.div>
 

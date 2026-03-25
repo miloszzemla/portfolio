@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { useLanguage } from "@/i18n/LanguageContext";
 
 const socials = [
   { name: "Instagram", href: "https://www.instagram.com/tamermagdy07/" },
@@ -9,9 +10,11 @@ const socials = [
   { name: "Dribbble", href: "https://dribbble.com/TamerMagdy" },
 ];
 
-const marqueeText = "Let\u2019s work together \u00A0\u00A0\u00A0 Let\u2019s work together \u00A0\u00A0\u00A0 Let\u2019s work together \u00A0\u00A0\u00A0 Let\u2019s work together \u00A0\u00A0\u00A0 ";
-
 export default function Footer() {
+  const { t } = useLanguage();
+
+  const marqueeText = `${t.footer.marquee} \u00A0\u00A0\u00A0 ${t.footer.marquee} \u00A0\u00A0\u00A0 ${t.footer.marquee} \u00A0\u00A0\u00A0 ${t.footer.marquee} \u00A0\u00A0\u00A0 `;
+
   return (
     <footer className="relative flex min-h-[80vh] md:min-h-screen w-full flex-col justify-end bg-dark overflow-hidden px-0 pt-16 md:pt-24 pb-8 md:pb-12">
       <div
@@ -28,7 +31,7 @@ export default function Footer() {
         }}
       />
 
-      {/* Scrolling "Let's work together" marquee */}
+      {/* Scrolling marquee */}
       <div className="relative z-10 my-auto w-full overflow-hidden">
         <motion.div
           initial={{ opacity: 0 }}
@@ -72,8 +75,7 @@ export default function Footer() {
         {/* Info text */}
         <div className="w-full md:w-[40%] lg:w-[30%]">
           <p className="text-[20px] md:text-[22px] lg:text-[24px] font-medium leading-[1.5] tracking-[-0.6px] lg:tracking-[-0.8px] text-cream">
-            I&apos;m currently available for new work, let me know if you need a
-            digital designer. I&apos;d love to talk about the next big thing!
+            {t.footer.available}
           </p>
         </div>
       </div>
@@ -102,7 +104,7 @@ export default function Footer() {
             }}
             className="text-[18px] md:text-[20px] font-medium leading-[1.5] tracking-[-0.4px] md:tracking-[-0.6px] text-cream underline underline-offset-4 decoration-cream/40 transition-opacity hover:opacity-60"
           >
-            ↑ Back to top
+            {t.footer.backToTop}
           </a>
         </div>
       </div>

@@ -3,10 +3,12 @@
 import { useRef } from "react";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
+import { useLanguage } from "@/i18n/LanguageContext";
 
 export default function Hero() {
   const containerRef = useRef<HTMLDivElement>(null);
   const logoRef = useRef<HTMLDivElement>(null);
+  const { t } = useLanguage();
 
   useGSAP(
     () => {
@@ -62,7 +64,7 @@ export default function Hero() {
       <div className="grid-bg" />
 
       <div className="relative z-10 flex w-[92%] flex-col items-start md:items-center gap-2 md:gap-3 lg:gap-4">
-        {/* Line 1: logo + "I'm Milosz Zemla" */}
+        {/* Line 1: logo + greeting */}
         <div className="flex w-full items-center justify-start md:justify-center gap-3 md:gap-4 lg:gap-6">
           <div
             ref={logoRef}
@@ -80,7 +82,7 @@ export default function Hero() {
             <h1
               className="hero-line font-light leading-[1.12] tracking-[-2px] md:tracking-[-6px] lg:tracking-[-9px] text-[36px] md:text-[70px] lg:text-[100px] xl:text-[140px]"
             >
-              I&apos;m Milosz Zemla
+              {t.hero.greeting}
             </h1>
           </div>
         </div>
@@ -89,14 +91,13 @@ export default function Hero() {
         {/* Desktop: description + "A designer" in one row */}
         <div className="hidden md:flex w-full items-center justify-center gap-6 lg:gap-10">
           <p className="hero-description max-w-[34%] text-[18px] lg:text-[22px] font-medium leading-[1.5] tracking-[-0.6px] text-dark text-left">
-            I ask the necessary (and sometimes the difficult questions) to
-            create brands and products that focus on and prioritize people
+            {t.hero.description}
           </p>
           <div className="overflow-hidden">
             <span
               className="hero-line block font-bold leading-[1.12] tracking-[-5px] lg:tracking-[-8px] text-[70px] lg:text-[100px] xl:text-[140px]"
             >
-              A designer
+              {t.hero.designer}
             </span>
           </div>
         </div>
@@ -106,12 +107,11 @@ export default function Hero() {
             <span
               className="hero-line block font-bold leading-[1.12] tracking-[-2px] text-[36px]"
             >
-              A designer
+              {t.hero.designer}
             </span>
           </div>
           <p className="hero-description text-[16px] font-medium leading-[1.5] tracking-[-0.4px] text-dark text-left">
-            I ask the necessary (and sometimes the difficult questions) to
-            create brands and products that focus on and prioritize people
+            {t.hero.description}
           </p>
         </div>
 
@@ -121,7 +121,7 @@ export default function Hero() {
             <span
               className="hero-line block font-light leading-[1.12] tracking-[-2px] md:tracking-[-6px] lg:tracking-[-9px] text-[36px] md:text-[70px] lg:text-[100px] xl:text-[140px]"
             >
-              lives by design
+              {t.hero.livesByDesign}
             </span>
           </div>
         </div>

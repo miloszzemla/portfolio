@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Space_Grotesk, Inter } from "next/font/google";
+import { LanguageProvider } from "@/i18n/LanguageContext";
 import "./globals.css";
 
 const spaceGrotesk = Space_Grotesk({
@@ -39,7 +40,7 @@ export const metadata: Metadata = {
 };
 
 // Set to false when portfolio is ready to go live
-const COMING_SOON = true;
+const COMING_SOON = false;
 
 function ComingSoon() {
   return (
@@ -79,7 +80,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${spaceGrotesk.variable} ${inter.variable}`}>
-      <body>{COMING_SOON ? <ComingSoon /> : children}</body>
+      <body>
+        <LanguageProvider>
+          {COMING_SOON ? <ComingSoon /> : children}
+        </LanguageProvider>
+      </body>
     </html>
   );
 }

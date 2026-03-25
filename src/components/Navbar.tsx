@@ -1,9 +1,12 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { useLanguage } from "@/i18n/LanguageContext";
+import LanguageSwitcher from "./LanguageSwitcher";
 
 export default function Navbar() {
   const [time, setTime] = useState("");
+  const { t } = useLanguage();
 
   useEffect(() => {
     const update = () => {
@@ -37,32 +40,35 @@ export default function Navbar() {
             href="/#about"
             className="text-[18px] lg:text-[20px] font-medium leading-[1.5] tracking-[-0.6px] text-dark transition-opacity hover:opacity-60"
           >
-            About
+            {t.nav.about}
           </a>
           <a
             href="/#work"
             className="text-[18px] lg:text-[20px] font-medium leading-[1.5] tracking-[-0.6px] text-dark transition-opacity hover:opacity-60"
           >
-            Projects
+            {t.nav.projects}
           </a>
           <a
             href="/contact"
             className="text-[18px] lg:text-[20px] font-medium leading-[1.5] tracking-[-0.6px] text-dark transition-opacity hover:opacity-60"
           >
-            Contact
+            {t.nav.contact}
           </a>
         </div>
 
-        <div className="hidden lg:flex lg:w-1/3 items-center justify-end gap-1">
-          <span className="text-[20px] font-medium leading-[1.5] tracking-[-0.6px] text-dark">
-            Warsaw
-          </span>
-          <span className="text-[18px] font-medium leading-[1.5] tracking-[-0.4px] text-dark">
-            *
-          </span>
-          <span className="text-[20px] font-medium leading-[1.5] tracking-[-0.6px] text-dark">
-            {time}
-          </span>
+        <div className="flex items-center justify-end gap-6 md:w-1/3">
+          <LanguageSwitcher />
+          <div className="hidden lg:flex items-center gap-1">
+            <span className="text-[20px] font-medium leading-[1.5] tracking-[-0.6px] text-dark">
+              {t.nav.location}
+            </span>
+            <span className="text-[18px] font-medium leading-none tracking-[-0.4px] text-dark flex items-center">
+              *
+            </span>
+            <span className="text-[20px] font-medium leading-[1.5] tracking-[-0.6px] text-dark">
+              {time}
+            </span>
+          </div>
         </div>
       </div>
       <div className="relative mx-auto w-[92%] h-[2px] bg-dark" />

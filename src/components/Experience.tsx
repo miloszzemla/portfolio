@@ -1,20 +1,11 @@
 "use client";
 
 import { motion } from "framer-motion";
-
-const experience = [
-  { company: "MANO", role: "Design Consultant", period: "2022 – Now" },
-  { company: "Spotify", role: "Senior Designer", period: "2021 – 2022" },
-  {
-    company: "Martin Taylor",
-    role: "Freelance Designer",
-    period: "2019 – 2021",
-  },
-  { company: "Shrink", role: "UI/UX Designer", period: "2018 – 2019" },
-  { company: "IBM", role: "Design Intern", period: "2016 – 2017" },
-];
+import { useLanguage } from "@/i18n/LanguageContext";
 
 export default function Experience() {
+  const { t } = useLanguage();
+
   return (
     <section className="relative w-full bg-cream overflow-hidden py-[60px] md:py-[80px] lg:py-[100px]">
       <div className="grid-bg" />
@@ -24,7 +15,7 @@ export default function Experience() {
         <div className="flex w-full flex-col gap-4">
           <div className="flex w-full items-center justify-between">
             <h2 className="text-[20px] md:text-[22px] lg:text-[24px] font-medium leading-[1.4] tracking-[-0.8px] text-dark">
-              Experience
+              {t.experience.title}
             </h2>
           </div>
           <div className="h-[2px] w-full bg-dark" />
@@ -40,14 +31,12 @@ export default function Experience() {
             className="w-full lg:w-[30%]"
           >
             <p className="text-[20px] md:text-[22px] lg:text-[24px] font-medium leading-[1.5] tracking-[-0.6px] lg:tracking-[-0.8px] text-dark">
-              I&apos;ve worked with companies and clients, both in agency
-              settings and as a freelancer. I enjoy collaborating with clients
-              who appreciate the importance of good design.
+              {t.experience.intro}
             </p>
           </motion.div>
 
           <div className="flex w-full lg:w-[60%] flex-col gap-5">
-            {experience.map((item, i) => (
+            {t.experience.items.map((item, i) => (
               <motion.div
                 key={item.company}
                 initial={{ opacity: 0, y: 15 }}
@@ -68,7 +57,7 @@ export default function Experience() {
                   </span>
                 </div>
                 {/* Divider */}
-                {i < experience.length - 1 && (
+                {i < t.experience.items.length - 1 && (
                   <div className="mt-5 h-[2px] w-full bg-dark/16" />
                 )}
               </motion.div>
