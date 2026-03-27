@@ -40,7 +40,7 @@ export const metadata: Metadata = {
 };
 
 // Set to false when portfolio is ready to go live
-const COMING_SOON = false;
+const COMING_SOON = true;
 
 function ComingSoon() {
   return (
