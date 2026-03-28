@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Space_Grotesk, Inter } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
 import { LanguageProvider } from "@/i18n/LanguageContext";
 import "./globals.css";
 
@@ -84,6 +85,7 @@ export default function RootLayout({
         <LanguageProvider>
           {COMING_SOON ? <ComingSoon /> : children}
         </LanguageProvider>
+        <Analytics />
       </body>
     </html>
   );
