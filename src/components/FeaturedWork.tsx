@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { getTranslatedProjects } from "@/data/projects";
 import { useLanguage } from "@/i18n/LanguageContext";
+import PhoneMockup from "@/components/PhoneMockup";
 
 export default function FeaturedWork() {
   const { t, lang } = useLanguage();
@@ -43,14 +44,24 @@ export default function FeaturedWork() {
                 className="group flex flex-col lg:flex-row lg:h-[500px] xl:h-[650px] w-full lg:items-end justify-between overflow-hidden"
               >
                 {/* Image - on top for mobile, right side for desktop */}
-                <div className="relative w-full lg:hidden aspect-[16/10] overflow-hidden">
-                  <Image
-                    src={project.thumbnail}
-                    alt={project.title}
-                    fill
-                    className="object-cover object-top transition-transform duration-700 group-hover:scale-[1.02]"
-                  />
-                </div>
+                {project.slug === "lisek" ? (
+                  <div className="flex w-full lg:hidden items-center justify-center bg-[#f5f5f5] py-8">
+                    <div className="w-[180px]">
+                      <PhoneMockup
+                        videoSrc="/assets/videos/lisek-screen.mov"
+                      />
+                    </div>
+                  </div>
+                ) : (
+                  <div className="relative w-full lg:hidden aspect-[16/10] overflow-hidden">
+                    <Image
+                      src={project.thumbnail}
+                      alt={project.title}
+                      fill
+                      className="object-cover object-top transition-transform duration-700 group-hover:scale-[1.02]"
+                    />
+                  </div>
+                )}
 
                 {/* Details */}
                 <div className="flex w-full lg:w-[30%] flex-col justify-between pt-4 lg:pr-12 lg:h-full gap-4 lg:gap-0">
@@ -68,14 +79,24 @@ export default function FeaturedWork() {
                 </div>
 
                 {/* Image - hidden on mobile, visible on desktop */}
-                <div className="relative hidden lg:block h-full w-[70%] overflow-hidden">
-                  <Image
-                    src={project.thumbnail}
-                    alt={project.title}
-                    fill
-                    className="object-cover object-top transition-transform duration-700 group-hover:scale-[1.02]"
-                  />
-                </div>
+                {project.slug === "lisek" ? (
+                  <div className="hidden lg:flex h-full w-[70%] items-center justify-center bg-[#f5f5f5]">
+                    <div className="w-[240px]">
+                      <PhoneMockup
+                        videoSrc="/assets/videos/lisek-screen.mov"
+                      />
+                    </div>
+                  </div>
+                ) : (
+                  <div className="relative hidden lg:block h-full w-[70%] overflow-hidden">
+                    <Image
+                      src={project.thumbnail}
+                      alt={project.title}
+                      fill
+                      className="object-cover object-top transition-transform duration-700 group-hover:scale-[1.02]"
+                    />
+                  </div>
+                )}
               </motion.div>
             </Link>
           ))}

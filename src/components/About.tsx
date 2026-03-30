@@ -48,7 +48,7 @@ export default function About() {
           >
             <div className="relative h-[350px] md:h-[450px] lg:h-[580px] w-full overflow-hidden">
               <Image
-                src="/assets/images/portrait.webp"
+                src="/assets/images/milosz-zemla.png"
                 alt="Milosz Zemla"
                 fill
                 className="object-cover"

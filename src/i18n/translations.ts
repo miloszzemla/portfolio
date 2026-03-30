@@ -31,11 +31,12 @@ export const translations = {
       intro:
         "I\u2019ve worked with companies and clients, both in agency settings and as a freelancer. I enjoy collaborating with clients who appreciate the importance of good design.",
       items: [
-        { company: "MANO", role: "Design Consultant", period: "2022 \u2013 Now" },
-        { company: "Spotify", role: "Senior Designer", period: "2021 \u2013 2022" },
-        { company: "Martin Taylor", role: "Freelance Designer", period: "2019 \u2013 2021" },
-        { company: "Shrink", role: "UI/UX Designer", period: "2018 \u2013 2019" },
-        { company: "IBM", role: "Design Intern", period: "2016 \u2013 2017" },
+        { company: "Lisek", role: "Product Designer", period: "2023 \u2013 Now" },
+        { company: "Playmaker", role: "UX/UI Designer", period: "2022 \u2013 2023" },
+        { company: "Listonic", role: "UX/UI Designer", period: "2021 \u2013 2023" },
+        { company: "Freelance", role: "Product Designer", period: "2020 \u2013 Now" },
+        { company: "IOT Global", role: "UX/UI Designer", period: "2019 \u2013 2021" },
+        { company: "Rise up agency", role: "UI Designer", period: "2019 \u2013 2020" },
       ],
     },
     // Services
@@ -45,12 +46,12 @@ export const translations = {
         "I am dedicated to expanding my knowledge and expertise in my field. Throughout my career, I\u2019ve acquired various skills, which I continue to perfect.",
       items: [
         {
-          title: "Digital Design",
+          title: "Product Design",
           description:
             "Crafting visually appealing and user-friendly interfaces that create intuitive and seamless experiences.",
         },
         {
-          title: "Framer Expert",
+          title: "Framer Enthusiast",
           description:
             "The most efficient platform to implement web solutions and publish websites with one click.",
         },
@@ -60,7 +61,7 @@ export const translations = {
             "Defining product\u2019s vision, strategizing the approach, and setting both short & long term goals.",
         },
         {
-          title: "Art Direction",
+          title: "Design Direction",
           description:
             "Establishing a strong foundation to set the project\u2019s tone, providing a clear & organized starting point.",
         },
@@ -149,11 +150,12 @@ export const translations = {
       intro:
         "Pracowa\u0142em z firmami i klientami, zar\u00f3wno w agencjach, jak i jako freelancer. Lubi\u0119 wsp\u00f3\u0142prac\u0119 z klientami, kt\u00f3rzy doceniaj\u0105 znaczenie dobrego designu.",
       items: [
-        { company: "MANO", role: "Konsultant ds. Designu", period: "2022 \u2013 Teraz" },
-        { company: "Spotify", role: "Senior Designer", period: "2021 \u2013 2022" },
-        { company: "Martin Taylor", role: "Freelance Designer", period: "2019 \u2013 2021" },
-        { company: "Shrink", role: "UI/UX Designer", period: "2018 \u2013 2019" },
-        { company: "IBM", role: "Sta\u017cysta ds. Designu", period: "2016 \u2013 2017" },
+        { company: "Lisek", role: "Product Designer", period: "2023 \u2013 Teraz" },
+        { company: "Playmaker", role: "UX/UI Designer", period: "2022 \u2013 2023" },
+        { company: "Listonic", role: "UX/UI Designer", period: "2021 \u2013 2023" },
+        { company: "Freelance", role: "Product Designer", period: "2020 \u2013 Teraz" },
+        { company: "IOT Global", role: "UX/UI Designer", period: "2019 \u2013 2021" },
+        { company: "Rise up agency", role: "UI Designer", period: "2019 \u2013 2020" },
       ],
     },
     // Services
@@ -163,24 +165,24 @@ export const translations = {
         "Stale poszerzam swoj\u0105 wiedz\u0119 i umiej\u0119tno\u015bci. W trakcie kariery zdoby\u0142em r\u00f3\u017cnorodne kompetencje, kt\u00f3re ci\u0105gle doskonale.",
       items: [
         {
-          title: "Digital Design",
+          title: "Projektowanie Produktu",
           description:
-            "Tworzenie atrakcyjnych wizualnie i przyjaznych interfejs\u00f3w, kt\u00f3re zapewniaj\u0105 intuicyjne do\u015bwiadczenia.",
+            "Tworzenie atrakcyjnych wizualnie i przyjaznych interfejsów, które zapewniają intuicyjne doświadczenia.",
         },
         {
-          title: "Framer Expert",
+          title: "Entuzjasta Framera",
           description:
-            "Najefektywniejsza platforma do wdra\u017cania rozwi\u0105za\u0144 webowych i publikowania stron jednym klikni\u0119ciem.",
+            "Najefektywniejsza platforma do wdrażania rozwiązań webowych i publikowania stron jednym kliknięciem.",
         },
         {
           title: "Strategia Produktu",
           description:
-            "Definiowanie wizji produktu, strategii podej\u015bcia oraz wyznaczanie cel\u00f3w kr\u00f3tko- i d\u0142ugoterminowych.",
+            "Definiowanie wizji produktu, strategii podejścia oraz wyznaczanie celów krótko- i długoterminowych.",
         },
         {
-          title: "Kierunek Artystyczny",
+          title: "Kierunek Designu",
           description:
-            "Budowanie solidnych fundament\u00f3w, kt\u00f3re nadaj\u0105 projektowi ton i zapewniaj\u0105 czytelny punkt wyj\u015bcia.",
+            "Budowanie solidnych fundamentów, które nadają projektowi ton i zapewniają czytelny punkt wyjścia.",
         },
       ],
     },

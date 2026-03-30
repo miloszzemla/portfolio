@@ -91,3 +91,18 @@ body {
 .footer-marquee {
   animation: footer-marquee 40s linear infinite;
 }
+
+/* Phone mockup scroll animation
+   Image is 2970px tall, viewport is ~812px → need to scroll ~72.7% of image height */
+.phone-scroll-img {
+  animation: phone-scroll 8s ease-in-out infinite alternate;
+}
+
+@keyframes phone-scroll {
+  0%, 10% {
+    transform: translateY(0);
+  }
+  90%, 100% {
+    transform: translateY(-72.7%);
+  }
+}
