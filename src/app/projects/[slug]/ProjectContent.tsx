@@ -75,6 +75,35 @@ export default function ProjectContent({ project: rawProject, nextProject: rawNe
         </div>
       </section>
 
+      {/* 1a. IMPACT OVERVIEW */}
+      {project.results.length > 0 && (
+        <section className="relative w-full bg-cream overflow-hidden py-[40px] md:py-[60px] lg:py-[80px]">
+          <div className="grid-bg" />
+          <div className="relative z-10 mx-auto w-[92%]">
+            <motion.div {...fadeUp} className="flex flex-col gap-8 md:gap-10">
+              <h2 className="text-[20px] md:text-[22px] lg:text-[24px] font-medium leading-[1.4] tracking-[-0.8px] text-dark">
+                {t.project.impactOverview}
+              </h2>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
+                {project.results.map((metric, i) => (
+                  <div
+                    key={i}
+                    className="flex flex-col gap-3 rounded-xl border border-dark/15 p-6 md:p-8"
+                  >
+                    <span className="text-[32px] md:text-[36px] lg:text-[42px] font-bold leading-[1.2] tracking-[-1px] lg:tracking-[-2px] text-dark">
+                      {metric.value}
+                    </span>
+                    <span className="text-[18px] md:text-[20px] font-medium leading-[1.5] tracking-[-0.4px] text-dark">
+                      {metric.label}
+                    </span>
+                  </div>
+                ))}
+              </div>
+            </motion.div>
+          </div>
+        </section>
+      )}
+
       {/* 1b. PROJECT DETAILS */}
       <section className="relative w-full bg-cream overflow-hidden py-[60px] md:py-[80px]">
         <div className="grid-bg" />

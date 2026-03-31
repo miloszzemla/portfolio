@@ -65,10 +65,10 @@ export default function FeaturedWork() {
 
                 {/* Details */}
                 <div className="flex w-full lg:w-[30%] flex-col justify-between pt-4 lg:pr-12 lg:h-full gap-4 lg:gap-0">
-                  <h3 className="text-[28px] md:text-[36px] lg:text-[44px] font-medium leading-[1.4] tracking-[-1px] lg:tracking-[-2px] text-dark">
-                    {project.title}
-                  </h3>
                   <div className="flex flex-col items-start gap-4 lg:gap-6">
+                    <h3 className="text-[28px] md:text-[36px] lg:text-[44px] font-medium leading-[1.4] tracking-[-1px] lg:tracking-[-2px] text-dark">
+                      {project.title}
+                    </h3>
                     <p className="text-[18px] md:text-[20px] lg:text-[22px] font-medium leading-[1.5] tracking-[-0.6px] text-dark">
                       {project.description}
                     </p>

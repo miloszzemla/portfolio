@@ -101,6 +101,7 @@ export const translations = {
     },
     // Project page
     project: {
+      impactOverview: "Impact Overview",
       viewLive: "View live website \u2197",
       client: "Client:",
       role: "My Role:",
@@ -220,7 +221,8 @@ export const translations = {
     },
     // Project page
     project: {
-      viewLive: "Zobacz stron\u0119 \u2197",
+      impactOverview: "Przegląd wpływu",
+      viewLive: "Zobacz stronę \u2197",
       client: "Klient:",
       role: "Moja rola:",
       year: "Rok:",
