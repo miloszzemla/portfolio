@@ -87,7 +87,7 @@ function ComingSoon() {
           <div className="mt-8 md:mt-0 md:pb-2 lg:pb-3 flex flex-col gap-4 max-w-[360px] lg:max-w-[400px]">
             <span className="inline-flex self-start items-center gap-2 bg-dark text-cream px-4 py-2 text-[13px] md:text-[14px] font-medium tracking-[-0.2px]">
               <span className="inline-block h-[6px] w-[6px] rounded-full bg-green-400 animate-pulse" />
-              Coming soon
+              Website coming soon
             </span>
             <div className="flex flex-col gap-1">
               <a
