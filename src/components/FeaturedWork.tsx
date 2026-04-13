@@ -44,13 +44,13 @@ export default function FeaturedWork() {
                 className="group flex flex-col lg:flex-row lg:h-[400px] xl:h-[500px] w-full lg:items-end justify-between overflow-hidden"
               >
                 {/* Image - on top for mobile, right side for desktop */}
-                <div className="relative w-full lg:hidden aspect-[16/9] overflow-hidden">
+                <div className="relative w-full lg:hidden aspect-[4/3] md:aspect-[16/9] overflow-hidden">
                   {project.thumbnail ? (
                     <Image
                       src={project.thumbnail}
                       alt={project.title}
                       fill
-                      className="object-contain object-center transition-transform duration-700 group-hover:scale-[1.02]"
+                      className="object-cover object-center transition-transform duration-700 group-hover:scale-[1.02]"
                     />
                   ) : (
                     <div className="absolute inset-0 bg-dark/5 border-2 border-dashed border-dark/15 flex items-center justify-center">

@@ -51,23 +51,23 @@ function ComingSoon() {
     <div className="relative flex min-h-screen flex-col items-center justify-center bg-cream px-6">
       <div className="grid-bg" />
       <div className="flex max-w-[600px] flex-col items-center justify-center self-center gap-8 text-center">
-        <h1 className="text-[64px] font-bold leading-[1.1] tracking-[-3px] text-dark">
+        <h1 className="font-space text-[48px] md:text-[64px] font-light leading-[1.1] tracking-[-2px] md:tracking-[-3px] text-dark">
           Milosz Zemla
         </h1>
         <div className="h-[2px] w-24 bg-dark" />
-        <p className="w-auto self-center text-[24px] font-medium leading-[1.5] tracking-[-0.8px] text-dark/60">
+        <p className="font-dm w-auto self-center text-[20px] md:text-[24px] font-medium leading-[1.5] tracking-[-0.6px] md:tracking-[-0.8px] text-dark/65">
           Portfolio coming soon
         </p>
         <div className="flex flex-col items-center gap-3">
           <a
             href="mailto:miloszzemla@gmail.com"
-            className="text-[20px] font-medium leading-[1.5] tracking-[-0.6px] text-dark transition-opacity hover:opacity-60"
+            className="font-dm text-[18px] md:text-[20px] font-medium leading-[1.5] tracking-[-0.6px] text-dark transition-opacity hover:opacity-60"
           >
             miloszzemla@gmail.com
           </a>
           <a
             href="tel:+48698205063"
-            className="text-[20px] font-medium leading-[1.5] tracking-[-0.6px] text-dark transition-opacity hover:opacity-60"
+            className="font-dm text-[18px] md:text-[20px] font-medium leading-[1.5] tracking-[-0.6px] text-dark transition-opacity hover:opacity-60"
           >
             +48 698 205 063
           </a>

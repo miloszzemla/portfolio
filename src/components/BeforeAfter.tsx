@@ -43,14 +43,14 @@ export default function BeforeAfter({ before, after, alt = "Before and after com
   return (
     <div
       ref={containerRef}
-      className="relative aspect-[16/9] w-full overflow-hidden cursor-col-resize select-none bg-[#e0deda]"
+      className="relative aspect-[3/4] md:aspect-[1.85/1] w-full overflow-hidden cursor-col-resize select-none bg-[#e0deda]"
       onPointerDown={handlePointerDown}
       onPointerMove={handlePointerMove}
       onPointerUp={handlePointerUp}
     >
       {/* After image (full) */}
       {hasAfter ? (
-        <Image src={after} alt={`${alt} — after`} fill className="object-contain" />
+        <Image src={after} alt={`${alt} — after`} fill draggable={false} className="object-cover md:object-contain md:object-top pointer-events-none" />
       ) : (
         <div className="absolute inset-0 bg-dark/5 border-2 border-dashed border-dark/15 flex items-center justify-center">
           <span className="text-[18px] font-medium text-dark/30">After — add image</span>
@@ -63,7 +63,7 @@ export default function BeforeAfter({ before, after, alt = "Before and after com
         style={{ width: `${position}%` }}
       >
         {hasBefore ? (
-          <img src={before} alt={`${alt} — before`} className="absolute inset-0 w-full h-full object-contain" style={{ minWidth: `${containerRef.current?.offsetWidth || 1000}px` }} />
+          <img src={before} alt={`${alt} — before`} draggable={false} onContextMenu={(e) => e.preventDefault()} className="absolute inset-0 w-full h-full object-cover md:object-contain md:object-top pointer-events-none" style={{ minWidth: `${containerRef.current?.offsetWidth || 1000}px` }} />
         ) : (
           <div className="absolute inset-0 flex items-center justify-center bg-dark/10 border-2 border-dashed border-dark/15" style={{ minWidth: `${containerRef.current?.offsetWidth || 1000}px` }}>
             <span className="text-[18px] font-medium text-dark/30">Before</span>

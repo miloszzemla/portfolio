@@ -97,26 +97,21 @@ export default function HeroAlt() {
             </span>
           </div>
 
-          {/* Line 2: "Product Designer" + badge */}
-          <div className="relative overflow-visible flex items-center">
-            <div className="overflow-hidden">
-              <span className="hero-alt-line block text-[44px] md:text-[56px] lg:text-[76px] xl:text-[96px] font-bold leading-[1.08] tracking-[-2px] md:tracking-[-4px] lg:tracking-[-5px]">
-                {t.hero.role1}
-              </span>
-            </div>
-            <span className="hero-alt-badge hidden md:inline-flex md:relative md:ml-4 -top-5 lg:-top-7 rotate-[-6deg] items-center gap-2 rounded-none bg-white border-2 border-dark text-dark px-5 py-2.5 text-[14px] font-medium tracking-[-0.2px] flex-shrink-0">
-              &#x2728; {t.hero.badge}
+          {/* Line 2: "Product Designer" */}
+          <div className="overflow-hidden">
+            <span className="hero-alt-line block text-[44px] md:text-[56px] lg:text-[76px] xl:text-[96px] font-bold leading-[1.08] tracking-[-2px] md:tracking-[-4px] lg:tracking-[-5px]">
+              {t.hero.role1}
             </span>
           </div>
 
-          {/* Line 3: "& Builder." + badge on mobile */}
-          <div className="overflow-visible flex items-center gap-3">
+          {/* Line 3: "& Builder." + badge */}
+          <div className="overflow-visible flex items-center gap-3 md:gap-4">
             <div className="overflow-hidden">
               <span className="hero-alt-line block text-[44px] md:text-[56px] lg:text-[76px] xl:text-[96px] font-bold leading-[1.08] tracking-[-2px] md:tracking-[-4px] lg:tracking-[-5px]">
                 {t.hero.role2}
               </span>
             </div>
-            <span className="hero-alt-badge md:hidden inline-flex items-center gap-1.5 rounded-none bg-white border-2 border-dark text-dark px-3 py-1.5 text-[11px] font-medium tracking-[-0.2px] flex-shrink-0 rotate-[-6deg]">
+            <span className="hero-alt-badge inline-flex items-center gap-1.5 md:gap-2 rounded-none bg-white border-2 border-dark text-dark px-3 py-1.5 md:px-5 md:py-2.5 text-[11px] md:text-[14px] font-medium tracking-[-0.2px] flex-shrink-0 rotate-[-6deg]">
               &#x2728; {t.hero.badge}
             </span>
           </div>

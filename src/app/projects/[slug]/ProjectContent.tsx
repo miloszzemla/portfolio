@@ -45,11 +45,32 @@ export default function ProjectContent({ project: rawProject, nextProject: rawNe
       <section className="relative w-full bg-cream overflow-hidden">
         <div className="grid-bg" />
         <div className="relative z-10 mx-auto w-[92%] max-w-[1400px]">
-          <motion.div {...fadeUp} className="relative aspect-[16/9] w-full overflow-hidden">
+          <motion.div {...fadeUp} className="relative aspect-[4/3] md:aspect-[16/9] w-full overflow-hidden">
             <Image src={project.heroImage} alt={project.title} fill className="object-cover" priority />
           </motion.div>
         </div>
       </section>
+
+      {/* ===== MOBILE: Role/Service/Platform — right after hero image ===== */}
+      {(project.role || project.services || project.platform) && (
+        <section className="md:hidden relative w-full bg-cream overflow-hidden pt-6 pb-2">
+          <div className="grid-bg" />
+          <div className="relative z-10 mx-auto w-[92%]">
+            <div className="bg-white border-2 border-dark p-6 flex flex-col gap-5">
+              {[
+                { label: t.project.role, value: project.role },
+                { label: t.project.service, value: project.services },
+                { label: "Platform", value: project.platform },
+              ].filter(group => group.value).map((group) => (
+                <div key={group.label} className="flex flex-col gap-1">
+                  <span className="text-[13px] font-medium text-dark/55">{group.label}</span>
+                  <span className="text-[16px] font-medium text-dark">{group.value}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* ===== COMING SOON ===== */}
       {project.comingSoon ? (
@@ -97,7 +118,7 @@ export default function ProjectContent({ project: rawProject, nextProject: rawNe
                 {project.description}
               </p>
             </div>
-            <div className="w-full md:w-[45%] bg-white border-2 border-dark p-6 md:p-8 flex flex-col gap-5">
+            <div className="hidden md:flex w-full md:w-[45%] bg-white border-2 border-dark p-6 md:p-8 flex-col gap-5">
               {[
                 { label: t.project.role, value: project.role },
                 { label: t.project.service, value: project.services },
@@ -190,7 +211,7 @@ export default function ProjectContent({ project: rawProject, nextProject: rawNe
           <div className="grid-bg" />
           <div className="relative z-10 mx-auto w-[92%] max-w-[1400px]">
             <motion.div {...fadeUp} className="flex flex-col gap-4">
-              <div className="relative aspect-[16/9] w-full overflow-hidden">
+              <div className="relative aspect-[4/3] md:aspect-[16/9] w-full overflow-hidden">
                 <Image src={project.solutions[0].image} alt={project.solutions[0].alt} fill className="object-cover" />
               </div>
               <p className="text-[15px] md:text-[16px] font-dm font-medium text-dark/65">{project.solutions[0].caption}</p>
@@ -231,7 +252,7 @@ export default function ProjectContent({ project: rawProject, nextProject: rawNe
             <div className="flex flex-col gap-10 md:gap-16">
               {project.solutions.slice(1).map((screen, i) => (
                 <motion.div key={i} {...fadeUp} className="flex flex-col gap-4">
-                  <div className="relative aspect-[16/9] w-full overflow-hidden">
+                  <div className="relative aspect-[4/3] md:aspect-[16/9] w-full overflow-hidden">
                     <Image src={screen.image} alt={screen.alt} fill className="object-cover" />
                   </div>
                   <p className="text-[15px] md:text-[16px] font-dm font-medium text-dark/65">{screen.caption}</p>
