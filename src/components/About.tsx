@@ -34,7 +34,7 @@ export default function About() {
             transition={{ duration: 0.6 }}
             className="flex w-full lg:w-[60%] flex-col gap-8"
           >
-            <p className="text-[24px] md:text-[28px] lg:text-[34px] font-medium leading-[1.5] tracking-[-0.6px] lg:tracking-[-1px] text-dark">
+            <p className="text-[20px] md:text-[20px] lg:text-[28px] font-medium leading-[1.5] tracking-[-0.6px] text-dark">
               {t.about.bio}
             </p>
           </motion.div>

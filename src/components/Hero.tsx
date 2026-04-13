@@ -80,7 +80,7 @@ export default function Hero() {
           </div>
           <div className="overflow-hidden">
             <h1
-              className="hero-line font-light leading-[1.12] tracking-[-2px] md:tracking-[-6px] lg:tracking-[-9px] text-[36px] md:text-[70px] lg:text-[100px] xl:text-[140px]"
+              className="hero-line font-light leading-[1.12] tracking-[-2px] md:tracking-[-5px] lg:tracking-[-7px] text-[36px] md:text-[64px] lg:text-[88px] xl:text-[120px]"
             >
               {t.hero.greeting}
             </h1>
@@ -95,7 +95,7 @@ export default function Hero() {
           </p>
           <div className="overflow-hidden">
             <span
-              className="hero-line block font-bold leading-[1.12] tracking-[-5px] lg:tracking-[-8px] text-[70px] lg:text-[100px] xl:text-[140px]"
+              className="hero-line block font-bold leading-[1.12] tracking-[-4px] lg:tracking-[-6px] text-[64px] lg:text-[88px] xl:text-[120px]"
             >
               {t.hero.designer}
             </span>
@@ -119,7 +119,7 @@ export default function Hero() {
         <div className="flex w-full items-center justify-start md:justify-center gap-4 md:gap-6 lg:gap-8">
           <div className="overflow-hidden">
             <span
-              className="hero-line block font-light leading-[1.12] tracking-[-2px] md:tracking-[-6px] lg:tracking-[-9px] text-[36px] md:text-[70px] lg:text-[100px] xl:text-[140px]"
+              className="hero-line block font-light leading-[1.12] tracking-[-2px] md:tracking-[-5px] lg:tracking-[-7px] text-[36px] md:text-[64px] lg:text-[88px] xl:text-[120px]"
             >
               {t.hero.livesByDesign}
             </span>

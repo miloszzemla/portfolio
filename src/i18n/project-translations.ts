@@ -1,6 +1,6 @@
 import type { Project } from "@/data/projects";
 
-type TranslatableProject = Omit<Project, "slug" | "thumbnail" | "heroImage" | "liveUrl">;
+type TranslatableProject = Omit<Project, "slug" | "thumbnail" | "heroImage" | "liveUrl" | "tag"> & { tag?: string | string[] };
 
 // Deep partial — every field is optional for overrides
 type DeepPartial<T> = { [K in keyof T]?: T[K] extends object ? DeepPartial<T[K]> : T[K] };
@@ -10,206 +10,274 @@ type ProjectOverride = DeepPartial<TranslatableProject>;
 export const projectTranslations: Record<string, { en: ProjectOverride; pl: ProjectOverride }> = {
   lisek: {
     en: {
-      subtitle: "Shopping experience redesign",
-      description: "Leader of Polish q-commerce market with over 5M orders",
-      tag: "Mobile App",
+      subtitle: "Loyalty Redesign — Driving Frequency & Retention Growth",
+      description: "Streak-based loyalty system for Poland's leading q-commerce app with 5M+ orders.",
+      tag: ["Mobile App", "Web App"],
       meta: "Lisek  \u00b7  Q-Commerce  \u00b7  2026  \u00b7  Product Design",
       role: "Product Designer",
-      services: "Product Design, Mobile Design",
+      services: "Product Design, Loyalty System Design",
       problemStatement:
-        "Lisek loses users after the first order. 30-day retention drops and cart abandonment rises \u2014 users don\u2019t come back because repeat purchases require too many steps.",
-      problemMetrics: "30d Retention: 18%  \u00b7  Cart abandonment: 67%",
+        "Most users ordered sporadically \u2014 1.4x/month. No loyalty mechanism. Price decided, not brand relationship.",
+      problemMetrics: "Order frequency: 1.4/mo  \u00b7  60d churn: 41%",
       designQuestion:
-        "How to simplify repeat purchases so users keep coming back?",
+        "Reward frequency, not basket value.",
       userQuote: {
-        text: "I shop every 2\u20133 days, always the same stuff. And yet every time I have to search from scratch.",
-        author: "Ania, 32, mother of two",
+        text: "I have Zabka, Biedronka, Lidl apps \u2014 points everywhere that I never spend. I just want to pay less for what I buy regularly.",
+        author: "Kasia, 28, switched from Lisek to Zabka",
       },
       researchMethods: [
-        "Competitive analysis \u2014 5 q-commerce apps (Jokr, Gorillas, Getir, \u017babka, Glovo)",
-        "8 user interviews (heavy grocery shoppers, ages 25\u201340)",
-        "Drop-off analysis in the purchase funnel + heatmaps",
+        "10 user interviews (heavy shoppers + churned)",
+        "Cohort analysis \u2014 what separates 4+/mo users",
+        "Benchmark of 6 loyalty programs",
       ],
       researchInsights: [
-        { text: "They buy the same ~15 products on repeat", stat: "7/8" },
-        { text: "Browsing categories is the biggest frustration", stat: "6/8" },
-        { text: "They want real-time courier tracking", stat: "8/8" },
-        { text: "They prefer a list over a catalog as entry point", stat: "5/8" },
+        { text: "Users ignore 'collect points' \u2014 rewards too distant", stat: "8/10" },
+        { text: "Free delivery beats percentage discounts", stat: "#1" },
+        { text: "Streak programs have 2x higher engagement than points", stat: "2x" },
       ],
       iterations: [
         {
           version: "V1",
-          title: "Catalog-first \u2014 classic store",
-          description: "Standard e-commerce flow: categories \u2192 products \u2192 cart \u2192 checkout.",
-          wins: ["Familiar pattern, low barrier to entry"],
-          fails: [
-            "Too many taps for repeat purchases",
-            "Users: \u2018it\u2019s like every other app\u2019",
-          ],
+          title: "Classic points program",
+          description: "1 PLN = 1 point. Rewards catalog. Familiar, but 12% engagement \u2014 users said 'another program I won't use'.",
+          wins: [],
+          fails: [],
         },
         {
           version: "V2",
-          title: "List-first + Quick Reorder",
-          description: "Entry point is a shopping list, not the catalog. Smart reorder based on history.",
-          wins: [
-            "Average order time: 48s (vs 90s in V1)",
-            "Users: \u2018that\u2019s exactly what I needed\u2019",
-          ],
-          fails: ["New users without history didn\u2019t know where to start"],
+          title: "Streak-based",
+          description: "Order 3x/week \u2192 free delivery next week. 3x engagement vs V1, but weekly cycle too rigid. Breaking streak = frustration.",
+          wins: [],
+          fails: [],
         },
         {
           version: "V3",
-          title: "Hybrid \u2014 smart onboarding + list-first",
-          description: "New users get popular baskets as starters. Returning users see their lists.",
-          wins: [
-            "Solves the cold start problem",
-            "Task completion rate: 93%",
-            "Keeps V2 speed for returning users",
-          ],
+          title: "Hybrid \u2014 Streak + Tiers + Instant Rewards",
+          description: "Flexible weekly streak + tier system + instant perks after every order. Streak recovery instead of punishment.",
+          wins: [],
           fails: [],
         },
       ],
-      process: [
-        { label: "Discovery", text: "8 user interviews, drop-off analysis in purchase funnel" },
-        { label: "Insight", text: "Users buy the same products every week but have to search from scratch" },
-        { label: "Iteration", text: "Tested 2 concepts \u2014 quick reorder vs smart search" },
-        { label: "Decision", text: "Quick reorder won in usability tests (CTR +32%)" },
-      ],
+      process: [],
       solutions: [
         {
           image: "/assets/images/project-lisek.png",
-          alt: "Quick Reorder on home",
-          caption: "Quick Reorder on home \u2014 1 tap to reorder",
+          alt: "Home with streak progress bar",
+          caption: "Streak progress on home \u2014 always visible, in context of purchase decision",
         },
         {
           image: "/assets/images/project-lisek.png",
-          alt: "Live tracking",
-          caption: "Live tracking \u2014 delivery status visible at all times",
+          alt: "Loyalty profile with tiers",
+          caption: "Loyalty profile \u2014 current tier, benefits, reward history",
         },
         {
           image: "/assets/images/project-lisek.png",
-          alt: "Smart search",
-          caption: "Smart search \u2014 history + AI suggestions",
+          alt: "Post-checkout instant reward",
+          caption: "Instant reward after checkout \u2014 tangible, not abstract points",
         },
       ],
       results: [
-        { icon: "\ud83d\udcc8", label: "30d Retention", value: "+28%" },
-        { icon: "\ud83d\uded2", label: "Cart abandonment", value: "-35%" },
-        { icon: "\u23f1\ufe0f", label: "Order time", value: "90s \u2192 55s" },
+        { icon: "\ud83d\udcc8", label: "Order frequency", value: "+64%" },
+        { icon: "\ud83d\udcc9", label: "60d churn", value: "-12pp" },
+        { icon: "\ud83d\udcb0", label: "AOV", value: "+8%" },
       ],
-      testimonial: {
-        quote:
-          "Rouse identified the retention problem we only saw in data. The new flow genuinely moved the metrics.",
-        author: "Jan Kowalski",
-        role: "CPO at Lisek",
-      },
       learnings: [
-        { text: "In q-commerce \u2018simple\u2019 \u2260 \u2018few features\u2019 \u2014 simple = zero decisions to make" },
-        { text: "Personalization > discovery in the context of repeat purchases" },
-        { text: "Cold start problem is real \u2014 popular baskets as starters solve it elegantly" },
+        { text: "Reward frequency, not basket value. Streaks beat points in q-commerce." },
+        { text: "Instant gratification wins. Free juice now > 500 points redeemed later." },
+        { text: "Never punish a broken streak. 'Second life' turned frustration into gratitude." },
       ],
       resultsNote: undefined,
     },
     pl: {
-      subtitle: "Redesign do\u015bwiadczenia zakupowego",
-      description: "Lider polskiego rynku q-commerce z ponad 5 mln zam\u00f3wie\u0144",
-      tag: "Aplikacja mobilna",
+      subtitle: "Loyalty Redesign — Driving Frequency & Retention Growth",
+      description: "System lojalno\u015bciowy oparty na strekach dla lidera polskiego q-commerce z 5M+ zam\u00f3wie\u0144.",
+      tag: ["Aplikacja mobilna", "Aplikacja webowa"],
       meta: "Lisek  \u00b7  Q-Commerce  \u00b7  2026  \u00b7  Product Design",
       role: "Product Designer",
-      services: "Product Design, Mobile Design",
+      services: "Product Design, Loyalty System Design",
       problemStatement:
-        "Lisek traci u\u017cytkownik\u00f3w po pierwszym zam\u00f3wieniu. Retention 30d spada, a cart abandonment ro\u015bnie \u2014 u\u017cytkownicy nie wracaj\u0105, bo powtarzalne zakupy wymagaj\u0105 za du\u017co krok\u00f3w.",
-      problemMetrics: "Retention 30d: 18%  \u00b7  Cart abandonment: 67%",
+        "Wi\u0119kszo\u015b\u0107 u\u017cytkownik\u00f3w zamawia\u0142a sporadycznie \u2014 1.4x/mies. Brak mechanizmu lojalno\u015bciowego. Decydowa\u0142a cena, nie relacja z mark\u0105.",
+      problemMetrics: "Cz\u0119stotliwo\u015b\u0107: 1.4/mies.  \u00b7  Churn 60d: 41%",
       designQuestion:
-        "Jak upro\u015bci\u0107 powtarzalne zakupy, \u017ceby u\u017cytkownicy wracali?",
+        "Nagradzaj cz\u0119stotliwo\u015b\u0107, nie warto\u015b\u0107 koszyka.",
       userQuote: {
-        text: "Robi\u0119 zakupy co 2-3 dni, zawsze to samo. A i tak za ka\u017cdym razem musz\u0119 szuka\u0107 od zera.",
-        author: "Ania, 32 lata, matka dw\u00f3jki dzieci",
+        text: "Mam apk\u0119 \u017babki, Biedronki, Lidla \u2014 wsz\u0119dzie jakie\u015b punkty, kt\u00f3rych nigdy nie wydaj\u0119. Chc\u0119 po prostu p\u0142aci\u0107 mniej za to, co kupuj\u0119 regularnie.",
+        author: "Kasia, 28 lat, przesz\u0142a z Liska na \u017babk\u0119",
       },
       researchMethods: [
-        "Analiza konkurencji \u2014 5 aplikacji q-commerce (Jokr, Gorillas, Getir, \u017babka, Glovo)",
-        "8 wywiad\u00f3w z u\u017cytkownikami (heavy grocery shoppers, 25-40 lat)",
-        "Analiza drop-off w funnelu zakupowym + heatmapy",
+        "10 wywiad\u00f3w z u\u017cytkownikami (heavy shoppers + churned)",
+        "Analiza kohortowa \u2014 co odr\u00f3\u017cnia u\u017cytkownik\u00f3w 4+/mies.",
+        "Benchmark 6 program\u00f3w lojalno\u015bciowych",
       ],
       researchInsights: [
-        { text: "Kupuj\u0105 te same ~15 produkt\u00f3w w k\u00f3\u0142ko", stat: "7/8" },
-        { text: "Przegl\u0105danie kategorii to najwi\u0119ksza frustracja", stat: "6/8" },
-        { text: "Chc\u0105 widzie\u0107 gdzie jest kurier w real-time", stat: "8/8" },
-        { text: "Wol\u0105 list\u0119 ni\u017c katalog jako punkt wej\u015bcia", stat: "5/8" },
+        { text: "U\u017cytkownicy ignoruj\u0105 'zbieraj punkty' \u2014 nagrody zbyt odleg\u0142e", stat: "8/10" },
+        { text: "Darmowa dostawa bije rabaty procentowe", stat: "#1" },
+        { text: "Programy ze strekami maj\u0105 2x wy\u017cszy engagement", stat: "2x" },
       ],
       iterations: [
         {
           version: "V1",
-          title: "Catalog-first \u2014 klasyczny sklep",
-          description: "Standardowy e-commerce flow: kategorie \u2192 produkty \u2192 koszyk \u2192 checkout.",
-          wins: ["Znajomy wzorzec, niski pr\u00f3g wej\u015bcia"],
-          fails: [
-            "Za du\u017co tap\u00f3w do powtarzalnych zakup\u00f3w",
-            "U\u017cytkownicy: \u2018to jest jak ka\u017cda inna apka\u2019",
-          ],
+          title: "Klasyczny program punktowy",
+          description: "1 z\u0142 = 1 punkt. Katalog nagr\u00f3d. 12% engagement \u2014 'kolejny program, kt\u00f3rego nie b\u0119d\u0119 u\u017cywa\u0107'.",
+          wins: [],
+          fails: [],
         },
         {
           version: "V2",
-          title: "List-first + Quick Reorder",
-          description: "Punkt wej\u015bcia to lista zakup\u00f3w, nie katalog. Smart reorder na podstawie historii.",
-          wins: [
-            "\u015aredni czas zam\u00f3wienia: 48s (vs 90s w V1)",
-            "U\u017cytkownicy: \u2018o to mi chodzi\u0142o\u2019",
-          ],
-          fails: ["Nowi u\u017cytkownicy bez historii nie wiedzieli od czego zacz\u0105\u0107"],
+          title: "Streak-based",
+          description: "Zam\u00f3w 3x/tydzie\u0144 \u2192 darmowa dostawa. 3x engagement vs V1, ale tygodniowy cykl za sztywny.",
+          wins: [],
+          fails: [],
         },
         {
           version: "V3",
-          title: "Hybrid \u2014 smart onboarding + list-first",
-          description: "Nowi u\u017cytkownicy dostaj\u0105 popularne koszyki jako starter. Powracaj\u0105cy widz\u0105 swoje listy.",
-          wins: [
-            "Rozwi\u0105zuje problem cold start",
-            "Task completion rate: 93%",
-            "Zachowuje szybko\u015b\u0107 V2 dla powracaj\u0105cych",
-          ],
+          title: "Hybrid \u2014 Streak + Tiers + Instant Rewards",
+          description: "Elastyczny streak + system tier\u00f3w + natychmiastowe nagrody po ka\u017cdym zam\u00f3wieniu. Recovery zamiast kary.",
+          wins: [],
           fails: [],
         },
       ],
-      process: [
-        { label: "Discovery", text: "8 wywiad\u00f3w z u\u017cytkownikami, analiza drop-off w funnelu zakupowym" },
-        { label: "Insight", text: "U\u017cytkownicy kupuj\u0105 te same produkty co tydzie\u0144, ale musz\u0105 szuka\u0107 od zera" },
-        { label: "Iteracja", text: "Testowa\u0142em 2 koncepty \u2014 quick reorder vs smart search" },
-        { label: "Decyzja", text: "Quick reorder wygra\u0142 w testach u\u017cyteczno\u015bci (CTR +32%)" },
-      ],
+      process: [],
       solutions: [
         {
           image: "/assets/images/project-lisek.png",
-          alt: "Quick Reorder na home",
-          caption: "Quick Reorder na home \u2014 1 tap do ponownego zam\u00f3wienia",
+          alt: "Home z progress barem streaka",
+          caption: "Progress streaka na home \u2014 zawsze widoczny, w kontek\u015bcie decyzji zakupowej",
         },
         {
           image: "/assets/images/project-lisek.png",
-          alt: "Live tracking",
-          caption: "Live tracking \u2014 status dostawy widoczny ca\u0142y czas",
+          alt: "Profil lojalno\u015bciowy z tierami",
+          caption: "Profil lojalno\u015bciowy \u2014 aktualny tier, benefity, historia nagr\u00f3d",
         },
         {
           image: "/assets/images/project-lisek.png",
-          alt: "Smart search",
-          caption: "Smart search \u2014 historia + sugestie z AI",
+          alt: "Nagroda po checkout",
+          caption: "Natychmiastowa nagroda po checkout \u2014 namacalna, nie abstrakcyjne punkty",
         },
       ],
       results: [
-        { icon: "\ud83d\udcc8", label: "Retention 30d", value: "+28%" },
-        { icon: "\ud83d\uded2", label: "Cart abandonment", value: "-35%" },
-        { icon: "\u23f1\ufe0f", label: "Czas zam\u00f3wienia", value: "90s \u2192 55s" },
+        { icon: "\ud83d\udcc8", label: "Cz\u0119stotliwo\u015b\u0107 zam\u00f3wie\u0144", value: "+64%" },
+        { icon: "\ud83d\udcc9", label: "Churn 60d", value: "-12pp" },
+        { icon: "\ud83d\udcb0", label: "AOV", value: "+8%" },
       ],
+      learnings: [
+        { text: "Nagradzaj cz\u0119stotliwo\u015b\u0107, nie kwot\u0119. Streki bij\u0105 punkty w q-commerce." },
+        { text: "Natychmiastowa gratyfikacja wygrywa. Darmowy sok teraz > 500 punkt\u00f3w p\u00f3\u017aniej." },
+        { text: "Nigdy nie karz za przerwany streak. 'Drugie \u017cycie' zamieni\u0142o frustracj\u0119 w wdzi\u0119czno\u015b\u0107." },
+      ],
+      resultsNote: "Dane po 8 tygodniach soft launch na 15% bazy.",
+    },
+  },
+
+  "lisek-loyalty": {
+    en: {
+      subtitle: "Loyalty Program — Streak + Tiers + Instant Rewards",
+      description: "Streak-based loyalty system for Poland's leading q-commerce app with 5M+ orders. Order frequency up 64%.",
+      tag: "Mobile App",
+      meta: "Lisek  ·  Q-Commerce  ·  2026  ·  Product Design",
+      role: "Product Designer",
+      services: "Product Design, Loyalty System Design",
+      problemStatement:
+        "Lisek has 5M+ orders, but most users order sporadically — 1.4x/month average. No mechanism to reward regularity. Price decides, not brand relationship.",
+      problemMetrics: "Frequency: 1.4/mo  ·  60d churn: 41%  ·  No loyalty program",
+      designQuestion:
+        "How to build a loyalty system that rewards purchase frequency, not just basket value?",
+      userQuote: {
+        text: "I have Zabka, Biedronka, Lidl apps — points everywhere that I never spend. I don't want another program, I just want to pay less for what I buy regularly.",
+        author: "Kasia, 28, switched from Lisek to Zabka",
+      },
+      researchMethods: [
+        "10 user interviews (heavy shoppers + churned users)",
+        "Cohort analysis — what separates 4+/mo users from the rest",
+        "Benchmark of 6 loyalty programs (Starbucks Rewards, Żappka, Biedronka, Bolt, Uber One, Amazon Fresh)",
+      ],
+      researchInsights: [
+        { text: "Users don't react to 'collect points' — rewards feel too distant", stat: "8/10" },
+        { text: "Strongest motivator is free delivery, not percentage discounts", stat: "#1" },
+        { text: "4+/mo users have higher AOV (+22%) — it's habit, not price", stat: "+22%" },
+        { text: "Progress bar (streak) programs have 2x higher engagement than points", stat: "2x" },
+      ],
+      iterations: [
+        {
+          version: "V1",
+          title: "Classic points program",
+          description: "1 PLN = 1 point. Rewards catalog. Simple to understand, but 12% engagement — users said 'another program I won't use'.",
+          wins: ["Simple to understand"],
+          fails: ["12% engagement", "Users didn't see value"],
+        },
+        {
+          version: "V2",
+          title: "Streak-based — 'Your Week'",
+          description: "Order 3x/week → free delivery for the entire next week. Visible progress bar on home.",
+          wins: ["3x higher engagement vs V1", "Rules understood in 5 seconds", "FOMO effect from progress bar"],
+          fails: ["Weekly cycle not flexible enough", "Breaking streak = frustration"],
+        },
+        {
+          version: "V3",
+          title: "Hybrid — Streak + Tiers + Instant Rewards",
+          description: "Flexible weekly streak + tier system (Lisek → Fox → Golden Fox) + instant perks after every order. Streak recovery instead of punishment.",
+          wins: ["Highest engagement", "Instant gratification", "No frustration from breaking"],
+          fails: [],
+        },
+      ],
+      process: [],
+      solutions: [
+        {
+          image: "/assets/images/project-lisek.png",
+          alt: "Home with streak progress bar",
+          caption: "Streak bar on home — always visible, in context of purchase decision. Not hidden in a tab.",
+        },
+        {
+          image: "/assets/images/project-lisek.png",
+          alt: "Loyalty profile with tiers",
+          caption: "Loyalty profile — current tier, benefits, reward history. Zero unnecessary animations.",
+        },
+        {
+          image: "/assets/images/project-lisek.png",
+          alt: "Post-checkout reward moment",
+          caption: "Instant reward after order — 'Free juice added!' Tangible, not abstract points.",
+        },
+        {
+          image: "/assets/images/project-lisek.png",
+          alt: "Streak recovery",
+          caption: "Second life instead of punishment — 'Order by Friday and your streak is back'. Fair play.",
+        },
+      ],
+      results: [
+        { icon: "📈", label: "Order frequency", value: "+64%" },
+        { icon: "📉", label: "60d churn", value: "-12pp" },
+        { icon: "💰", label: "AOV", value: "+8%" },
+        { icon: "⭐", label: "Program NPS", value: "47" },
+      ],
+      resultsNote: "Data from 8-week soft launch on 15% of user base. Full rollout in progress.",
       testimonial: {
-        quote:
-          "Rouse zidentyfikowa\u0142 problem z retencj\u0105, kt\u00f3ry my widzieli\u015bmy tylko w danych. Nowy flow realnie zmieni\u0142 metryki.",
-        author: "Jan Kowalski",
-        role: "CPO at Lisek",
+        quote: "The loyalty program was our missing puzzle piece. Miłosz designed a system that doesn't feel like another loyalty card — users say it's 'a game they want to play'.",
+        author: "Marta Wiśniewska",
+        role: "Head of Product, Lisek",
       },
       learnings: [
-        { text: "W q-commerce \u2018prosty\u2019 \u2260 \u2018ma\u0142o funkcji\u2019 \u2014 prosty = zero decyzji do podj\u0119cia" },
-        { text: "Personalizacja > discovery w kontek\u015bcie powtarzalnych zakup\u00f3w" },
-        { text: "Cold start problem jest realny \u2014 popular baskets jako starter rozwi\u0105zuj\u0105 go elegancko" },
+        { text: "Reward frequency, not amount. In q-commerce, customer value is regularity. Streaks beat points." },
+        { text: "Instant gratification > deferred reward. 'Free juice now' motivates more than '500 points = 10 PLN discount next month'." },
+        { text: "Punishment for breaking is the worst pattern. 'Second life' instead of penalty turned frustration into gratitude." },
+        { text: "Visibility > depth. Progress bar on home (not in a hidden tab) increased engagement by 3x." },
       ],
-      resultsNote: undefined,
+    },
+    pl: {
+      // Polish is the base language in projects.ts, minimal overrides needed
+      tag: "Aplikacja mobilna",
+    },
+  },
+
+  "lisek-bazaar": {
+    en: {},
+    pl: {
+      subtitle: "Marketplace Expansion \u2014 Od Groceries do Wszystkiego",
+      description: "Marketplace non-grocery wewn\u0105trz Liska. Nowy strumie\u0144 przychod\u00f3w, ta sama obietnica dostawy.",
+      problemStatement:
+        "Przychody Liska zale\u017ca\u0142y wy\u0142\u0105cznie od groceries. U\u017cytkownicy chcieli wi\u0119cej, konkurencja si\u0119 rozszerza\u0142a.",
+      designQuestion:
+        "Zmieni\u0107 apk\u0119 grocery w marketplace bez rozbijania core experience.",
+      resultsNote: "Uruchomiony jako nowa zak\u0142adka w apce Lisek.",
     },
   },
 
@@ -217,7 +285,7 @@ export const projectTranslations: Record<string, { en: ProjectOverride; pl: Proj
     en: {
       subtitle: "Platform connecting talent with opportunities",
       description: "An app that matches job seekers with relevant postings",
-      tag: "UX/UI Design",
+      tag: "Web App",
       role: "Product Designer",
       services: "UX/UI Design, Product Strategy",
       problemStatement:
@@ -250,7 +318,7 @@ export const projectTranslations: Record<string, { en: ProjectOverride; pl: Proj
     pl: {
       subtitle: "Platforma \u0142\u0105cz\u0105ca talenty z mo\u017cliwo\u015bciami",
       description: "Aplikacja dopasowuj\u0105ca kandydat\u00f3w do ofert pracy",
-      tag: "UX/UI Design",
+      tag: "Aplikacja webowa",
       role: "Product Designer",
       services: "UX/UI Design, Strategia Produktu",
       problemStatement:

@@ -63,7 +63,7 @@ export interface Project {
   title: string;
   subtitle: string;
   description: string;
-  tag: string;
+  tag: string | string[];
   thumbnail: string;
   heroImage: string;
   meta: string;
@@ -95,123 +95,209 @@ export interface Project {
   testimonial?: Testimonial;
   // Learnings
   learnings?: Learning[];
+  // Coming soon
+  comingSoon?: boolean;
 }
 
 export const projects: Project[] = [
   {
     slug: "lisek",
     title: "Lisek App",
-    subtitle: "Redesign doświadczenia zakupowego",
-    description: "Lider polskiego rynku q-commerce z ponad 5 mln zamówień",
-    tag: "Mobile App",
-    thumbnail: "/assets/images/project-lisek.png",
-    heroImage: "/assets/images/project-lisek.png",
+    subtitle: "Loyalty Redesign — Driving Frequency & Retention Growth",
+    description: "Streak-based loyalty system for Poland's leading q-commerce app with 5M+ orders.",
+    tag: ["Mobile App", "Web App"],
+    thumbnail: "/assets/images/lisek_cover.webp",
+    heroImage: "/assets/images/lisek_cover.webp",
     meta: "Lisek  ·  Q-Commerce  ·  2026  ·  Product Design",
-    liveUrl: "#",
     // Role & Team
     role: "Product Designer",
     team: [
       { name: "Miłosz", role: "Product Designer" },
-      // TODO: dodaj prawdziwy zespół
+      { name: "PM", role: "Product Manager" },
+      { name: "2 devs", role: "Developers" },
+      { name: "Analityk", role: "Data Analyst" },
     ],
-    timeline: "3 miesiące",
+    timeline: "~4 miesiące",
     platform: "iOS & Android",
-    services: "Product Design, Mobile Design",
+    services: "Product Design, Loyalty System Design",
     // Problem
     problemStatement:
-      "Lisek traci użytkowników po pierwszym zamówieniu. Retention 30d spada, a cart abandonment rośnie — użytkownicy nie wracają, bo powtarzalne zakupy wymagają za dużo kroków.",
-    problemMetrics: "Retention 30d: 18%  ·  Cart abandonment: 67%",
+      "Most users ordered sporadically — 1.4x/month. No loyalty mechanism. Price decided, not brand relationship.",
+    problemMetrics: "Order frequency: 1.4/mo  ·  60d churn: 41%",
     designQuestion:
-      "Jak uprościć powtarzalne zakupy, żeby użytkownicy wracali?",
+      "Reward frequency, not basket value.",
     userQuote: {
-      text: "Robię zakupy co 2-3 dni, zawsze to samo. A i tak za każdym razem muszę szukać od zera.",
-      author: "Ania, 32 lata, matka dwójki dzieci",
+      text: "I have Zabka, Biedronka, Lidl apps — points everywhere that I never spend. I just want to pay less for what I buy regularly.",
+      author: "Kasia, 28, switched from Lisek to Zabka",
     },
     // Research
     researchMethods: [
-      "Analiza konkurencji — 5 aplikacji q-commerce (Jokr, Gorillas, Getir, Żabka, Glovo)",
-      "8 wywiadów z użytkownikami (heavy grocery shoppers, 25-40 lat)",
-      "Analiza drop-off w funnelu zakupowym + heatmapy",
+      "10 user interviews (heavy shoppers + churned)",
+      "Cohort analysis — what separates 4+/mo users",
+      "Benchmark of 6 loyalty programs",
     ],
     researchInsights: [
-      { text: "Kupują te same ~15 produktów w kółko", stat: "7/8" },
-      { text: "Przeglądanie kategorii to największa frustracja", stat: "6/8" },
-      { text: "Chcą widzieć gdzie jest kurier w real-time", stat: "8/8" },
-      { text: "Wolą listę niż katalog jako punkt wejścia", stat: "5/8" },
+      { text: "Users ignore 'collect points' — rewards too distant", stat: "8/10" },
+      { text: "Free delivery beats percentage discounts", stat: "#1" },
+      { text: "Streak programs have 2x higher engagement than points", stat: "2x" },
     ],
     // Iterations
     iterations: [
       {
         version: "V1",
-        title: "Catalog-first — klasyczny sklep",
-        description: "Standardowy e-commerce flow: kategorie → produkty → koszyk → checkout.",
-        wins: ["Znajomy wzorzec, niski próg wejścia"],
-        fails: [
-          "Za dużo tapów do powtarzalnych zakupów",
-          "Użytkownicy: 'to jest jak każda inna apka'",
-        ],
+        title: "Classic points program",
+        description: "1 PLN = 1 point. Rewards catalog. Familiar, but 12% engagement — users said 'another program I won't use'.",
+        wins: [],
+        fails: [],
       },
       {
         version: "V2",
-        title: "List-first + Quick Reorder",
-        description: "Punkt wejścia to lista zakupów, nie katalog. Smart reorder na podstawie historii.",
-        wins: [
-          "Średni czas zamówienia: 48s (vs 90s w V1)",
-          "Użytkownicy: 'o to mi chodziło'",
-        ],
-        fails: ["Nowi użytkownicy bez historii nie wiedzieli od czego zacząć"],
+        title: "Streak-based",
+        description: "Order 3x/week → free delivery next week. 3x engagement vs V1, but weekly cycle too rigid. Breaking streak = frustration.",
+        wins: [],
+        fails: [],
       },
       {
         version: "V3",
-        title: "Hybrid — smart onboarding + list-first",
-        description: "Nowi użytkownicy dostają popularne koszyki jako starter. Powracający widzą swoje listy.",
-        wins: [
-          "Rozwiązuje problem cold start",
-          "Task completion rate: 93%",
-          "Zachowuje szybkość V2 dla powracających",
-        ],
+        title: "Hybrid — Streak + Tiers + Instant Rewards",
+        description: "Flexible weekly streak + tier system + instant perks after every order. Streak recovery instead of punishment.",
+        wins: [],
         fails: [],
       },
     ],
-    // Process (legacy summary)
-    process: [
-      { label: "Discovery", text: "8 wywiadów z użytkownikami, analiza drop-off w funnelu zakupowym" },
-      { label: "Insight", text: "Użytkownicy kupują te same produkty co tydzień, ale muszą szukać od zera" },
-      { label: "Iteracja", text: "Testowałem 2 koncepty — quick reorder vs smart search" },
-      { label: "Decyzja", text: "Quick reorder wygrał w testach użyteczności (CTR +32%)" },
-    ],
+    // Process — empty, covered by Research + Iterations
+    process: [],
     solutions: [
       {
         image: "/assets/images/project-lisek.png",
-        alt: "Quick Reorder na home",
-        caption: "Quick Reorder na home — 1 tap do ponownego zamówienia",
+        alt: "Home with streak progress bar",
+        caption: "Streak progress on home — always visible, in context of purchase decision",
       },
       {
         image: "/assets/images/project-lisek.png",
-        alt: "Live tracking",
-        caption: "Live tracking — status dostawy widoczny cały czas",
+        alt: "Loyalty profile with tiers",
+        caption: "Loyalty profile — current tier, benefits, reward history",
       },
       {
         image: "/assets/images/project-lisek.png",
-        alt: "Smart search",
-        caption: "Smart search — historia + sugestie z AI",
+        alt: "Post-checkout instant reward",
+        caption: "Instant reward after checkout — tangible, not abstract points",
       },
     ],
     results: [
-      { icon: "📈", label: "Retention 30d", value: "+28%" },
-      { icon: "🛒", label: "Cart abandonment", value: "-35%" },
-      { icon: "⏱️", label: "Czas zamówienia", value: "90s → 55s" },
+      { icon: "📈", label: "Częstotliwość zamówień", value: "+64%" },
+      { icon: "📉", label: "Churn 60d", value: "-12pp" },
+      { icon: "💰", label: "AOV", value: "+8%" },
     ],
+    resultsNote: "8-week soft launch on 15% of user base.",
+    learnings: [
+      { text: "Reward frequency, not basket value. Streaks beat points in q-commerce." },
+      { text: "Instant gratification wins. Free juice now > 500 points redeemed later." },
+      { text: "Never punish a broken streak. 'Second life' turned frustration into gratitude." },
+    ],
+  },
+  {
+    slug: "lisek-loyalty",
+    title: "Lisek Points",
+    subtitle: "Program lojalnościowy — Streak + Tiers + Instant Rewards",
+    description: "System lojalnościowy oparty na strekach dla lidera polskiego q-commerce z 5M+ zamówień. Wzrost częstotliwości zamówień o 64%.",
+    tag: "Mobile App",
+    thumbnail: "/assets/images/lisek_cover_misje.webp",
+    heroImage: "/assets/images/lisek_cover_misje.webp",
+    meta: "Lisek  ·  Q-Commerce  ·  2026  ·  Product Design",
+    role: "Product Designer",
+    team: [
+      { name: "Miłosz", role: "Product Designer" },
+      { name: "PM", role: "Product Manager" },
+      { name: "2 devs", role: "Developers" },
+      { name: "Analityk", role: "Data Analyst" },
+    ],
+    timeline: "~4 miesiące",
+    platform: "iOS & Android",
+    services: "Product Design, Loyalty System Design",
+    problemStatement:
+      "Lisek ma 5M+ zamówień, ale większość użytkowników zamawia sporadycznie — średnio 1.4 zamówienia na miesiąc. Brak mechanizmu, który nagradza regularność. Cena decyduje, nie relacja z marką.",
+    problemMetrics: "Częstotliwość: 1.4/mies.  ·  Churn 60d: 41%  ·  Brak programu lojalnościowego",
+    designQuestion:
+      "Jak zbudować system lojalnościowy, który nagradza częstotliwość zakupów, a nie tylko wartość koszyka?",
+    userQuote: {
+      text: "Mam apkę Żabki, Biedronki, Lidla — wszędzie jakieś punkty, których nigdy nie wydaję. Nie chcę kolejnego programu, chcę po prostu płacić mniej za to, co kupuję regularnie.",
+      author: "Kasia, 28 lat, przeszła z Liska na Żabkę",
+    },
+    researchMethods: [
+      "10 wywiadów z użytkownikami (heavy shoppers + churned users)",
+      "Analiza kohortowa — co odróżnia użytkowników 4+/mies. od reszty",
+      "Benchmark 6 programów lojalnościowych (Starbucks Rewards, Żappka, Biedronka, Bolt, Uber One, Amazon Fresh)",
+    ],
+    researchInsights: [
+      { text: "Użytkownicy nie reagują na 'zbieraj punkty' — nagrody zbyt odległe", stat: "8/10" },
+      { text: "Najsilniejszy motywator to darmowa dostawa, nie rabaty procentowe", stat: "#1" },
+      { text: "Użytkownicy 4+/mies. mają wyższy AOV (+22%) — to nawyk, nie cena", stat: "+22%" },
+      { text: "Programy z paskiem postępu (streak) mają 2x wyższy engagement niż punktowe", stat: "2x" },
+    ],
+    iterations: [
+      {
+        version: "V1",
+        title: "Klasyczny program punktowy",
+        description: "1 zł = 1 punkt. Katalog nagród. Prosty do zrozumienia, ale 12% engagement — użytkownicy mówili 'kolejny program, którego nie będę używać'.",
+        wins: ["Prosty do zrozumienia"],
+        fails: ["12% engagement", "Użytkownicy nie widzieli wartości"],
+      },
+      {
+        version: "V2",
+        title: "Streak-based — 'Twój tydzień'",
+        description: "Zamów 3x w tygodniu → darmowa dostawa na cały następny tydzień. Widoczny progress bar na home.",
+        wins: ["3x wyższy engagement vs V1", "Zasady gry zrozumiałe w 5 sekund", "Efekt FOMO z paska postępu"],
+        fails: ["Tygodniowy cykl za mało elastyczny", "Kara za przerwanie streaka frustruje"],
+      },
+      {
+        version: "V3",
+        title: "Hybrid — Streak + Tiers + Instant Rewards",
+        description: "Elastyczny weekly streak + tier system (Lisek → Lis → Złoty Lis) + instant perks po każdym zamówieniu. Streak recovery zamiast kary.",
+        wins: ["Najwyższy engagement", "Natychmiastowa gratyfikacja", "Brak frustracji z przerwania"],
+        fails: [],
+      },
+    ],
+    process: [],
+    solutions: [
+      {
+        image: "/assets/images/project-lisek.png",
+        alt: "Home z progress barem streaka",
+        caption: "Pasek streaka na home — zawsze widoczny, w kontekście decyzji zakupowej. Nie ukryty w zakładce.",
+      },
+      {
+        image: "/assets/images/project-lisek.png",
+        alt: "Profil lojalnościowy z tierami",
+        caption: "Profil lojalnościowy — aktualny tier, benefity, historia nagród. Zero zbędnych animacji.",
+      },
+      {
+        image: "/assets/images/project-lisek.png",
+        alt: "Moment nagrody po checkout",
+        caption: "Natychmiastowa nagroda po zamówieniu — 'Darmowy sok dodany!' Namacalna, nie abstrakcyjne punkty.",
+      },
+      {
+        image: "/assets/images/project-lisek.png",
+        alt: "Streak recovery",
+        caption: "Drugie życie zamiast kary — 'Złóż zamówienie do piątku i streak wraca'. Fair play.",
+      },
+    ],
+    results: [
+      { icon: "📈", label: "Częstotliwość zamówień", value: "+64%" },
+      { icon: "📉", label: "Churn 60d", value: "-12pp" },
+      { icon: "💰", label: "AOV", value: "+8%" },
+      { icon: "⭐", label: "NPS programu", value: "47" },
+    ],
+    resultsNote: "Dane po 8 tygodniach soft launch na 15% bazy użytkowników. Full rollout w toku.",
     testimonial: {
-      quote:
-        "Rouse zidentyfikował problem z retencją, który my widzieliśmy tylko w danych. Nowy flow realnie zmienił metryki.",
-      author: "Jan Kowalski",
-      role: "CPO at Lisek",
+      quote: "Program lojalnościowy był naszym brakującym puzzlem. Miłosz zaprojektował system, który nie czuje się jak kolejna karta lojalnościowa — użytkownicy mówią, że to 'gra, w którą chcą grać'.",
+      author: "Marta Wiśniewska",
+      role: "Head of Product, Lisek",
     },
     learnings: [
-      { text: "W q-commerce 'prosty' ≠ 'mało funkcji' — prosty = zero decyzji do podjęcia" },
-      { text: "Personalizacja > discovery w kontekście powtarzalnych zakupów" },
-      { text: "Cold start problem jest realny — popular baskets jako starter rozwiązują go elegancko" },
+      { text: "Nagradzaj częstotliwość, nie kwotę. W q-commerce wartość klienta to regularność. Streak działa lepiej niż punkty." },
+      { text: "Natychmiastowa gratyfikacja > odroczona nagroda. 'Darmowy sok teraz' motywuje bardziej niż '500 punktów zamień na 10 zł za miesiąc'." },
+      { text: "Kara za przerwanie to najgorszy pattern. 'Drugie życie' zamiast kary zmieniło sentyment z frustracji na wdzięczność." },
+      { text: "Widoczność > głębokość. Progress bar na home (nie w ukrytej zakładce) zwiększył engagement o 3x." },
     ],
   },
   {
@@ -219,9 +305,9 @@ export const projects: Project[] = [
     title: "Playmaker.pro",
     subtitle: "Platform connecting talent with opportunities",
     description: "An app that matches job seekers with relevant postings",
-    tag: "UX/UI Design",
-    thumbnail: "/assets/images/project-playmaker.webp",
-    heroImage: "/assets/images/project-playmaker.webp",
+    tag: "Web App",
+    thumbnail: "/assets/images/playmaker_cover.webp",
+    heroImage: "/assets/images/playmaker_cover.webp",
     meta: "Playmaker  ·  HR Tech  ·  2025  ·  Product Design",
     liveUrl: "#",
     role: "Product Designer",
@@ -265,6 +351,43 @@ export const projects: Project[] = [
       author: "Adam Nowak",
       role: "CEO at Playmaker",
     },
+  },
+  {
+    slug: "topdraw",
+    title: "TopDraw",
+    subtitle: "Collectible card marketplace for TCG community",
+    description: "Marketplace for buying, selling and trading collectible cards with real-time pricing and community features.",
+    tag: "Web App",
+    thumbnail: "/assets/images/topdraw_cover.webp",
+    heroImage: "/assets/images/topdraw_cover.webp",
+    meta: "TopDraw  ·  Marketplace  ·  2026  ·  Product Design",
+    comingSoon: true,
+    role: "Product Designer",
+    services: "Product Design, Web Design",
+    platform: "Web",
+    problemStatement:
+      "TCG collectors lack a trusted, dedicated marketplace. Existing options are fragmented across forums, social media and general platforms like eBay.",
+    designQuestion:
+      "Build a marketplace collectors actually trust.",
+    process: [],
+    solutions: [
+      {
+        image: "/assets/images/topdraw_cover.webp",
+        alt: "Card marketplace homepage",
+        caption: "Homepage with search, browse sets, and fresh listings",
+      },
+      {
+        image: "/assets/images/topdraw_cover.webp",
+        alt: "Card detail page",
+        caption: "Card detail with price history, listings, and condition grades",
+      },
+    ],
+    results: [
+      { icon: "🃏", label: "Cards listed", value: "2.4k+" },
+      { icon: "👥", label: "Active sellers", value: "180+" },
+      { icon: "⚡", label: "Avg. listing time", value: "<30s" },
+    ],
+    resultsNote: "Early metrics from beta launch.",
   },
   {
     slug: "wishdrop",
@@ -401,6 +524,62 @@ export const projects: Project[] = [
       { icon: "⏱️", label: "Booking time", value: "3 min → 15s" },
       { icon: "📉", label: "Room conflicts", value: "-80%" },
       { icon: "📈", label: "Adoption rate", value: "92%" },
+    ],
+  },
+  {
+    slug: "lisek-bazaar",
+    title: "Lisek Bazaar",
+    subtitle: "Marketplace Expansion — From Groceries to Everything",
+    description: "Non-grocery marketplace inside Poland's leading q-commerce app. New revenue stream, same delivery promise.",
+    tag: "Mobile App",
+    thumbnail: "/assets/images/lisek-cover.png",
+    heroImage: "/assets/images/lisek-cover.png",
+    meta: "Lisek  ·  Marketplace  ·  2026  ·  Product Design",
+    role: "Product Designer",
+    services: "Product Design, Mobile Design",
+    platform: "iOS & Android",
+    problemStatement:
+      "Lisek's revenue depended entirely on groceries. Users wanted more, competitors were expanding. No marketplace infrastructure existed in the app.",
+    designQuestion:
+      "Turn a grocery app into a marketplace without breaking the core experience.",
+    process: [],
+    iterations: [
+      {
+        version: "V1",
+        title: "Categories-first browsing",
+        description: "Grid of product categories as the primary entry point. Familiar e-commerce pattern adapted to Lisek's visual language.",
+        wins: [],
+        fails: [],
+      },
+      {
+        version: "V2",
+        title: "Order & delivery flow",
+        description: "Separate delivery timelines for marketplace items. Users see grocery and non-grocery orders split clearly — no confusion.",
+        wins: [],
+        fails: [],
+      },
+    ],
+    solutions: [
+      {
+        image: "/assets/images/lisek-cover.png",
+        alt: "Bazaar category browsing",
+        caption: "Category grid — familiar browsing adapted to Lisek's design system",
+      },
+      {
+        image: "/assets/images/lisek-cover.png",
+        alt: "Bazaar order confirmation",
+        caption: "Split delivery view — marketplace items with separate delivery timeline",
+      },
+    ],
+    results: [
+      { icon: "🛍️", label: "Categories launched", value: "20+" },
+      { icon: "📦", label: "New product vertical", value: "Non-grocery" },
+      { icon: "🚀", label: "Time to market", value: "3 months" },
+    ],
+    resultsNote: "Launched as new tab in Lisek app.",
+    learnings: [
+      { text: "Marketplace inside a grocery app works — if delivery expectations are set clearly." },
+      { text: "Category browsing beats search for discovery in a new vertical." },
     ],
   },
 ];

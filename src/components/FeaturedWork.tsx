@@ -41,27 +41,17 @@ export default function FeaturedWork() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-100px" }}
                 transition={{ duration: 0.6 }}
-                className="group flex flex-col lg:flex-row lg:h-[500px] xl:h-[650px] w-full lg:items-end justify-between overflow-hidden"
+                className="group flex flex-col lg:flex-row lg:h-[400px] xl:h-[500px] w-full lg:items-end justify-between overflow-hidden"
               >
                 {/* Image - on top for mobile, right side for desktop */}
-                {project.slug === "lisek" ? (
-                  <div className="flex w-full lg:hidden items-center justify-center bg-[#f5f5f5] py-8">
-                    <div className="w-[180px]">
-                      <PhoneMockup
-                        videoSrc="/assets/videos/lisek-screen.mov"
-                      />
-                    </div>
-                  </div>
-                ) : (
-                  <div className="relative w-full lg:hidden aspect-[16/10] overflow-hidden">
-                    <Image
-                      src={project.thumbnail}
-                      alt={project.title}
-                      fill
-                      className="object-cover object-top transition-transform duration-700 group-hover:scale-[1.02]"
-                    />
-                  </div>
-                )}
+                <div className="relative w-full lg:hidden aspect-[16/9] overflow-hidden">
+                  <Image
+                    src={project.thumbnail}
+                    alt={project.title}
+                    fill
+                    className="object-contain object-center transition-transform duration-700 group-hover:scale-[1.02]"
+                  />
+                </div>
 
                 {/* Details */}
                 <div className="flex w-full lg:w-[30%] flex-col justify-between pt-4 lg:pr-12 lg:h-full gap-4 lg:gap-0">
@@ -72,31 +62,25 @@ export default function FeaturedWork() {
                     <p className="text-[18px] md:text-[20px] lg:text-[22px] font-medium leading-[1.5] tracking-[-0.6px] text-dark">
                       {project.description}
                     </p>
-                    <span className="rounded bg-dark/8 px-3 py-2 md:px-4 md:py-2.5 text-[16px] md:text-[18px] font-medium leading-[1.5] tracking-[-0.4px] text-dark">
-                      {project.tag}
-                    </span>
+                    <div className="flex flex-wrap gap-2">
+                      {(Array.isArray(project.tag) ? project.tag : [project.tag]).map((t) => (
+                        <span key={t} className="rounded bg-dark/8 px-3 py-2 md:px-4 md:py-2.5 text-[16px] md:text-[18px] font-medium leading-[1.5] tracking-[-0.4px] text-dark">
+                          {t}
+                        </span>
+                      ))}
+                    </div>
                   </div>
                 </div>
 
                 {/* Image - hidden on mobile, visible on desktop */}
-                {project.slug === "lisek" ? (
-                  <div className="hidden lg:flex h-full w-[70%] items-center justify-center bg-[#f5f5f5]">
-                    <div className="w-[240px]">
-                      <PhoneMockup
-                        videoSrc="/assets/videos/lisek-screen.mov"
-                      />
-                    </div>
-                  </div>
-                ) : (
-                  <div className="relative hidden lg:block h-full w-[70%] overflow-hidden">
-                    <Image
-                      src={project.thumbnail}
-                      alt={project.title}
-                      fill
-                      className="object-cover object-top transition-transform duration-700 group-hover:scale-[1.02]"
-                    />
-                  </div>
-                )}
+                <div className="relative hidden lg:block h-full w-[70%] overflow-hidden">
+                  <Image
+                    src={project.thumbnail}
+                    alt={project.title}
+                    fill
+                    className="object-contain object-center transition-transform duration-700 group-hover:scale-[1.02]"
+                  />
+                </div>
               </motion.div>
             </Link>
           ))}

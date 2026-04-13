@@ -23,7 +23,7 @@ export const translations = {
     // About
     about: {
       title: "About",
-      bio: "I\u2019m Milosz Zemla, a product designer with a graphic design background. Somewhere along the way I started building websites and shaping digital products. I care about the small things \u2014 the ones you don\u2019t notice until they\u2019re missing. Outside of design, I\u2019m into aviation and travel, and I spend more time than I should exploring how apps like Airbnb and Wise work under the hood.",
+      bio: "I\u2019m Milosz Zemla, a product designer with a graphic design background and a business-oriented mindset. Somewhere along the way I started building websites and shaping digital products. I care about the small things \u2014 the ones you don\u2019t notice until they\u2019re missing. Outside of design, I\u2019m passionate about photography and aviation, and I spend more time than I should exploring how apps like Airbnb and Wise work under the hood. My all-time favorite? FocusFlight.",
     },
     // Experience
     experience: {
@@ -117,6 +117,8 @@ export const translations = {
       results: "Results",
       nextProject: "Next Project",
       learnings: "Learnings",
+      comingSoon: "Case study coming soon",
+      comingSoonDescription: "I\u2019m currently working on this case study. Check back soon for the full story behind the project.",
     },
   },
   pl: {
@@ -143,7 +145,7 @@ export const translations = {
     // About
     about: {
       title: "O mnie",
-      bio: "Jestem Milosz Zemla \u2014 product designer z backgroundem w grafice. W pewnym momencie zacz\u0105\u0142em budowa\u0107 strony i kszta\u0142towa\u0107 produkty cyfrowe. Zale\u017cy mi na detailach \u2014 tych, kt\u00f3rych nie zauwa\u017casz, dop\u00f3ki ich nie zabraknie. Poza designem interesuj\u0119 si\u0119 lotnictwem i podr\u00f3\u017cami, a na analizowanie jak dzia\u0142aj\u0105 apki typu Airbnb czy Wise po\u015bwi\u0119cam wi\u0119cej czasu ni\u017c powinienem.",
+      bio: "Jestem Milosz Zemla \u2014 product designer z backgroundem w grafice i biznesowym podej\u015bciem do designu. W pewnym momencie zacz\u0105\u0142em budowa\u0107 strony i kszta\u0142towa\u0107 produkty cyfrowe. Zale\u017cy mi na detailach \u2014 tych, kt\u00f3rych nie zauwa\u017casz, dop\u00f3ki ich nie zabraknie. Poza designem pasjonuj\u0119 si\u0119 fotografi\u0105 i lotnictwem, a na analizowanie jak dzia\u0142aj\u0105 apki typu Airbnb czy Wise po\u015bwi\u0119cam wi\u0119cej czasu ni\u017c powinienem. M\u00f3j absolutny faworyt? FocusFlight.",
     },
     // Experience
     experience: {
@@ -237,6 +239,8 @@ export const translations = {
       results: "Wyniki",
       nextProject: "Nast\u0119pny projekt",
       learnings: "Wnioski",
+      comingSoon: "Case study wkr\u00f3tce",
+      comingSoonDescription: "Aktualnie pracuj\u0119 nad tym case study. Wr\u00f3\u0107 niedługo, \u017ceby pozna\u0107 pe\u0142n\u0105 histori\u0119 tego projektu.",
     },
   },
 };
