@@ -1,5 +1,5 @@
 import Navbar from "@/components/Navbar";
-import Hero from "@/components/Hero";
+import HeroAlt from "@/components/HeroAlt";
 import FeaturedWork from "@/components/FeaturedWork";
 import About from "@/components/About";
 import Experience from "@/components/Experience";
@@ -11,7 +11,7 @@ export default function Home() {
   return (
     <>
       <Navbar />
-      <Hero />
+      <HeroAlt />
       <FeaturedWork />
       <About />
       <Experience />

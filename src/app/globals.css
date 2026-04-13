@@ -7,6 +7,7 @@
 
   --font-space: "Space Grotesk", sans-serif;
   --font-inter: "Inter", sans-serif;
+  --font-dm: "DM Sans", sans-serif;
 }
 
 html {
@@ -20,6 +21,14 @@ body {
   font-feature-settings: "ss03", "ss04";
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-space);
+}
+
+p, .body-text {
+  font-family: var(--font-dm);
 }
 
 ::selection {

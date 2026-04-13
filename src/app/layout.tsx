@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import Script from "next/script";
-import { Space_Grotesk, Inter } from "next/font/google";
+import { Space_Grotesk, DM_Sans } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
+import { Retune } from "retune";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { LanguageProvider } from "@/i18n/LanguageContext";
 import "./globals.css";
@@ -13,11 +14,11 @@ const spaceGrotesk = Space_Grotesk({
   weight: ["300", "400", "500", "600", "700"],
 });
 
-const inter = Inter({
+const dmSans = DM_Sans({
   subsets: ["latin", "latin-ext"],
-  variable: "--font-inter",
+  variable: "--font-dm",
   display: "swap",
-  weight: ["400", "600", "700"],
+  weight: ["400", "500", "600", "700"],
 });
 
 export const metadata: Metadata = {
@@ -43,18 +44,18 @@ export const metadata: Metadata = {
 };
 
 // Set to false when portfolio is ready to go live
-const COMING_SOON = true;
+const COMING_SOON = false;
 
 function ComingSoon() {
   return (
     <div className="relative flex min-h-screen flex-col items-center justify-center bg-cream px-6">
       <div className="grid-bg" />
-      <div className="flex max-w-[600px] flex-col items-center gap-8 text-center">
+      <div className="flex max-w-[600px] flex-col items-center justify-center self-center gap-8 text-center">
         <h1 className="text-[64px] font-bold leading-[1.1] tracking-[-3px] text-dark">
           Milosz Zemla
         </h1>
         <div className="h-[2px] w-24 bg-dark" />
-        <p className="text-[24px] font-medium leading-[1.5] tracking-[-0.8px] text-dark/60">
+        <p className="w-auto self-center text-[24px] font-medium leading-[1.5] tracking-[-0.8px] text-dark/60">
           Portfolio coming soon
         </p>
         <div className="flex flex-col items-center gap-3">
@@ -82,11 +83,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${spaceGrotesk.variable} ${inter.variable}`}>
+    <html lang="en" className={`${spaceGrotesk.variable} ${dmSans.variable}`}>
       <body>
         <LanguageProvider>
           {COMING_SOON ? <ComingSoon /> : children}
         </LanguageProvider>
+        <Retune />
         <Analytics />
         <SpeedInsights />
         <Script id="hotjar" strategy="afterInteractive">
