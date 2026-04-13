@@ -51,7 +51,7 @@ function ComingSoon() {
     <div className="relative flex min-h-screen flex-col items-center justify-center bg-cream px-6">
       <div className="grid-bg" />
       <div className="flex max-w-[600px] flex-col items-center justify-center self-center gap-8 text-center">
-        <h1 className="font-space text-[48px] md:text-[64px] font-light leading-[1.1] tracking-[-2px] md:tracking-[-3px] text-dark">
+        <h1 className="font-space text-[48px] md:text-[64px] font-bold leading-[1.1] tracking-[-2px] md:tracking-[-3px] text-dark">
           Milosz Zemla
         </h1>
         <div className="h-[2px] w-24 bg-dark" />
