@@ -95,6 +95,10 @@ export interface Project {
   testimonial?: Testimonial;
   // Learnings
   learnings?: Learning[];
+  // Scope / Accomplishments
+  scope?: { title: string; description: string }[];
+  // Before/After comparison
+  beforeAfter?: { before: string; after: string; alt?: string };
   // Coming soon
   comingSoon?: boolean;
 }
@@ -103,8 +107,8 @@ export const projects: Project[] = [
   {
     slug: "lisek",
     title: "Lisek App",
-    subtitle: "Loyalty Redesign — Driving Frequency & Retention Growth",
-    description: "Streak-based loyalty system for Poland's leading q-commerce app with 5M+ orders.",
+    subtitle: "Redesign of Lisek's key surfaces as the app scaled past 5M+ orders.",
+    description: "Redesign of Lisek's key surfaces as the app scaled past 5M+ orders.",
     tag: ["Mobile App", "Web App"],
     thumbnail: "/assets/images/lisek_cover.webp",
     heroImage: "/assets/images/lisek_cover.webp",
@@ -167,6 +171,29 @@ export const projects: Project[] = [
     ],
     // Process — empty, covered by Research + Iterations
     process: [],
+    scope: [
+      {
+        title: "End-to-end app redesign",
+        description: "Redesigned core screens — home, search, product detail, cart and checkout — improving usability and visual consistency.",
+      },
+      {
+        title: "User research & testing",
+        description: "Conducted 10 interviews with heavy shoppers and churned users, ran cohort analysis, and benchmarked 6 competing loyalty programs to validate every design decision.",
+      },
+      {
+        title: "Design system foundations",
+        description: "Created reusable component library and design tokens, reducing design-to-dev handoff time and ensuring consistency across teams.",
+      },
+      {
+        title: "Data-informed decisions",
+        description: "Worked with analytics team to define KPIs, run cohort analysis, and validate each iteration with real user data before scaling.",
+      },
+    ],
+    beforeAfter: {
+      before: "/assets/images/lisek-before.webp",
+      after: "/assets/images/lisek-after.webp",
+      alt: "Lisek app before and after redesign",
+    },
     solutions: [
       {
         image: "/assets/images/project-lisek.png",
@@ -395,8 +422,8 @@ export const projects: Project[] = [
     subtitle: "Collaborative wishlist & gifting platform",
     description: "Managing finances with tools for tracking expenses & budgeting",
     tag: "Mobile Design",
-    thumbnail: "/assets/images/project-wishdrop.png",
-    heroImage: "/assets/images/project-wishdrop.png",
+    thumbnail: "",
+    heroImage: "",
     meta: "Wishdrop  ·  E-Commerce  ·  2025  ·  Mobile Design",
     liveUrl: "#",
     role: "Product Designer",
@@ -441,8 +468,8 @@ export const projects: Project[] = [
     subtitle: "Landing page redesign for conversion",
     description: "Boosting sales & engagement with landing page redesign",
     tag: "Web Design",
-    thumbnail: "/assets/images/project-olimpia.webp",
-    heroImage: "/assets/images/project-olimpia.webp",
+    thumbnail: "",
+    heroImage: "",
     meta: "Olimpia  ·  Fitness  ·  2024  ·  Web Design",
     liveUrl: "#",
     role: "Web Designer",
@@ -487,8 +514,8 @@ export const projects: Project[] = [
     subtitle: "Room booking system redesign",
     description: "An e-commerce website that sells yummy desserts online",
     tag: "Personal Project",
-    thumbnail: "/assets/images/project-roomzilla.webp",
-    heroImage: "/assets/images/project-roomzilla.webp",
+    thumbnail: "",
+    heroImage: "",
     meta: "Roomzilla  ·  SaaS  ·  2024  ·  Web Design",
     liveUrl: "#",
     role: "Product Designer",
@@ -532,8 +559,8 @@ export const projects: Project[] = [
     subtitle: "Marketplace Expansion — From Groceries to Everything",
     description: "Non-grocery marketplace inside Poland's leading q-commerce app. New revenue stream, same delivery promise.",
     tag: "Mobile App",
-    thumbnail: "/assets/images/lisek-cover.png",
-    heroImage: "/assets/images/lisek-cover.png",
+    thumbnail: "",
+    heroImage: "",
     meta: "Lisek  ·  Marketplace  ·  2026  ·  Product Design",
     role: "Product Designer",
     services: "Product Design, Mobile Design",

@@ -115,7 +115,7 @@ export default function Services() {
                   <h3 className="text-[22px] md:text-[24px] lg:text-[26px] font-medium leading-[1.5] tracking-[-0.8px] lg:tracking-[-1px] text-dark">
                     {service.title}
                   </h3>
-                  <p className="text-[18px] md:text-[20px] lg:text-[22px] font-medium leading-[1.5] tracking-[-0.4px] lg:tracking-[-0.6px] text-dark">
+                  <p className="text-[18px] md:text-[20px] lg:text-[22px] font-medium leading-[1.5] tracking-[-0.4px] lg:tracking-[-0.6px] text-dark/65">
                     {service.description}
                   </p>
                 </motion.div>
@@ -136,7 +136,7 @@ export default function Services() {
                   <h3 className="text-[22px] md:text-[24px] lg:text-[26px] font-medium leading-[1.5] tracking-[-0.8px] lg:tracking-[-1px] text-dark">
                     {service.title}
                   </h3>
-                  <p className="text-[18px] md:text-[20px] lg:text-[22px] font-medium leading-[1.5] tracking-[-0.4px] lg:tracking-[-0.6px] text-dark">
+                  <p className="text-[18px] md:text-[20px] lg:text-[22px] font-medium leading-[1.5] tracking-[-0.4px] lg:tracking-[-0.6px] text-dark/65">
                     {service.description}
                   </p>
                 </motion.div>

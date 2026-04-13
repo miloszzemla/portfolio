@@ -3,10 +3,12 @@
 import { useRef } from "react";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
+import { useLanguage } from "@/i18n/LanguageContext";
 
 export default function HeroAlt() {
   const containerRef = useRef<HTMLDivElement>(null);
   const logoRef = useRef<HTMLDivElement>(null);
+  const { t } = useLanguage();
 
   useGSAP(
     () => {
@@ -91,7 +93,7 @@ export default function HeroAlt() {
               </svg>
             </div>
             <span className="hero-alt-line block text-[44px] md:text-[56px] lg:text-[76px] xl:text-[96px] font-light leading-[1.08] tracking-[-2px] md:tracking-[-4px] lg:tracking-[-5px]">
-              Hi, I&rsquo;m Milosz
+              {t.hero.greeting}
             </span>
           </div>
 
@@ -99,11 +101,11 @@ export default function HeroAlt() {
           <div className="relative overflow-visible flex items-center">
             <div className="overflow-hidden">
               <span className="hero-alt-line block text-[44px] md:text-[56px] lg:text-[76px] xl:text-[96px] font-bold leading-[1.08] tracking-[-2px] md:tracking-[-4px] lg:tracking-[-5px]">
-                Product Designer
+                {t.hero.role1}
               </span>
             </div>
             <span className="hero-alt-badge hidden md:inline-flex md:relative md:ml-4 -top-5 lg:-top-7 rotate-[-6deg] items-center gap-2 rounded-none bg-white border-2 border-dark text-dark px-5 py-2.5 text-[14px] font-medium tracking-[-0.2px] flex-shrink-0">
-              &#x2728; AI-native
+              &#x2728; {t.hero.badge}
             </span>
           </div>
 
@@ -111,19 +113,18 @@ export default function HeroAlt() {
           <div className="overflow-visible flex items-center gap-3">
             <div className="overflow-hidden">
               <span className="hero-alt-line block text-[44px] md:text-[56px] lg:text-[76px] xl:text-[96px] font-bold leading-[1.08] tracking-[-2px] md:tracking-[-4px] lg:tracking-[-5px]">
-                &amp; Builder.
+                {t.hero.role2}
               </span>
             </div>
             <span className="hero-alt-badge md:hidden inline-flex items-center gap-1.5 rounded-none bg-white border-2 border-dark text-dark px-3 py-1.5 text-[11px] font-medium tracking-[-0.2px] flex-shrink-0 rotate-[-6deg]">
-              &#x2728; AI-native
+              &#x2728; {t.hero.badge}
             </span>
           </div>
         </div>
 
         {/* Right column: description — aligned to bottom of heading on desktop */}
         <p className="hero-alt-desc max-w-[360px] lg:max-w-[400px] text-[16px] md:text-[18px] lg:text-[20px] font-medium leading-[1.55] tracking-[-0.3px] text-dark/65 mt-6 md:mt-0 md:pb-2 lg:pb-3">
-          I ask the necessary (and sometimes the difficult) questions to create
-          products that focus on and prioritize people.
+          {t.hero.description}
         </p>
       </div>
     </section>

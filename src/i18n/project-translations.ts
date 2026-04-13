@@ -10,8 +10,8 @@ type ProjectOverride = DeepPartial<TranslatableProject>;
 export const projectTranslations: Record<string, { en: ProjectOverride; pl: ProjectOverride }> = {
   lisek: {
     en: {
-      subtitle: "Loyalty Redesign — Driving Frequency & Retention Growth",
-      description: "Streak-based loyalty system for Poland's leading q-commerce app with 5M+ orders.",
+      subtitle: "Redesign of Lisek's key surfaces as the app scaled past 5M+ orders.",
+      description: "Redesign of Lisek's key surfaces as the app scaled past 5M+ orders.",
       tag: ["Mobile App", "Web App"],
       meta: "Lisek  \u00b7  Q-Commerce  \u00b7  2026  \u00b7  Product Design",
       role: "Product Designer",
@@ -89,8 +89,8 @@ export const projectTranslations: Record<string, { en: ProjectOverride; pl: Proj
       resultsNote: undefined,
     },
     pl: {
-      subtitle: "Loyalty Redesign — Driving Frequency & Retention Growth",
-      description: "System lojalno\u015bciowy oparty na strekach dla lidera polskiego q-commerce z 5M+ zam\u00f3wie\u0144.",
+      subtitle: "Redesign kluczowych ekran\u00f3w Liska przy skali 5M+ zam\u00f3wie\u0144.",
+      description: "Redesign kluczowych ekran\u00f3w Liska przy skali 5M+ zam\u00f3wie\u0144.",
       tag: ["Aplikacja mobilna", "Aplikacja webowa"],
       meta: "Lisek  \u00b7  Q-Commerce  \u00b7  2026  \u00b7  Product Design",
       role: "Product Designer",

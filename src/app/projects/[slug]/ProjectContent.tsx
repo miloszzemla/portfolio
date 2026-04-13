@@ -8,6 +8,7 @@ import Footer from "@/components/Footer";
 import type { Project } from "@/data/projects";
 import { getTranslatedProject } from "@/data/projects";
 import { useLanguage } from "@/i18n/LanguageContext";
+import BeforeAfter from "@/components/BeforeAfter";
 
 const fadeUp = {
   initial: { opacity: 0, y: 30 },
@@ -28,15 +29,13 @@ export default function ProjectContent({ project: rawProject, nextProject: rawNe
       {/* ===== HERO ===== */}
       <header className="relative w-full bg-cream overflow-hidden pt-[120px] md:pt-[160px] pb-[60px] md:pb-[80px]">
         <div className="grid-bg" />
-        <div className="relative z-10 mx-auto w-[92%] max-w-[1200px]">
-          <motion.div {...fadeUp} className="flex flex-col gap-6">
-            <h1 className="font-bold text-[40px] md:text-[56px] lg:text-[72px] leading-[1.1] tracking-[-1.5px] md:tracking-[-2.5px] lg:tracking-[-3px] text-dark max-w-[900px]">
+        <div className="relative z-10 mx-auto w-[92%] max-w-[1400px]">
+          <motion.div {...fadeUp} className="flex flex-col gap-4 md:gap-5">
+            <h1 className="font-bold text-[40px] md:text-[56px] lg:text-[72px] leading-[1.1] tracking-[-1.5px] md:tracking-[-2.5px] lg:tracking-[-3px] text-dark">
               {project.title}
-              <br />
-              <span className="text-[#525252]">{project.subtitle}</span>
             </h1>
-            <p className="text-[16px] md:text-[17px] font-medium text-[#636363]">
-              {project.meta}
+            <p className="font-dm text-[20px] md:text-[24px] lg:text-[28px] font-medium leading-[1.35] tracking-[-0.5px] md:tracking-[-1px] text-dark/65 max-w-[700px]">
+              {project.subtitle}
             </p>
           </motion.div>
         </div>
@@ -45,7 +44,7 @@ export default function ProjectContent({ project: rawProject, nextProject: rawNe
       {/* ===== HERO IMAGE ===== */}
       <section className="relative w-full bg-cream overflow-hidden">
         <div className="grid-bg" />
-        <div className="relative z-10 mx-auto w-[92%] max-w-[1200px]">
+        <div className="relative z-10 mx-auto w-[92%] max-w-[1400px]">
           <motion.div {...fadeUp} className="relative aspect-[16/9] w-full overflow-hidden">
             <Image src={project.heroImage} alt={project.title} fill className="object-cover" priority />
           </motion.div>
@@ -57,7 +56,7 @@ export default function ProjectContent({ project: rawProject, nextProject: rawNe
         <>
           <section className="relative w-full bg-cream overflow-hidden py-[80px] md:py-[120px] lg:py-[160px]">
             <div className="grid-bg" />
-            <div className="relative z-10 mx-auto w-[92%] max-w-[1200px] flex flex-col items-center text-center gap-6">
+            <div className="relative z-10 mx-auto w-[92%] max-w-[1400px] flex flex-col items-center text-center gap-6">
               <motion.h2
                 {...fadeUp}
                 className="text-[32px] md:text-[40px] lg:text-[48px] font-bold leading-[1.2] tracking-[-1px] md:tracking-[-2px] text-dark"
@@ -66,7 +65,7 @@ export default function ProjectContent({ project: rawProject, nextProject: rawNe
               </motion.h2>
               <motion.p
                 {...fadeUp}
-                className="text-[17px] md:text-[19px] font-medium leading-[1.6] text-[#636363] max-w-[520px]"
+                className="font-dm text-[17px] md:text-[19px] font-medium leading-[1.6] text-dark/65 max-w-[520px]"
               >
                 {t.project.comingSoonDescription}
               </motion.p>
@@ -88,29 +87,25 @@ export default function ProjectContent({ project: rawProject, nextProject: rawNe
       {/* ===== BACKGROUND ===== */}
       <section className="relative w-full bg-cream overflow-hidden py-[60px] md:py-[100px] lg:py-[120px]">
         <div className="grid-bg" />
-        <div className="relative z-10 mx-auto w-[92%] max-w-[1200px]">
+        <div className="relative z-10 mx-auto w-[92%] max-w-[1400px]">
           <motion.div {...fadeUp} className="flex flex-col md:flex-row gap-10 md:gap-16 lg:gap-24">
             <div className="w-full md:w-[55%] flex flex-col gap-4 md:gap-6">
-              <h2 className="text-[13px] font-medium uppercase tracking-[0.08em] text-[#636363]">
+              <h2 className="text-[16px] md:text-[18px] font-medium tracking-[-0.3px] text-dark/70">
                 Background
               </h2>
-              <p className="text-[24px] md:text-[28px] lg:text-[32px] font-medium leading-[1.4] tracking-[-0.5px] md:tracking-[-1px] text-dark">
+              <p className="font-space text-[24px] md:text-[28px] lg:text-[32px] font-medium leading-[1.4] tracking-[-0.5px] md:tracking-[-1px] text-dark">
                 {project.description}
               </p>
             </div>
-            <div className="w-full md:w-[45%] flex flex-col gap-6">
+            <div className="w-full md:w-[45%] bg-white border-2 border-dark p-6 md:p-8 flex flex-col gap-5">
               {[
                 { label: t.project.role, value: project.role },
                 { label: t.project.service, value: project.services },
                 { label: "Platform", value: project.platform },
               ].filter(group => group.value).map((group) => (
                 <div key={group.label} className="flex flex-col gap-1">
-                  <span className="text-[13px] font-medium uppercase tracking-[0.08em] text-[#636363]">
-                    {group.label}
-                  </span>
-                  <span className="text-[16px] font-medium text-[#444444]">
-                    {group.value}
-                  </span>
+                  <span className="text-[13px] font-medium text-dark/55">{group.label}</span>
+                  <span className="text-[16px] font-medium text-dark">{group.value}</span>
                 </div>
               ))}
             </div>
@@ -121,19 +116,19 @@ export default function ProjectContent({ project: rawProject, nextProject: rawNe
       {/* ===== CHALLENGE ===== */}
       <section className="relative w-full bg-cream overflow-hidden pb-[60px] md:pb-[100px] lg:pb-[120px]">
         <div className="grid-bg" />
-        <div className="relative z-10 mx-auto w-[92%] max-w-[1200px]">
+        <div className="relative z-10 mx-auto w-[92%] max-w-[1400px]">
           <motion.div {...fadeUp} className="max-w-[800px] flex flex-col gap-4 md:gap-6">
-            <h2 className="text-[13px] font-medium uppercase tracking-[0.08em] text-[#636363]">
+            <h2 className="text-[16px] md:text-[18px] font-medium tracking-[-0.3px] text-dark/70">
               {t.project.problem}
             </h2>
-            <p className="text-[24px] md:text-[28px] lg:text-[32px] font-medium leading-[1.4] tracking-[-0.5px] md:tracking-[-1px] text-dark">
+            <p className="font-space text-[24px] md:text-[28px] lg:text-[32px] font-medium leading-[1.4] tracking-[-0.5px] md:tracking-[-1px] text-dark">
               {project.designQuestion}
             </p>
-            <p className="text-[17px] md:text-[18px] font-medium leading-[1.7] text-[#525252]">
+            <p className="text-[17px] md:text-[18px] font-dm font-medium leading-[1.7] text-dark/65">
               {project.problemStatement}
             </p>
             {project.problemMetrics && (
-              <p className="text-[15px] font-medium text-[#636363]">
+              <p className="text-[15px] font-dm font-medium text-dark/65">
                 {project.problemMetrics}
               </p>
             )}
@@ -141,16 +136,64 @@ export default function ProjectContent({ project: rawProject, nextProject: rawNe
         </div>
       </section>
 
+      {/* ===== SCOPE ===== */}
+      {project.scope && project.scope.length > 0 && (
+        <section className="relative w-full bg-cream overflow-hidden pb-[60px] md:pb-[100px] lg:pb-[120px]">
+          <div className="grid-bg" />
+          <div className="relative z-10 mx-auto w-[92%] max-w-[1400px]">
+            <motion.div {...fadeUp} className="flex flex-col gap-10 md:gap-12">
+              <div className="flex w-full flex-col gap-4">
+                <h2 className="text-[20px] md:text-[22px] lg:text-[24px] font-medium leading-[1.4] tracking-[-0.8px] text-dark">
+                  What was done
+                </h2>
+                <div className="h-[2px] w-full bg-dark" />
+              </div>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+                {project.scope.map((item, i) => (
+                  <div key={i} className="flex flex-col gap-3 bg-white border-2 border-dark p-6 md:p-8">
+                    <span className="text-[14px] font-medium text-dark/30">
+                      {String(i + 1).padStart(2, "0")}
+                    </span>
+                    <h3 className="text-[20px] md:text-[22px] font-medium tracking-[-0.5px] text-dark leading-[1.3]">
+                      {item.title}
+                    </h3>
+                    <p className="font-dm text-[16px] md:text-[17px] font-medium leading-[1.6] text-dark/65">
+                      {item.description}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </motion.div>
+          </div>
+        </section>
+      )}
+
+      {/* ===== BEFORE / AFTER ===== */}
+      {project.beforeAfter && (
+        <section className="relative w-full bg-cream overflow-hidden pb-[60px] md:pb-[100px] lg:pb-[120px]">
+          <div className="grid-bg" />
+          <div className="relative z-10 mx-auto w-[92%] max-w-[1400px]">
+            <motion.div {...fadeUp}>
+              <BeforeAfter
+                before={project.beforeAfter.before}
+                after={project.beforeAfter.after}
+                alt={project.beforeAfter.alt}
+              />
+            </motion.div>
+          </div>
+        </section>
+      )}
+
       {/* ===== SOLUTION IMAGE 1 ===== */}
       {project.solutions[0] && (
         <section className="relative w-full bg-cream overflow-hidden pb-[60px] md:pb-[100px]">
           <div className="grid-bg" />
-          <div className="relative z-10 mx-auto w-[92%] max-w-[1200px]">
+          <div className="relative z-10 mx-auto w-[92%] max-w-[1400px]">
             <motion.div {...fadeUp} className="flex flex-col gap-4">
               <div className="relative aspect-[16/9] w-full overflow-hidden">
                 <Image src={project.solutions[0].image} alt={project.solutions[0].alt} fill className="object-cover" />
               </div>
-              <p className="text-[15px] md:text-[16px] font-medium text-[#636363]">{project.solutions[0].caption}</p>
+              <p className="text-[15px] md:text-[16px] font-dm font-medium text-dark/65">{project.solutions[0].caption}</p>
             </motion.div>
           </div>
         </section>
@@ -160,17 +203,17 @@ export default function ProjectContent({ project: rawProject, nextProject: rawNe
       {project.iterations && project.iterations.length > 0 && (
         <section className="relative w-full bg-cream overflow-hidden pb-[60px] md:pb-[100px] lg:pb-[120px]">
           <div className="grid-bg" />
-          <div className="relative z-10 mx-auto w-[92%] max-w-[1200px]">
+          <div className="relative z-10 mx-auto w-[92%] max-w-[1400px]">
             <div className="flex flex-col gap-12 md:gap-20">
               {project.iterations.map((iter, i) => (
                 <motion.div key={i} {...fadeUp} className="max-w-[680px]">
-                  <span className="text-[13px] font-medium uppercase tracking-[0.08em] text-[#636363]">
+                  <span className="text-[16px] md:text-[18px] font-medium tracking-[-0.3px] text-dark/70">
                     {iter.version}
                   </span>
                   <h3 className="mt-3 text-[28px] md:text-[34px] lg:text-[40px] font-bold leading-[1.2] tracking-[-1px] md:tracking-[-1.5px] text-dark">
                     {iter.title}
                   </h3>
-                  <p className="mt-4 text-[17px] md:text-[18px] font-medium leading-[1.7] text-[#525252]">
+                  <p className="mt-4 text-[17px] md:text-[18px] font-dm font-medium leading-[1.7] text-dark/65">
                     {iter.description}
                   </p>
                 </motion.div>
@@ -184,14 +227,14 @@ export default function ProjectContent({ project: rawProject, nextProject: rawNe
       {project.solutions.length > 1 && (
         <section className="relative w-full bg-cream overflow-hidden pb-[60px] md:pb-[100px] lg:pb-[120px]">
           <div className="grid-bg" />
-          <div className="relative z-10 mx-auto w-[92%] max-w-[1200px]">
+          <div className="relative z-10 mx-auto w-[92%] max-w-[1400px]">
             <div className="flex flex-col gap-10 md:gap-16">
               {project.solutions.slice(1).map((screen, i) => (
                 <motion.div key={i} {...fadeUp} className="flex flex-col gap-4">
                   <div className="relative aspect-[16/9] w-full overflow-hidden">
                     <Image src={screen.image} alt={screen.alt} fill className="object-cover" />
                   </div>
-                  <p className="text-[15px] md:text-[16px] font-medium text-[#636363]">{screen.caption}</p>
+                  <p className="text-[15px] md:text-[16px] font-dm font-medium text-dark/65">{screen.caption}</p>
                 </motion.div>
               ))}
             </div>
@@ -201,14 +244,14 @@ export default function ProjectContent({ project: rawProject, nextProject: rawNe
 
       {/* ===== IMPACT ===== */}
       <section className="relative w-full bg-dark overflow-hidden py-[60px] md:py-[100px] lg:py-[120px]">
-        <div className="relative z-10 mx-auto w-[92%] max-w-[1200px]">
+        <div className="relative z-10 mx-auto w-[92%] max-w-[1400px]">
           <motion.div {...fadeUp} className="flex flex-col gap-10 md:gap-16">
             <div className="flex flex-col gap-3">
-              <h2 className="text-[13px] font-medium uppercase tracking-[0.08em] text-[#9a9a9a]">
+              <h2 className="text-[16px] md:text-[18px] font-medium tracking-[-0.3px] text-cream/70">
                 {t.project.results}
               </h2>
               {project.resultsNote && (
-                <p className="text-[17px] md:text-[18px] font-medium leading-[1.6] text-[#9a9a9a]">
+                <p className="text-[17px] md:text-[18px] font-dm font-medium leading-[1.6] text-cream/65">
                   {project.resultsNote}
                 </p>
               )}
@@ -219,7 +262,7 @@ export default function ProjectContent({ project: rawProject, nextProject: rawNe
                   <span className="text-[48px] md:text-[56px] lg:text-[64px] font-bold leading-[1.1] tracking-[-2px] lg:tracking-[-3px] text-cream">
                     {metric.value}
                   </span>
-                  <span className="text-[16px] md:text-[17px] font-medium text-[#9a9a9a]">
+                  <span className="text-[16px] md:text-[17px] font-dm font-medium text-cream/65">
                     {metric.label}
                   </span>
                 </div>
@@ -233,14 +276,14 @@ export default function ProjectContent({ project: rawProject, nextProject: rawNe
       {project.learnings && project.learnings.length > 0 && (
         <section className="relative w-full bg-cream overflow-hidden py-[60px] md:py-[100px] lg:py-[120px]">
           <div className="grid-bg" />
-          <div className="relative z-10 mx-auto w-[92%] max-w-[1200px]">
+          <div className="relative z-10 mx-auto w-[92%] max-w-[1400px]">
             <motion.div {...fadeUp} className="max-w-[680px]">
-              <h2 className="text-[13px] font-medium uppercase tracking-[0.08em] text-[#636363] mb-8 md:mb-12">
+              <h2 className="text-[16px] md:text-[18px] font-medium tracking-[-0.3px] text-dark/70 mb-8 md:mb-12">
                 {t.project.learnings}
               </h2>
               <div className="flex flex-col gap-6">
                 {project.learnings.map((learning, i) => (
-                  <p key={i} className="text-[17px] md:text-[18px] font-medium leading-[1.7] text-[#525252]">
+                  <p key={i} className="text-[17px] md:text-[18px] font-dm font-medium leading-[1.7] text-dark/65">
                     {learning.text}
                   </p>
                 ))}
@@ -253,7 +296,7 @@ export default function ProjectContent({ project: rawProject, nextProject: rawNe
       {/* ===== NEXT PROJECT ===== */}
       <section className="relative w-full bg-cream overflow-hidden pb-[80px] md:pb-[100px] lg:pb-[150px]">
         <div className="grid-bg" />
-        <div className="relative z-10 mx-auto w-[92%] max-w-[1200px] flex flex-col gap-10 md:gap-12 lg:gap-16">
+        <div className="relative z-10 mx-auto w-[92%] max-w-[1400px] flex flex-col gap-10 md:gap-12 lg:gap-16">
           <div className="flex w-full flex-col gap-4">
             <h2 className="text-[20px] md:text-[22px] lg:text-[24px] font-medium leading-[1.4] tracking-[-0.8px] text-dark">
               {t.project.nextProject}

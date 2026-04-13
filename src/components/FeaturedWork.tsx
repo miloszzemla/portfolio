@@ -45,12 +45,18 @@ export default function FeaturedWork() {
               >
                 {/* Image - on top for mobile, right side for desktop */}
                 <div className="relative w-full lg:hidden aspect-[16/9] overflow-hidden">
-                  <Image
-                    src={project.thumbnail}
-                    alt={project.title}
-                    fill
-                    className="object-contain object-center transition-transform duration-700 group-hover:scale-[1.02]"
-                  />
+                  {project.thumbnail ? (
+                    <Image
+                      src={project.thumbnail}
+                      alt={project.title}
+                      fill
+                      className="object-contain object-center transition-transform duration-700 group-hover:scale-[1.02]"
+                    />
+                  ) : (
+                    <div className="absolute inset-0 bg-dark/5 border-2 border-dashed border-dark/15 flex items-center justify-center">
+                      <span className="text-[16px] font-medium text-dark/30">Coming soon</span>
+                    </div>
+                  )}
                 </div>
 
                 {/* Details */}
@@ -59,7 +65,7 @@ export default function FeaturedWork() {
                     <h3 className="text-[28px] md:text-[36px] lg:text-[44px] font-medium leading-[1.4] tracking-[-1px] lg:tracking-[-2px] text-dark">
                       {project.title}
                     </h3>
-                    <p className="text-[18px] md:text-[20px] lg:text-[22px] font-medium leading-[1.5] tracking-[-0.6px] text-dark">
+                    <p className="text-[18px] md:text-[20px] lg:text-[22px] font-medium leading-[1.5] tracking-[-0.6px] text-dark/65">
                       {project.description}
                     </p>
                     <div className="flex flex-wrap gap-2">
@@ -74,12 +80,18 @@ export default function FeaturedWork() {
 
                 {/* Image - hidden on mobile, visible on desktop */}
                 <div className="relative hidden lg:block h-full w-[70%] overflow-hidden">
-                  <Image
-                    src={project.thumbnail}
-                    alt={project.title}
-                    fill
-                    className="object-contain object-center transition-transform duration-700 group-hover:scale-[1.02]"
-                  />
+                  {project.thumbnail ? (
+                    <Image
+                      src={project.thumbnail}
+                      alt={project.title}
+                      fill
+                      className="object-contain object-center transition-transform duration-700 group-hover:scale-[1.02]"
+                    />
+                  ) : (
+                    <div className="absolute inset-0 bg-dark/5 border-2 border-dashed border-dark/15 flex items-center justify-center">
+                      <span className="text-[18px] font-medium text-dark/30">Coming soon</span>
+                    </div>
+                  )}
                 </div>
               </motion.div>
             </Link>

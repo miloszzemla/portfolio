@@ -9,9 +9,13 @@ export const translations = {
     },
     // Hero
     hero: {
-      greeting: "I\u2019m Milosz Zemla",
+      greeting: "Hi, I\u2019m Milosz",
+      role1: "Product Designer",
+      role2: "& Builder.",
+      badge: "AI-native",
       description:
-        "I ask the necessary (and sometimes the difficult questions) to create brands and products that focus on and prioritize people",
+        "I ask the necessary (and sometimes the difficult) questions to create products that prioritize people and drive business results.",
+      // legacy keys (used by Hero.tsx)
       designer: "A designer",
       livesByDesign: "lives by design",
     },
@@ -19,6 +23,10 @@ export const translations = {
     featuredWork: {
       title: "Featured work",
       scroll: "Scroll \u2193",
+    },
+    // Other Projects
+    otherProjects: {
+      title: "Other projects",
     },
     // About
     about: {
@@ -131,9 +139,13 @@ export const translations = {
     },
     // Hero
     hero: {
-      greeting: "Jestem Milosz Zemla",
+      greeting: "Cze\u015b\u0107, jestem Milosz",
+      role1: "Product Designer",
+      role2: "& Builder.",
+      badge: "AI-native",
       description:
-        "Zadaj\u0119 potrzebne (i czasem trudne pytania), by tworzy\u0107 marki i produkty, kt\u00f3re stawiaj\u0105 ludzi na pierwszym miejscu",
+        "Zadaj\u0119 potrzebne (i czasem trudne) pytania, by tworzy\u0107 produkty, kt\u00f3re stawiaj\u0105 ludzi na pierwszym miejscu i nap\u0119dzaj\u0105 wyniki biznesowe.",
+      // legacy keys (used by Hero.tsx)
       designer: "Designer",
       livesByDesign: "\u017cyj\u0119 designem",
     },
@@ -141,6 +153,10 @@ export const translations = {
     featuredWork: {
       title: "Wybrane projekty",
       scroll: "Przewi\u0144 \u2193",
+    },
+    // Other Projects
+    otherProjects: {
+      title: "Pozosta\u0142e projekty",
     },
     // About
     about: {
