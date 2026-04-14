@@ -409,11 +409,21 @@ export const projects: Project[] = [
     problemMetrics: "Bounce rate: 68%  ·  Avg. session: 1.8 min  ·  Profile completion: 34%",
     designQuestion:
       "How do we turn an outdated listing board into a data-driven transfer market that both players and clubs actually trust?",
+    researchMethods: [
+      "8 interviews with players, agents and club scouts",
+      "Competitive analysis of 5 transfer platforms",
+      "Analytics audit of existing platform behavior",
+    ],
+    researchInsights: [
+      { text: "Scouts leave within 90 seconds if a player profile has no video or stats — they need data to justify decisions to their board.", stat: "No player stats" },
+      { text: "Profile completion sits at 34% — the registration form is too complex and feels like bureaucracy. Players abandon it before showcasing their real potential.", stat: "Complex registration" },
+      { text: "Contact limited to email or phone only — no in-app messaging, no contact forms. Reaching clubs, players or scouts meant leaving the platform entirely.", stat: "No direct contact" },
+    ],
     process: [
-      { label: "Discovery", text: "Competitor audit + 6 user interviews with active job seekers" },
-      { label: "Insight", text: "Users want fewer, better matches — not more listings" },
-      { label: "Iteracja", text: "Tested swipe-based matching vs filtered feed" },
-      { label: "Decyzja", text: "Filtered feed with smart tags won — users felt more in control" },
+      { label: "Discovery", text: "Competitive audit + 8 interviews with players, scouts and agents" },
+      { label: "Insight", text: "Both sides want data and trust signals — not just a listing board" },
+      { label: "Iteration", text: "Tested profile-first vs. feed-first information architecture" },
+      { label: "Decision", text: "Profile-first approach with rich data won — scouts need depth, not volume" },
     ],
     solutions: [
       {
@@ -433,15 +443,15 @@ export const projects: Project[] = [
       },
     ],
     results: [
-      { icon: "📈", label: "Match rate", value: "+45%" },
-      { icon: "⏱️", label: "Avg. session", value: "2.1 → 5.8 min" },
-      { icon: "🎯", label: "Applications sent", value: "+62%" },
+      { icon: "📈", label: "User engagement", value: "+38%" },
+      { icon: "📋", label: "Profile completion", value: "34% → 71%" },
+      { icon: "⏱️", label: "Avg. session time", value: "1.8 → 4.2 min" },
     ],
     testimonial: {
       quote:
-        "The new matching algorithm and UX completely changed how our users interact with the platform.",
-      author: "Adam Nowak",
-      role: "CEO at Playmaker",
+        "The redesign completely changed how players and clubs interact on our platform. We finally have a product people trust.",
+      author: "Playmaker Team",
+      role: "Playmaker.pro",
     },
   },
   {

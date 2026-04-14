@@ -5,6 +5,7 @@ export const translations = {
       about: "About",
       projects: "Projects",
       contact: "Contact",
+      photography: "Photography",
       location: "Warsaw",
     },
     // Hero
@@ -139,6 +140,7 @@ export const translations = {
       about: "O mnie",
       projects: "Projekty",
       contact: "Kontakt",
+      photography: "Fotografia",
       location: "Warszawa",
     },
     // Hero

@@ -205,11 +205,16 @@ export const projectTranslations: Record<string, { en: ProjectOverride; pl: Proj
       problemMetrics: "Bounce rate: 68%  ·  Avg. session: 1.8 min  ·  Profile completion: 34%",
       designQuestion:
         "How do we turn an outdated listing board into a data-driven transfer market that both players and clubs actually trust?",
+      researchInsights: [
+        { text: "Scouts leave within 90 seconds if a player profile has no video or stats — they need data to justify decisions to their board.", stat: "No player stats" },
+        { text: "Profile completion sits at 34% — the registration form is too complex and feels like bureaucracy. Players abandon it before showcasing their real potential.", stat: "Complex registration" },
+        { text: "Contact limited to email or phone only — no in-app messaging, no contact forms. Reaching clubs, players or scouts meant leaving the platform entirely.", stat: "No direct contact" },
+      ],
       process: [
-        { label: "Discovery", text: "Competitor audit + 6 user interviews with active job seekers" },
-        { label: "Insight", text: "Users want fewer, better matches \u2014 not more listings" },
-        { label: "Iteration", text: "Tested swipe-based matching vs filtered feed" },
-        { label: "Decision", text: "Filtered feed with smart tags won \u2014 users felt more in control" },
+        { label: "Discovery", text: "Competitive audit + 8 interviews with players, scouts and agents" },
+        { label: "Insight", text: "Both sides want data and trust signals — not just a listing board" },
+        { label: "Iteration", text: "Tested profile-first vs. feed-first information architecture" },
+        { label: "Decision", text: "Profile-first approach with rich data won — scouts need depth, not volume" },
       ],
       solutions: [
         { image: "/assets/images/playmaker-old.webp", alt: "Playmaker wireframes — early-stage layout exploration", caption: "Early wireframes — mapping out the information architecture and core user flows before visual design." },
@@ -217,14 +222,14 @@ export const projectTranslations: Record<string, { en: ProjectOverride; pl: Proj
         { image: "/assets/images/project-playmaker.webp", alt: "Quick apply", caption: "Quick apply — 1-tap application with saved profile data" },
       ],
       results: [
-        { icon: "\ud83d\udcc8", label: "Match rate", value: "+45%" },
-        { icon: "\u23f1\ufe0f", label: "Avg. session", value: "2.1 \u2192 5.8 min" },
-        { icon: "\ud83c\udfaf", label: "Applications sent", value: "+62%" },
+        { icon: "📈", label: "User engagement", value: "+38%" },
+        { icon: "📋", label: "Profile completion", value: "34% → 71%" },
+        { icon: "⏱️", label: "Avg. session time", value: "1.8 → 4.2 min" },
       ],
       testimonial: {
-        quote: "The new matching algorithm and UX completely changed how our users interact with the platform.",
-        author: "Adam Nowak",
-        role: "CEO at Playmaker",
+        quote: "The redesign completely changed how players and clubs interact on our platform. We finally have a product people trust.",
+        author: "Playmaker Team",
+        role: "Playmaker.pro",
       },
     },
     pl: {
@@ -239,11 +244,16 @@ export const projectTranslations: Record<string, { en: ProjectOverride; pl: Proj
       problemMetrics: "Bounce rate: 68%  ·  Śr. sesja: 1.8 min  ·  Wypełnienie profilu: 34%",
       designQuestion:
         "Jak zmienić przestarzałą tablicę ogłoszeń w oparty na danych rynek transferowy, któremu ufają zarówno zawodnicy, jak i kluby?",
+      researchInsights: [
+        { text: "Skauci opuszczają profil w ciągu 90 sekund, jeśli nie ma wideo ani statystyk — potrzebują danych, żeby uzasadnić decyzję przed zarządem.", stat: "Brak statystyk" },
+        { text: "Wypełnienie profilu na poziomie 34% — formularz rejestracji jest zbyt skomplikowany i wygląda jak biurokracja. Zawodnicy porzucają go, zanim pokażą swój prawdziwy potencjał.", stat: "Skomplikowana rejestracja" },
+        { text: "Kontakt ograniczony do maila lub telefonu — brak wiadomości w aplikacji, brak formularzy kontaktowych. Dotarcie do klubów, zawodników czy skautów wymagało opuszczenia platformy.", stat: "Brak kontaktu" },
+      ],
       process: [
-        { label: "Discovery", text: "Audyt konkurencji + 6 wywiad\u00f3w z aktywnie szukaj\u0105cymi pracy" },
-        { label: "Insight", text: "U\u017cytkownicy chc\u0105 mniej, ale lepszych dopasowa\u0144 \u2014 nie wi\u0119cej ofert" },
-        { label: "Iteracja", text: "Testowanie swipe-matchingu vs filtrowanego feedu" },
-        { label: "Decyzja", text: "Filtrowany feed ze smart tagami wygra\u0142 \u2014 u\u017cytkownicy czuli wi\u0119ksz\u0105 kontrol\u0119" },
+        { label: "Discovery", text: "Audyt konkurencji + 8 wywiadów z zawodnikami, skautami i agentami" },
+        { label: "Insight", text: "Obie strony chcą danych i sygnałów zaufania — nie kolejnej tablicy ogłoszeń" },
+        { label: "Iteracja", text: "Testowanie architektury profile-first vs feed-first" },
+        { label: "Decyzja", text: "Profile-first z bogatymi danymi wygrało — skauci potrzebują głębi, nie ilości" },
       ],
       solutions: [
         { image: "/assets/images/playmaker-old.webp", alt: "Wireframes Playmaker — wczesna eksploracja layoutu", caption: "Wczesne wireframes — mapowanie architektury informacji i kluczowych user flows przed visual designem." },
@@ -251,14 +261,14 @@ export const projectTranslations: Record<string, { en: ProjectOverride; pl: Proj
         { image: "/assets/images/project-playmaker.webp", alt: "Szybka aplikacja", caption: "Szybka aplikacja — 1 tap z zapisanymi danymi profilu" },
       ],
       results: [
-        { icon: "\ud83d\udcc8", label: "Trafno\u015b\u0107 dopasowa\u0144", value: "+45%" },
-        { icon: "\u23f1\ufe0f", label: "\u015ar. sesja", value: "2.1 \u2192 5.8 min" },
-        { icon: "\ud83c\udfaf", label: "Wys\u0142ane aplikacje", value: "+62%" },
+        { icon: "📈", label: "Zaangażowanie", value: "+38%" },
+        { icon: "📋", label: "Wypełnienie profilu", value: "34% → 71%" },
+        { icon: "⏱️", label: "Śr. czas sesji", value: "1.8 → 4.2 min" },
       ],
       testimonial: {
-        quote: "Nowy algorytm dopasowa\u0144 i UX ca\u0142kowicie zmieni\u0142y spos\u00f3b interakcji u\u017cytkownik\u00f3w z platform\u0105.",
-        author: "Adam Nowak",
-        role: "CEO at Playmaker",
+        quote: "Redesign kompletnie zmienił sposób, w jaki zawodnicy i kluby korzystają z naszej platformy. W końcu mamy produkt, któremu ludzie ufają.",
+        author: "Zespół Playmaker",
+        role: "Playmaker.pro",
       },
     },
   },

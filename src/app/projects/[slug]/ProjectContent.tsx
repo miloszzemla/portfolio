@@ -176,6 +176,42 @@ export default function ProjectContent({ project: rawProject, nextProject: rawNe
         </div>
       </section>
 
+      {/* ===== IMPACT OVERVIEW ===== */}
+      {project.results && project.results.length > 0 && (
+        <section className="relative w-full bg-cream overflow-hidden pb-[60px] md:pb-[80px]">
+          <div className="grid-bg" />
+          <div className="relative z-10 mx-auto w-[92%] max-w-[1400px]">
+            <motion.div {...fadeUp} className="flex flex-col gap-10 md:gap-12">
+              <div className="flex w-full flex-col gap-4">
+                <h2 className="text-[20px] md:text-[22px] lg:text-[24px] font-medium leading-[1.4] tracking-[-0.8px] text-dark">
+                  {t.project.impactOverview}
+                </h2>
+                <div className="h-[2px] w-full bg-dark" />
+              </div>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
+                {project.results.map((metric, i) => (
+                  <motion.div
+                    key={i}
+                    initial={{ opacity: 0, y: 15 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, margin: "-40px" }}
+                    transition={{ duration: 0.4, delay: i * 0.1 }}
+                    className="bg-white border-2 border-dark p-5 md:p-6 flex flex-col gap-2"
+                  >
+                    <span className="text-[28px] md:text-[32px] font-bold leading-[1.1] tracking-[-1px] text-dark">
+                      {metric.value}
+                    </span>
+                    <span className="text-[15px] md:text-[16px] font-dm font-medium text-dark/65">
+                      {metric.label}
+                    </span>
+                  </motion.div>
+                ))}
+              </div>
+            </motion.div>
+          </div>
+        </section>
+      )}
+
       {/* ===== CHALLENGE ===== */}
       <section className="relative w-full bg-cream overflow-hidden pb-[60px] md:pb-[100px] lg:pb-[120px]">
         <div className="grid-bg" />
@@ -198,6 +234,45 @@ export default function ProjectContent({ project: rawProject, nextProject: rawNe
           </motion.div>
         </div>
       </section>
+
+      {/* ===== RESEARCH INSIGHTS ===== */}
+      {project.researchInsights && project.researchInsights.length > 0 && (
+        <section className="relative w-full bg-cream overflow-hidden pb-[60px] md:pb-[100px] lg:pb-[120px]">
+          <div className="grid-bg" />
+          <div className="relative z-10 mx-auto w-[92%] max-w-[1400px]">
+            <motion.div {...fadeUp} className="flex flex-col gap-10 md:gap-12">
+              <div className="flex w-full flex-col gap-4">
+                <h2 className="text-[20px] md:text-[22px] lg:text-[24px] font-medium leading-[1.4] tracking-[-0.8px] text-dark">
+                  {t.project.keyInsights}
+                </h2>
+                <div className="h-[2px] w-full bg-dark" />
+              </div>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+                {project.researchInsights.map((insight, i) => (
+                  <motion.div
+                    key={i}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, margin: "-40px" }}
+                    transition={{ duration: 0.4, delay: i * 0.1 }}
+                    whileHover={{ y: -4 }}
+                    className="group relative bg-white border-2 border-dark p-6 md:p-8 flex flex-col gap-3 cursor-default transition-shadow duration-300 hover:shadow-[4px_4px_0px_0px_rgba(28,28,28,1)]"
+                  >
+                    {insight.stat && (
+                      <h3 className="text-[18px] md:text-[20px] font-semibold leading-[1.3] tracking-[-0.3px] text-dark">
+                        {insight.stat}
+                      </h3>
+                    )}
+                    <p className="text-[16px] md:text-[17px] font-dm font-medium leading-[1.7] text-dark/65">
+                      {insight.text}
+                    </p>
+                  </motion.div>
+                ))}
+              </div>
+            </motion.div>
+          </div>
+        </section>
+      )}
 
       {/* ===== SCOPE ===== */}
       {project.scope && project.scope.length > 0 && (
