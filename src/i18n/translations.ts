@@ -79,7 +79,7 @@ export const translations = {
     footer: {
       marquee: "Let\u2019s work together",
       available:
-        "I\u2019m currently available for new work, let me know if you need a digital designer. I\u2019d love to talk about the next big thing!",
+        "Let me know if you need a product designer. I\u2019d love to talk about the next big thing!",
       backToTop: "\u2191 Back to top",
     },
     // Contact
@@ -115,6 +115,7 @@ export const translations = {
       role: "My Role:",
       year: "Year:",
       service: "Service Provided:",
+      platform: "Platform",
       problem: "Problem",
       designQuestion: "Design question",
       research: "Research",
@@ -122,6 +123,8 @@ export const translations = {
       iterations: "Iterations",
       process: "Process",
       solution: "Solution",
+      background: "Background",
+      scope: "What was done",
       results: "Results",
       nextProject: "Next Project",
       learnings: "Learnings",
@@ -207,9 +210,9 @@ export const translations = {
     },
     // Footer
     footer: {
-      marquee: "Wsp\u00f3\u0142pracujmy",
+      marquee: "Let\u2019s work together",
       available:
-        "Jestem dost\u0119pny do nowych projekt\u00f3w. Je\u015bli potrzebujesz digital designera \u2014 odezwij si\u0119. Ch\u0119tnie porozmawiam o Twoim kolejnym projekcie!",
+        "Je\u015bli potrzebujesz product designera \u2014 odezwij si\u0119. Ch\u0119tnie porozmawiam o Twoim kolejnym projekcie!",
       backToTop: "\u2191 Powr\u00f3t na g\u00f3r\u0119",
     },
     // Contact
@@ -245,6 +248,7 @@ export const translations = {
       role: "Moja rola:",
       year: "Rok:",
       service: "\u015awiadczone us\u0142ugi:",
+      platform: "Platforma",
       problem: "Problem",
       designQuestion: "Pytanie projektowe",
       research: "Research",
@@ -252,6 +256,8 @@ export const translations = {
       iterations: "Iteracje",
       process: "Proces",
       solution: "Rozwi\u0105zanie",
+      background: "Kontekst",
+      scope: "Co zrobili\u015bmy",
       results: "Wyniki",
       nextProject: "Nast\u0119pny projekt",
       learnings: "Wnioski",

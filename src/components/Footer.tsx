@@ -1,22 +1,38 @@
 "use client";
 
+import { useRef, useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { useLanguage } from "@/i18n/LanguageContext";
 
 const socials = [
-  { name: "Instagram", href: "https://www.instagram.com/tamermagdy07/" },
-  { name: "Twitter", href: "https://twitter.com/tamermagdy07" },
-  { name: "LinkedIn", href: "https://www.linkedin.com/in/tamermagdy/" },
-  { name: "Dribbble", href: "https://dribbble.com/TamerMagdy" },
+  { name: "Behance", href: "https://www.behance.net/miloszzemla" },
+  { name: "Dribbble", href: "https://dribbble.com/miloszzemla" },
+  { name: "LinkedIn", href: "https://www.linkedin.com/in/miloszzemla/" },
 ];
 
 export default function Footer() {
   const { t } = useLanguage();
+  const footerRef = useRef<HTMLElement>(null);
+  const [footerHeight, setFooterHeight] = useState(0);
+
+  useEffect(() => {
+    const updateHeight = () => {
+      if (footerRef.current) {
+        setFooterHeight(footerRef.current.offsetHeight);
+      }
+    };
+    updateHeight();
+    window.addEventListener("resize", updateHeight);
+    return () => window.removeEventListener("resize", updateHeight);
+  }, []);
 
   const marqueeText = `${t.footer.marquee} \u00A0\u00A0\u00A0 ${t.footer.marquee} \u00A0\u00A0\u00A0 ${t.footer.marquee} \u00A0\u00A0\u00A0 ${t.footer.marquee} \u00A0\u00A0\u00A0 `;
 
   return (
-    <footer className="relative flex min-h-[80vh] md:min-h-screen w-full flex-col justify-end bg-dark overflow-hidden px-0 pt-16 md:pt-24 pb-8 md:pb-12">
+    <>
+      {/* Spacer to account for fixed footer height */}
+      <div style={{ height: footerHeight }} />
+      <footer ref={footerRef} className="fixed bottom-0 left-0 right-0 z-0 flex min-h-[60vh] md:min-h-[75vh] w-full flex-col justify-end bg-dark overflow-hidden px-0 pt-16 md:pt-24 pb-8 md:pb-12">
       <div
         className="absolute opacity-5 pointer-events-none"
         style={{
@@ -56,9 +72,9 @@ export default function Footer() {
       </div>
 
       {/* Middle: Social + Info */}
-      <div className="relative z-10 mx-auto flex w-[92%] flex-col md:flex-row items-start justify-between gap-10 md:gap-16 lg:gap-64 mb-16 md:mb-24">
+      <div className="relative z-10 mx-auto flex w-[92%] flex-col md:flex-row items-start justify-between gap-10 md:gap-16 lg:gap-64 mt-12 md:mt-16 mb-16 md:mb-24">
         {/* Social links */}
-        <div className="flex w-full md:w-1/4 flex-col gap-3 md:gap-4">
+        <div className="flex w-full md:w-1/4 flex-row md:flex-col gap-4 md:gap-4 flex-wrap">
           {socials.map((social) => (
             <a
               key={social.name}
@@ -85,10 +101,10 @@ export default function Footer() {
         {/* Email */}
         <div className="md:w-1/3">
           <a
-            href="mailto:hello@martintaylor.com?subject=👋"
+            href="mailto:miloszzemla@gmail.com?subject=👋"
             className="text-[18px] md:text-[20px] font-medium leading-[1.5] tracking-[-0.4px] md:tracking-[-0.6px] text-cream underline underline-offset-4 decoration-cream/40 transition-opacity hover:opacity-60"
           >
-            hello@martintaylor.com
+            miloszzemla@gmail.com
           </a>
         </div>
 
@@ -109,5 +125,6 @@ export default function Footer() {
         </div>
       </div>
     </footer>
+    </>
   );
 }

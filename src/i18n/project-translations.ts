@@ -166,6 +166,29 @@ export const projectTranslations: Record<string, { en: ProjectOverride; pl: Proj
         { text: "Nigdy nie karz za przerwany streak. 'Drugie \u017cycie' zamieni\u0142o frustracj\u0119 w wdzi\u0119czno\u015b\u0107." },
       ],
       resultsNote: "Dane po 8 tygodniach soft launch na 15% bazy.",
+      scope: [
+        {
+          title: "Kompleksowy redesign aplikacji",
+          description: "Przeprojektowanie kluczowych ekranów — home, wyszukiwarka, karta produktu, koszyk i checkout — poprawa użyteczności i spójności wizualnej.",
+        },
+        {
+          title: "Badania użytkowników i testy",
+          description: "10 wywiadów z heavy shopperami i churned users, analiza kohortowa oraz benchmark 6 konkurencyjnych programów lojalnościowych — każda decyzja poparta danymi.",
+        },
+        {
+          title: "Fundamenty design systemu",
+          description: "Stworzenie biblioteki komponentów i design tokenów, skracając czas hand-offu design→dev i zapewniając spójność między zespołami.",
+        },
+        {
+          title: "Decyzje oparte na danych",
+          description: "Współpraca z zespołem analitycznym — definicja KPI, analiza kohortowa i walidacja każdej iteracji na realnych danych przed skalowaniem.",
+        },
+      ],
+      beforeAfter: {
+        before: "/assets/images/lisek-before.webp",
+        after: "/assets/images/lisek-after.webp",
+        alt: "Aplikacja Lisek przed i po redesignie",
+      },
     },
   },
 

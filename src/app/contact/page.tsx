@@ -29,6 +29,7 @@ export default function ContactPage() {
 
   return (
     <>
+      <main className="relative z-10 bg-[var(--color-cream)]">
       <Navbar />
 
       {/* Header */}
@@ -190,6 +191,7 @@ export default function ContactPage() {
           </form>
         </div>
       </section>
+      </main>
 
       <Footer />
     </>

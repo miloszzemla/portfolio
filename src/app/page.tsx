@@ -11,14 +11,16 @@ import Footer from "@/components/Footer";
 export default function Home() {
   return (
     <>
-      <Navbar />
-      <HeroAlt />
-      <FeaturedWork />
-      <OtherProjects />
-      <About />
-      <Experience />
-      <Services />
-      <Slider />
+      <main className="relative z-10 bg-[var(--color-cream)]">
+        <Navbar />
+        <HeroAlt />
+        <FeaturedWork />
+        <OtherProjects />
+        <About />
+        <Experience />
+        <Services />
+        <Slider />
+      </main>
       <Footer />
     </>
   );

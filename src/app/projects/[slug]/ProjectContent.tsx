@@ -24,6 +24,7 @@ export default function ProjectContent({ project: rawProject, nextProject: rawNe
 
   return (
     <>
+      <main className="relative z-10 bg-[var(--color-cream)]">
       <Navbar />
 
       {/* ===== HERO ===== */}
@@ -60,7 +61,7 @@ export default function ProjectContent({ project: rawProject, nextProject: rawNe
               {[
                 { label: t.project.role, value: project.role },
                 { label: t.project.service, value: project.services },
-                { label: "Platform", value: project.platform },
+                { label: t.project.platform, value: project.platform },
               ].filter(group => group.value).map((group) => (
                 <div key={group.label} className="flex flex-col gap-1">
                   <span className="text-[13px] font-medium text-dark/55">{group.label}</span>
@@ -74,7 +75,6 @@ export default function ProjectContent({ project: rawProject, nextProject: rawNe
 
       {/* ===== COMING SOON ===== */}
       {project.comingSoon ? (
-        <>
           <section className="relative w-full bg-cream overflow-hidden py-[80px] md:py-[120px] lg:py-[160px]">
             <div className="grid-bg" />
             <div className="relative z-10 mx-auto w-[92%] max-w-[1400px] flex flex-col items-center text-center gap-6">
@@ -100,8 +100,6 @@ export default function ProjectContent({ project: rawProject, nextProject: rawNe
               </motion.div>
             </div>
           </section>
-          <Footer />
-        </>
       ) : (
       <>
 
@@ -112,7 +110,7 @@ export default function ProjectContent({ project: rawProject, nextProject: rawNe
           <motion.div {...fadeUp} className="flex flex-col md:flex-row gap-10 md:gap-16 lg:gap-24">
             <div className="w-full md:w-[55%] flex flex-col gap-4 md:gap-6">
               <h2 className="text-[16px] md:text-[18px] font-medium tracking-[-0.3px] text-dark/70">
-                Background
+                {t.project.background}
               </h2>
               <p className="font-space text-[24px] md:text-[28px] lg:text-[32px] font-medium leading-[1.4] tracking-[-0.5px] md:tracking-[-1px] text-dark">
                 {project.description}
@@ -122,7 +120,7 @@ export default function ProjectContent({ project: rawProject, nextProject: rawNe
               {[
                 { label: t.project.role, value: project.role },
                 { label: t.project.service, value: project.services },
-                { label: "Platform", value: project.platform },
+                { label: t.project.platform, value: project.platform },
               ].filter(group => group.value).map((group) => (
                 <div key={group.label} className="flex flex-col gap-1">
                   <span className="text-[13px] font-medium text-dark/55">{group.label}</span>
@@ -165,7 +163,7 @@ export default function ProjectContent({ project: rawProject, nextProject: rawNe
             <motion.div {...fadeUp} className="flex flex-col gap-10 md:gap-12">
               <div className="flex w-full flex-col gap-4">
                 <h2 className="text-[20px] md:text-[22px] lg:text-[24px] font-medium leading-[1.4] tracking-[-0.8px] text-dark">
-                  What was done
+                  {t.project.scope}
                 </h2>
                 <div className="h-[2px] w-full bg-dark" />
               </div>
@@ -356,9 +354,10 @@ export default function ProjectContent({ project: rawProject, nextProject: rawNe
         </div>
       </section>
 
-      <Footer />
       </>
       )}
+      </main>
+      <Footer />
     </>
   );
 }
