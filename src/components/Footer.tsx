@@ -83,7 +83,7 @@ export default function Footer() {
               rel="noopener noreferrer"
               className="text-[20px] md:text-[22px] lg:text-[24px] font-medium leading-[1.5] tracking-[-0.6px] lg:tracking-[-0.8px] text-cream underline underline-offset-4 decoration-cream/40 transition-opacity hover:opacity-60"
             >
-              {social.name} <svg className="inline-block ml-1 -mt-0.5" width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 11L11 5M11 5H6M11 5V10"/></svg>
+              {social.name} <span className="inline-block rotate-45">&#x2191;</span>
             </a>
           ))}
         </div>
