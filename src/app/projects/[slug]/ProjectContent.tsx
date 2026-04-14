@@ -68,6 +68,27 @@ export default function ProjectContent({ project: rawProject, nextProject: rawNe
                   <span className="text-[16px] font-medium text-dark">{group.value}</span>
                 </div>
               ))}
+              {project.team && project.team.length > 0 && (
+                <div className="flex flex-col gap-2">
+                  <span className="text-[13px] font-medium text-dark/55">{t.project.team}</span>
+                  <div className="flex flex-wrap" style={{ gap: "6px" }}>
+                    {project.team.map((member, i) => (
+                      <button key={i} className="group/tip relative focus:outline-none" onClick={(e) => { e.preventDefault(); e.stopPropagation(); const el = e.currentTarget.querySelector('[data-tooltip]') as HTMLElement; if (el) { el.classList.toggle('!opacity-100'); el.classList.toggle('!translate-y-0'); setTimeout(() => { el.classList.remove('!opacity-100', '!translate-y-0'); }, 2000); } }}>
+                        {member.role === "Me" ? (
+                          <div className="h-[48px] w-[48px] rounded-full bg-[#3b5998] flex items-center justify-center transition-transform active:scale-90">
+                            <span className="text-[15px] font-semibold text-white">Me</span>
+                          </div>
+                        ) : (
+                          <div className="h-[48px] w-[48px] rounded-full bg-dark flex items-center justify-center transition-transform active:scale-90">
+                            <span className="text-[15px] font-semibold text-cream">{member.role}</span>
+                          </div>
+                        )}
+                        <span data-tooltip className="pointer-events-none absolute -bottom-8 left-1/2 -translate-x-1/2 translate-y-1 text-[12px] font-medium text-dark/70 bg-white border border-dark/10 rounded px-2 py-1 whitespace-nowrap opacity-0 group-hover/tip:opacity-100 group-hover/tip:translate-y-0 transition-all duration-200 shadow-sm">{{ "Me": "Product Designer", "PM": "Project Manager", "FE": "Frontend Developer", "BE": "Backend Developer" }[member.role] || member.role}</span>
+                      </button>
+                    ))}
+                  </div>
+                </div>
+              )}
             </div>
           </div>
         </section>
@@ -127,6 +148,27 @@ export default function ProjectContent({ project: rawProject, nextProject: rawNe
                   <span className="text-[16px] font-medium text-dark">{group.value}</span>
                 </div>
               ))}
+              {project.team && project.team.length > 0 && (
+                <div className="flex flex-col gap-2">
+                  <span className="text-[13px] font-medium text-dark/55">{t.project.team}</span>
+                  <div className="flex flex-wrap" style={{ gap: "6px" }}>
+                    {project.team.map((member, i) => (
+                      <button key={i} className="group/tip relative focus:outline-none" onClick={(e) => { e.preventDefault(); e.stopPropagation(); const el = e.currentTarget.querySelector('[data-tooltip]') as HTMLElement; if (el) { el.classList.toggle('!opacity-100'); el.classList.toggle('!translate-y-0'); setTimeout(() => { el.classList.remove('!opacity-100', '!translate-y-0'); }, 2000); } }}>
+                        {member.role === "Me" ? (
+                          <div className="h-[48px] w-[48px] rounded-full bg-[#3b5998] flex items-center justify-center transition-transform active:scale-90">
+                            <span className="text-[15px] font-semibold text-white">Me</span>
+                          </div>
+                        ) : (
+                          <div className="h-[48px] w-[48px] rounded-full bg-dark flex items-center justify-center transition-transform active:scale-90">
+                            <span className="text-[15px] font-semibold text-cream">{member.role}</span>
+                          </div>
+                        )}
+                        <span data-tooltip className="pointer-events-none absolute -bottom-8 left-1/2 -translate-x-1/2 translate-y-1 text-[12px] font-medium text-dark/70 bg-white border border-dark/10 rounded px-2 py-1 whitespace-nowrap opacity-0 group-hover/tip:opacity-100 group-hover/tip:translate-y-0 transition-all duration-200 shadow-sm">{{ "Me": "Product Designer", "PM": "Project Manager", "FE": "Frontend Developer", "BE": "Backend Developer" }[member.role] || member.role}</span>
+                      </button>
+                    ))}
+                  </div>
+                </div>
+              )}
             </div>
           </motion.div>
         </div>
@@ -296,17 +338,20 @@ export default function ProjectContent({ project: rawProject, nextProject: rawNe
         <section className="relative w-full bg-cream overflow-hidden py-[60px] md:py-[100px] lg:py-[120px]">
           <div className="grid-bg" />
           <div className="relative z-10 mx-auto w-[92%] max-w-[1400px]">
-            <motion.div {...fadeUp} className="max-w-[680px]">
-              <h2 className="text-[16px] md:text-[18px] font-medium tracking-[-0.3px] text-dark/70 mb-8 md:mb-12">
+            <motion.div {...fadeUp} className="flex flex-col gap-0">
+              <h2 className="text-[16px] md:text-[18px] font-medium tracking-[-0.3px] text-dark/70 mb-10 md:mb-14">
                 {t.project.learnings}
               </h2>
-              <div className="flex flex-col gap-6">
-                {project.learnings.map((learning, i) => (
-                  <p key={i} className="text-[17px] md:text-[18px] font-dm font-medium leading-[1.7] text-dark/65">
+              {project.learnings.map((learning, i) => (
+                <div key={i} className={`flex items-start gap-6 md:gap-10 py-8 md:py-10 ${i !== 0 ? "border-t border-dark/10" : ""}`}>
+                  <span className="text-[56px] md:text-[72px] lg:text-[96px] font-bold leading-[0.85] tracking-[-3px] md:tracking-[-5px] text-dark/8 shrink-0 w-[60px] md:w-[80px] lg:w-[100px]">
+                    {String(i + 1)}
+                  </span>
+                  <p className="text-[20px] md:text-[24px] lg:text-[28px] font-space font-medium leading-[1.45] tracking-[-0.5px] md:tracking-[-1px] text-dark pt-2 md:pt-3">
                     {learning.text}
                   </p>
-                ))}
-              </div>
+                </div>
+              ))}
             </motion.div>
           </div>
         </section>
@@ -325,17 +370,25 @@ export default function ProjectContent({ project: rawProject, nextProject: rawNe
 
           <Link
             href={`/projects/${nextProject.slug}`}
-            className="group flex flex-col lg:flex-row lg:h-[500px] xl:h-[650px] w-full lg:items-end justify-between overflow-hidden"
+            className="group flex flex-col lg:flex-row lg:h-[400px] xl:h-[500px] w-full lg:items-end justify-between overflow-hidden"
           >
-            <div className="relative w-full lg:hidden aspect-[16/10] overflow-hidden">
-              <Image src={nextProject.thumbnail} alt={nextProject.title} fill className="object-cover object-top transition-transform duration-700 group-hover:scale-[1.02]" />
+            {/* Image - mobile */}
+            <div className="relative w-full lg:hidden aspect-[4/3] md:aspect-[16/9] overflow-hidden">
+              {nextProject.thumbnail ? (
+                <Image src={nextProject.thumbnail} alt={nextProject.title} fill className="object-cover object-center transition-transform duration-700 group-hover:scale-[1.02]" />
+              ) : (
+                <div className="absolute inset-0 bg-dark/5 border-2 border-dashed border-dark/15 flex items-center justify-center">
+                  <span className="text-[16px] font-medium text-dark/30">Coming soon</span>
+                </div>
+              )}
             </div>
+            {/* Details */}
             <div className="flex w-full lg:w-[30%] flex-col justify-between pt-4 lg:pr-12 lg:h-full gap-4 lg:gap-0">
-              <h3 className="text-[28px] md:text-[36px] lg:text-[44px] font-medium leading-[1.4] tracking-[-1px] lg:tracking-[-2px] text-dark">
-                {nextProject.title}
-              </h3>
               <div className="flex flex-col items-start gap-4 lg:gap-6">
-                <p className="text-[18px] md:text-[20px] lg:text-[22px] font-medium leading-[1.5] tracking-[-0.4px] md:tracking-[-0.6px] text-dark">
+                <h3 className="text-[28px] md:text-[36px] lg:text-[44px] font-medium leading-[1.4] tracking-[-1px] lg:tracking-[-2px] text-dark">
+                  {nextProject.title}
+                </h3>
+                <p className="text-[18px] md:text-[20px] lg:text-[22px] font-medium leading-[1.5] tracking-[-0.6px] text-dark/65">
                   {nextProject.description}
                 </p>
                 <div className="flex flex-wrap gap-2">
@@ -347,8 +400,15 @@ export default function ProjectContent({ project: rawProject, nextProject: rawNe
                 </div>
               </div>
             </div>
+            {/* Image - desktop */}
             <div className="relative hidden lg:block h-full w-[70%] overflow-hidden">
-              <Image src={nextProject.thumbnail} alt={nextProject.title} fill className="object-cover object-top transition-transform duration-700 group-hover:scale-[1.02]" />
+              {nextProject.thumbnail ? (
+                <Image src={nextProject.thumbnail} alt={nextProject.title} fill className="object-contain object-center transition-transform duration-700 group-hover:scale-[1.02]" />
+              ) : (
+                <div className="absolute inset-0 bg-dark/5 border-2 border-dashed border-dark/15 flex items-center justify-center">
+                  <span className="text-[18px] font-medium text-dark/30">Coming soon</span>
+                </div>
+              )}
             </div>
           </Link>
         </div>

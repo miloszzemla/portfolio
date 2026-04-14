@@ -106,9 +106,9 @@ export interface Project {
 export const projects: Project[] = [
   {
     slug: "lisek",
-    title: "Lisek App",
-    subtitle: "Redesign of Lisek's key surfaces as the app scaled past 5M+ orders.",
-    description: "Redesign of Lisek's key surfaces as the app scaled past 5M+ orders.",
+    title: "Lisek Q-Commerce",
+    subtitle: "End-to-end redesign of a q-commerce app with 5M+ orders.",
+    description: "End-to-end redesign of a q-commerce app with 5M+ orders.",
     tag: ["Mobile App", "Web App"],
     thumbnail: "/assets/images/lisek_cover.webp",
     heroImage: "/assets/images/lisek_cover.webp",
@@ -116,13 +116,13 @@ export const projects: Project[] = [
     // Role & Team
     role: "Product Designer",
     team: [
-      { name: "Miłosz", role: "Product Designer" },
-      { name: "PM", role: "Product Manager" },
-      { name: "2 devs", role: "Developers" },
-      { name: "Analityk", role: "Data Analyst" },
+      { name: "Miłosz", role: "Me" },
+      { name: "PM", role: "PM" },
+      { name: "FE", role: "FE" },
+      { name: "BE", role: "BE" },
     ],
     timeline: "~4 miesiące",
-    platform: "iOS & Android",
+    platform: "iOS, Android & Web",
     services: "Product Design, Loyalty System Design",
     // Problem
     problemStatement:
@@ -196,19 +196,9 @@ export const projects: Project[] = [
     },
     solutions: [
       {
-        image: "/assets/images/project-lisek.png",
-        alt: "Home with streak progress bar",
-        caption: "Streak progress on home — always visible, in context of purchase decision",
-      },
-      {
-        image: "/assets/images/project-lisek.png",
-        alt: "Loyalty profile with tiers",
-        caption: "Loyalty profile — current tier, benefits, reward history",
-      },
-      {
-        image: "/assets/images/project-lisek.png",
-        alt: "Post-checkout instant reward",
-        caption: "Instant reward after checkout — tangible, not abstract points",
+        image: "/assets/images/lisek-design-system.webp",
+        alt: "Lisek design system — global color tokens and color palette",
+        caption: "Design system foundations — global color tokens ensuring consistency across the entire product",
       },
     ],
     results: [
@@ -234,10 +224,10 @@ export const projects: Project[] = [
     meta: "Lisek  ·  Q-Commerce  ·  2026  ·  Product Design",
     role: "Product Designer",
     team: [
-      { name: "Miłosz", role: "Product Designer" },
-      { name: "PM", role: "Product Manager" },
-      { name: "2 devs", role: "Developers" },
-      { name: "Analityk", role: "Data Analyst" },
+      { name: "Miłosz", role: "Me" },
+      { name: "PM", role: "PM" },
+      { name: "FE", role: "FE" },
+      { name: "BE", role: "BE" },
     ],
     timeline: "~4 miesiące",
     platform: "iOS & Android",
@@ -325,6 +315,62 @@ export const projects: Project[] = [
       { text: "Natychmiastowa gratyfikacja > odroczona nagroda. 'Darmowy sok teraz' motywuje bardziej niż '500 punktów zamień na 10 zł za miesiąc'." },
       { text: "Kara za przerwanie to najgorszy pattern. 'Drugie życie' zamiast kary zmieniło sentyment z frustracji na wdzięczność." },
       { text: "Widoczność > głębokość. Progress bar na home (nie w ukrytej zakładce) zwiększył engagement o 3x." },
+    ],
+  },
+  {
+    slug: "lisek-bazaar",
+    title: "Lisek Bazaar",
+    subtitle: "Marketplace Expansion — From Groceries to Everything",
+    description: "Non-grocery marketplace inside Poland's leading q-commerce app. New revenue stream, same delivery promise.",
+    tag: "Mobile App",
+    thumbnail: "",
+    heroImage: "",
+    meta: "Lisek  ·  Marketplace  ·  2026  ·  Product Design",
+    role: "Product Designer",
+    services: "Product Design, Mobile Design",
+    platform: "iOS & Android",
+    problemStatement:
+      "Lisek's revenue depended entirely on groceries. Users wanted more, competitors were expanding. No marketplace infrastructure existed in the app.",
+    designQuestion:
+      "Turn a grocery app into a marketplace without breaking the core experience.",
+    process: [],
+    iterations: [
+      {
+        version: "V1",
+        title: "Categories-first browsing",
+        description: "Grid of product categories as the primary entry point. Familiar e-commerce pattern adapted to Lisek's visual language.",
+        wins: [],
+        fails: [],
+      },
+      {
+        version: "V2",
+        title: "Order & delivery flow",
+        description: "Separate delivery timelines for marketplace items. Users see grocery and non-grocery orders split clearly — no confusion.",
+        wins: [],
+        fails: [],
+      },
+    ],
+    solutions: [
+      {
+        image: "/assets/images/lisek-cover.png",
+        alt: "Bazaar category browsing",
+        caption: "Category grid — familiar browsing adapted to Lisek's design system",
+      },
+      {
+        image: "/assets/images/lisek-cover.png",
+        alt: "Bazaar order confirmation",
+        caption: "Split delivery view — marketplace items with separate delivery timeline",
+      },
+    ],
+    results: [
+      { icon: "🛍️", label: "Categories launched", value: "20+" },
+      { icon: "📦", label: "New product vertical", value: "Non-grocery" },
+      { icon: "🚀", label: "Time to market", value: "3 months" },
+    ],
+    resultsNote: "Launched as new tab in Lisek app.",
+    learnings: [
+      { text: "Marketplace inside a grocery app works — if delivery expectations are set clearly." },
+      { text: "Category browsing beats search for discovery in a new vertical." },
     ],
   },
   {
@@ -461,153 +507,6 @@ export const projects: Project[] = [
       { icon: "💬", label: "Shares per list", value: "3.2 avg" },
     ],
     resultsNote: "Wstępne dane po 6 tygodniach od launchu MVP.",
-  },
-  {
-    slug: "olimpia",
-    title: "Olimpia",
-    subtitle: "Landing page redesign for conversion",
-    description: "Boosting sales & engagement with landing page redesign",
-    tag: "Web Design",
-    thumbnail: "",
-    heroImage: "",
-    meta: "Olimpia  ·  Fitness  ·  2024  ·  Web Design",
-    liveUrl: "#",
-    role: "Web Designer",
-    services: "Web Design, Conversion Optimization",
-    problemStatement:
-      "Olimpia's landing page had high traffic but low conversion — visitors weren't signing up for memberships.",
-    problemMetrics: "Conversion rate: 1.8%  ·  Bounce rate: 72%",
-    designQuestion:
-      "How to turn page visitors into gym members?",
-    process: [
-      { label: "Discovery", text: "Heatmap analysis + A/B test audit of existing page" },
-      { label: "Insight", text: "Users scrolled past pricing — CTA was buried below the fold" },
-      { label: "Iteracja", text: "Tested hero-first CTA vs sticky pricing bar" },
-      { label: "Decyzja", text: "Sticky pricing bar + social proof section above fold" },
-    ],
-    solutions: [
-      {
-        image: "/assets/images/project-olimpia.webp",
-        alt: "New hero section",
-        caption: "New hero — clear value prop with immediate CTA",
-      },
-      {
-        image: "/assets/images/project-olimpia.webp",
-        alt: "Pricing section",
-        caption: "Sticky pricing bar — always visible, reduces friction",
-      },
-      {
-        image: "/assets/images/project-olimpia.webp",
-        alt: "Social proof",
-        caption: "Social proof — member testimonials above the fold",
-      },
-    ],
-    results: [
-      { icon: "📈", label: "Conversion rate", value: "1.8% → 4.2%" },
-      { icon: "📉", label: "Bounce rate", value: "72% → 48%" },
-      { icon: "⏱️", label: "Time to CTA", value: "-60%" },
-    ],
-  },
-  {
-    slug: "roomzilla",
-    title: "Roomzilla",
-    subtitle: "Room booking system redesign",
-    description: "An e-commerce website that sells yummy desserts online",
-    tag: "Personal Project",
-    thumbnail: "",
-    heroImage: "",
-    meta: "Roomzilla  ·  SaaS  ·  2024  ·  Web Design",
-    liveUrl: "#",
-    role: "Product Designer",
-    services: "Product Design, Web Design",
-    problemStatement:
-      "Booking a meeting room in a large office takes too many clicks. Employees default to ad-hoc room grabs, causing conflicts.",
-    designQuestion:
-      "How to make room booking as fast as sending a message?",
-    process: [
-      { label: "Discovery", text: "Shadowed 12 employees booking rooms over 1 week" },
-      { label: "Insight", text: "Most bookings are recurring — same room, same time, every week" },
-      { label: "Iteracja", text: "Tested calendar-first vs map-first booking flow" },
-      { label: "Decyzja", text: "Map-first with quick-repeat — visual + fast" },
-    ],
-    solutions: [
-      {
-        image: "/assets/images/project-roomzilla.webp",
-        alt: "Map view",
-        caption: "Map view — see available rooms at a glance",
-      },
-      {
-        image: "/assets/images/project-roomzilla.webp",
-        alt: "Quick booking",
-        caption: "Quick booking — 2-tap reservation from floor plan",
-      },
-      {
-        image: "/assets/images/project-roomzilla.webp",
-        alt: "Recurring meetings",
-        caption: "Recurring setup — one-time config, auto-books weekly",
-      },
-    ],
-    results: [
-      { icon: "⏱️", label: "Booking time", value: "3 min → 15s" },
-      { icon: "📉", label: "Room conflicts", value: "-80%" },
-      { icon: "📈", label: "Adoption rate", value: "92%" },
-    ],
-  },
-  {
-    slug: "lisek-bazaar",
-    title: "Lisek Bazaar",
-    subtitle: "Marketplace Expansion — From Groceries to Everything",
-    description: "Non-grocery marketplace inside Poland's leading q-commerce app. New revenue stream, same delivery promise.",
-    tag: "Mobile App",
-    thumbnail: "",
-    heroImage: "",
-    meta: "Lisek  ·  Marketplace  ·  2026  ·  Product Design",
-    role: "Product Designer",
-    services: "Product Design, Mobile Design",
-    platform: "iOS & Android",
-    problemStatement:
-      "Lisek's revenue depended entirely on groceries. Users wanted more, competitors were expanding. No marketplace infrastructure existed in the app.",
-    designQuestion:
-      "Turn a grocery app into a marketplace without breaking the core experience.",
-    process: [],
-    iterations: [
-      {
-        version: "V1",
-        title: "Categories-first browsing",
-        description: "Grid of product categories as the primary entry point. Familiar e-commerce pattern adapted to Lisek's visual language.",
-        wins: [],
-        fails: [],
-      },
-      {
-        version: "V2",
-        title: "Order & delivery flow",
-        description: "Separate delivery timelines for marketplace items. Users see grocery and non-grocery orders split clearly — no confusion.",
-        wins: [],
-        fails: [],
-      },
-    ],
-    solutions: [
-      {
-        image: "/assets/images/lisek-cover.png",
-        alt: "Bazaar category browsing",
-        caption: "Category grid — familiar browsing adapted to Lisek's design system",
-      },
-      {
-        image: "/assets/images/lisek-cover.png",
-        alt: "Bazaar order confirmation",
-        caption: "Split delivery view — marketplace items with separate delivery timeline",
-      },
-    ],
-    results: [
-      { icon: "🛍️", label: "Categories launched", value: "20+" },
-      { icon: "📦", label: "New product vertical", value: "Non-grocery" },
-      { icon: "🚀", label: "Time to market", value: "3 months" },
-    ],
-    resultsNote: "Launched as new tab in Lisek app.",
-    learnings: [
-      { text: "Marketplace inside a grocery app works — if delivery expectations are set clearly." },
-      { text: "Category browsing beats search for discovery in a new vertical." },
-    ],
   },
 ];
 

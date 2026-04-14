@@ -10,8 +10,8 @@ type ProjectOverride = DeepPartial<TranslatableProject>;
 export const projectTranslations: Record<string, { en: ProjectOverride; pl: ProjectOverride }> = {
   lisek: {
     en: {
-      subtitle: "Redesign of Lisek's key surfaces as the app scaled past 5M+ orders.",
-      description: "Redesign of Lisek's key surfaces as the app scaled past 5M+ orders.",
+      subtitle: "End-to-end redesign of a q-commerce app with 5M+ orders.",
+      description: "End-to-end redesign of a q-commerce app with 5M+ orders.",
       tag: ["Mobile App", "Web App"],
       meta: "Lisek  \u00b7  Q-Commerce  \u00b7  2026  \u00b7  Product Design",
       role: "Product Designer",
@@ -61,19 +61,9 @@ export const projectTranslations: Record<string, { en: ProjectOverride; pl: Proj
       process: [],
       solutions: [
         {
-          image: "/assets/images/project-lisek.png",
-          alt: "Home with streak progress bar",
-          caption: "Streak progress on home \u2014 always visible, in context of purchase decision",
-        },
-        {
-          image: "/assets/images/project-lisek.png",
-          alt: "Loyalty profile with tiers",
-          caption: "Loyalty profile \u2014 current tier, benefits, reward history",
-        },
-        {
-          image: "/assets/images/project-lisek.png",
-          alt: "Post-checkout instant reward",
-          caption: "Instant reward after checkout \u2014 tangible, not abstract points",
+          image: "/assets/images/lisek-design-system.webp",
+          alt: "Lisek design system \u2014 global color tokens and color palette",
+          caption: "Design system foundations \u2014 global color tokens ensuring consistency across the entire product",
         },
       ],
       results: [
@@ -89,8 +79,8 @@ export const projectTranslations: Record<string, { en: ProjectOverride; pl: Proj
       resultsNote: undefined,
     },
     pl: {
-      subtitle: "Redesign kluczowych ekran\u00f3w Liska przy skali 5M+ zam\u00f3wie\u0144.",
-      description: "Redesign kluczowych ekran\u00f3w Liska przy skali 5M+ zam\u00f3wie\u0144.",
+      subtitle: "Kompleksowy redesign aplikacji q-commerce z 5M+ zam\u00f3wie\u0144.",
+      description: "Kompleksowy redesign aplikacji q-commerce z 5M+ zam\u00f3wie\u0144.",
       tag: ["Aplikacja mobilna", "Aplikacja webowa"],
       meta: "Lisek  \u00b7  Q-Commerce  \u00b7  2026  \u00b7  Product Design",
       role: "Product Designer",
@@ -140,19 +130,9 @@ export const projectTranslations: Record<string, { en: ProjectOverride; pl: Proj
       process: [],
       solutions: [
         {
-          image: "/assets/images/project-lisek.png",
-          alt: "Home z progress barem streaka",
-          caption: "Progress streaka na home \u2014 zawsze widoczny, w kontek\u015bcie decyzji zakupowej",
-        },
-        {
-          image: "/assets/images/project-lisek.png",
-          alt: "Profil lojalno\u015bciowy z tierami",
-          caption: "Profil lojalno\u015bciowy \u2014 aktualny tier, benefity, historia nagr\u00f3d",
-        },
-        {
-          image: "/assets/images/project-lisek.png",
-          alt: "Nagroda po checkout",
-          caption: "Natychmiastowa nagroda po checkout \u2014 namacalna, nie abstrakcyjne punkty",
+          image: "/assets/images/lisek-design-system.webp",
+          alt: "Design system Liska \u2014 globalne tokeny kolor\u00f3w i paleta",
+          caption: "Fundamenty design systemu \u2014 globalne tokeny kolor\u00f3w zapewniaj\u0105ce sp\u00f3jno\u015b\u0107 w ca\u0142ym produkcie",
         },
       ],
       results: [
@@ -432,119 +412,217 @@ export const projectTranslations: Record<string, { en: ProjectOverride; pl: Proj
     },
   },
 
-  olimpia: {
+  topdraw: {
     en: {
-      subtitle: "Landing page redesign for conversion",
-      description: "Boosting sales & engagement with landing page redesign",
-      tag: "Web Design",
-      role: "Web Designer",
-      services: "Web Design, Conversion Optimization",
+      subtitle: "Collectible card marketplace for TCG community",
+      description: "Marketplace for buying, selling and trading collectible cards with real-time pricing and community features.",
+      tag: "Web App",
+      role: "Product Designer",
+      services: "Product Design, Web Design",
+      platform: "Web",
       problemStatement:
-        "Olimpia\u2019s landing page had high traffic but low conversion \u2014 visitors weren\u2019t signing up for memberships.",
-      problemMetrics: "Conversion rate: 1.8%  \u00b7  Bounce rate: 72%",
+        "TCG collectors lack a trusted, dedicated marketplace. Existing options are fragmented across forums, social media and general platforms like eBay.",
       designQuestion:
-        "How to turn page visitors into gym members?",
-      process: [
-        { label: "Discovery", text: "Heatmap analysis + A/B test audit of existing page" },
-        { label: "Insight", text: "Users scrolled past pricing \u2014 CTA was buried below the fold" },
-        { label: "Iteration", text: "Tested hero-first CTA vs sticky pricing bar" },
-        { label: "Decision", text: "Sticky pricing bar + social proof section above fold" },
-      ],
+        "Build a marketplace collectors actually trust.",
       solutions: [
-        { image: "/assets/images/project-olimpia.webp", alt: "New hero section", caption: "New hero \u2014 clear value prop with immediate CTA" },
-        { image: "/assets/images/project-olimpia.webp", alt: "Pricing section", caption: "Sticky pricing bar \u2014 always visible, reduces friction" },
-        { image: "/assets/images/project-olimpia.webp", alt: "Social proof", caption: "Social proof \u2014 member testimonials above the fold" },
+        { image: "/assets/images/topdraw_cover.webp", alt: "Card marketplace homepage", caption: "Homepage with search, browse sets, and fresh listings" },
+        { image: "/assets/images/topdraw_cover.webp", alt: "Card detail page", caption: "Card detail with price history, listings, and condition grades" },
       ],
       results: [
-        { icon: "\ud83d\udcc8", label: "Conversion rate", value: "1.8% \u2192 4.2%" },
-        { icon: "\ud83d\udcc9", label: "Bounce rate", value: "72% \u2192 48%" },
-        { icon: "\u23f1\ufe0f", label: "Time to CTA", value: "-60%" },
+        { icon: "\ud83c\udccf", label: "Cards listed", value: "2.4k+" },
+        { icon: "\ud83d\udc65", label: "Active sellers", value: "180+" },
+        { icon: "\u26a1", label: "Avg. listing time", value: "<30s" },
+      ],
+      resultsNote: "Early metrics from beta launch.",
+    },
+    pl: {
+      subtitle: "Marketplace kart kolekcjonerskich dla spo\u0142eczno\u015bci TCG",
+      description: "Marketplace do kupowania, sprzedawania i wymiany kart kolekcjonerskich z cenami w czasie rzeczywistym i funkcjami spo\u0142eczno\u015bciowymi.",
+      tag: "Aplikacja webowa",
+      role: "Product Designer",
+      services: "Product Design, Web Design",
+      platform: "Web",
+      problemStatement:
+        "Kolekcjonerzy kart TCG nie maj\u0105 zaufanego, dedykowanego marketplace\u2019u. Istniej\u0105ce opcje s\u0105 rozproszone po forach, social mediach i og\u00f3lnych platformach jak eBay.",
+      designQuestion:
+        "Zbudowa\u0107 marketplace, kt\u00f3remu kolekcjonerzy naprawd\u0119 ufaj\u0105.",
+      solutions: [
+        { image: "/assets/images/topdraw_cover.webp", alt: "Strona g\u0142\u00f3wna marketplace", caption: "Strona g\u0142\u00f3wna z wyszukiwark\u0105, przegl\u0105daniem set\u00f3w i nowymi ofertami" },
+        { image: "/assets/images/topdraw_cover.webp", alt: "Strona karty", caption: "Szczeg\u00f3\u0142y karty z histori\u0105 cen, ofertami i ocen\u0105 stanu" },
+      ],
+      results: [
+        { icon: "\ud83c\udccf", label: "Wystawione karty", value: "2.4k+" },
+        { icon: "\ud83d\udc65", label: "Aktywni sprzedawcy", value: "180+" },
+        { icon: "\u26a1", label: "\u015ar. czas wystawienia", value: "<30s" },
+      ],
+      resultsNote: "Wst\u0119pne dane z fazy beta.",
+    },
+  },
+
+  "lisek-loyalty": {
+    en: {
+      subtitle: "Loyalty Program \u2014 Streak + Tiers + Instant Rewards",
+      description: "Streak-based loyalty system for Poland\u2019s leading q-commerce app with 5M+ orders. Order frequency up 64%.",
+      tag: "Mobile App",
+      role: "Product Designer",
+      services: "Product Design, Loyalty System Design",
+      platform: "iOS & Android",
+      problemStatement:
+        "Lisek has 5M+ orders, but most users order sporadically \u2014 1.4x/month. No mechanism to reward regularity. Price decided, not brand relationship.",
+      problemMetrics: "Frequency: 1.4/mo  \u00b7  60d churn: 41%  \u00b7  No loyalty program",
+      designQuestion:
+        "How to build a loyalty system that rewards purchase frequency, not just basket value?",
+      userQuote: {
+        text: "I have Zabka, Biedronka, Lidl apps \u2014 points everywhere that I never spend. I don\u2019t want another program, I just want to pay less for what I buy regularly.",
+        author: "Kasia, 28, switched from Lisek to Zabka",
+      },
+      researchMethods: [
+        "10 user interviews (heavy shoppers + churned users)",
+        "Cohort analysis \u2014 what separates 4+/mo users from the rest",
+        "Benchmark of 6 loyalty programs (Starbucks Rewards, Zappka, Biedronka, Bolt, Uber One, Amazon Fresh)",
+      ],
+      researchInsights: [
+        { text: "Users ignore \u2018collect points\u2019 \u2014 rewards too distant", stat: "8/10" },
+        { text: "Strongest motivator is free delivery, not percentage discounts", stat: "#1" },
+        { text: "4+/mo users have higher AOV (+22%) \u2014 it\u2019s habit, not price", stat: "+22%" },
+        { text: "Progress bar (streak) programs have 2x higher engagement than points-based", stat: "2x" },
+      ],
+      iterations: [
+        {
+          version: "V1",
+          title: "Classic points program",
+          description: "1 PLN = 1 point. Rewards catalog. Simple to understand, but 12% engagement \u2014 users said \u2018another program I won\u2019t use\u2019.",
+          wins: ["Simple to understand"],
+          fails: ["12% engagement", "Users didn\u2019t see the value"],
+        },
+        {
+          version: "V2",
+          title: "Streak-based \u2014 \u2018Your Week\u2019",
+          description: "Order 3x/week \u2192 free delivery for the entire next week. Visible progress bar on home.",
+          wins: ["3x higher engagement vs V1", "Rules understood in 5 seconds", "FOMO effect from progress bar"],
+          fails: ["Weekly cycle too rigid", "Breaking streak causes frustration"],
+        },
+        {
+          version: "V3",
+          title: "Hybrid \u2014 Streak + Tiers + Instant Rewards",
+          description: "Flexible weekly streak + tier system (Lisek \u2192 Lis \u2192 Golden Lis) + instant perks after every order. Streak recovery instead of punishment.",
+          wins: ["Highest engagement", "Instant gratification", "No frustration from breaking"],
+          fails: [],
+        },
+      ],
+      solutions: [
+        { image: "/assets/images/project-lisek.png", alt: "Home with streak progress bar", caption: "Streak bar on home \u2014 always visible, in context of purchase decision. Not hidden in a tab." },
+        { image: "/assets/images/project-lisek.png", alt: "Loyalty profile with tiers", caption: "Loyalty profile \u2014 current tier, benefits, reward history. Zero unnecessary animations." },
+        { image: "/assets/images/project-lisek.png", alt: "Post-checkout reward moment", caption: "Instant reward after order \u2014 \u2018Free juice added!\u2019 Tangible, not abstract points." },
+        { image: "/assets/images/project-lisek.png", alt: "Streak recovery", caption: "Second life instead of punishment \u2014 \u2018Place an order by Friday and your streak is back\u2019. Fair play." },
+      ],
+      results: [
+        { icon: "\ud83d\udcc8", label: "Order frequency", value: "+64%" },
+        { icon: "\ud83d\udcc9", label: "60d churn", value: "-12pp" },
+        { icon: "\ud83d\udcb0", label: "AOV", value: "+8%" },
+        { icon: "\u2b50", label: "Program NPS", value: "47" },
+      ],
+      resultsNote: "Data after 8-week soft launch on 15% of user base. Full rollout in progress.",
+      testimonial: {
+        quote: "The loyalty program was our missing puzzle piece. Milosz designed a system that doesn\u2019t feel like another loyalty card \u2014 users say it\u2019s \u2018a game they want to play\u2019.",
+        author: "Marta Wi\u015bniewska",
+        role: "Head of Product, Lisek",
+      },
+      learnings: [
+        { text: "Reward frequency, not basket value. In q-commerce, customer value is regularity. Streaks beat points." },
+        { text: "Instant gratification > delayed reward. \u2018Free juice now\u2019 motivates more than \u2018redeem 500 points for 10 PLN next month\u2019." },
+        { text: "Punishment for breaking is the worst pattern. \u2018Second life\u2019 instead of penalty turned frustration into gratitude." },
+        { text: "Visibility > depth. Progress bar on home (not in a hidden tab) increased engagement 3x." },
+      ],
+    },
+    pl: {},
+  },
+
+  "lisek-bazaar": {
+    en: {
+      subtitle: "Marketplace Expansion \u2014 From Groceries to Everything",
+      description: "Non-grocery marketplace inside Poland\u2019s leading q-commerce app. New revenue stream, same delivery promise.",
+      tag: "Mobile App",
+      role: "Product Designer",
+      services: "Product Design, Mobile Design",
+      platform: "iOS & Android",
+      problemStatement:
+        "Lisek\u2019s revenue depended entirely on groceries. Users wanted more, competitors were expanding. No marketplace infrastructure existed in the app.",
+      designQuestion:
+        "Turn a grocery app into a marketplace without breaking the core experience.",
+      iterations: [
+        {
+          version: "V1",
+          title: "Categories-first browsing",
+          description: "Grid of product categories as the primary entry point. Familiar e-commerce pattern adapted to Lisek\u2019s visual language.",
+          wins: [],
+          fails: [],
+        },
+        {
+          version: "V2",
+          title: "Order & delivery flow",
+          description: "Separate delivery timelines for marketplace items. Users see grocery and non-grocery orders split clearly \u2014 no confusion.",
+          wins: [],
+          fails: [],
+        },
+      ],
+      solutions: [
+        { image: "/assets/images/lisek-cover.png", alt: "Bazaar category browsing", caption: "Category grid \u2014 familiar browsing adapted to Lisek\u2019s design system" },
+        { image: "/assets/images/lisek-cover.png", alt: "Bazaar order confirmation", caption: "Split delivery view \u2014 marketplace items with separate delivery timeline" },
+      ],
+      results: [
+        { icon: "\ud83d\uded2", label: "Categories launched", value: "20+" },
+        { icon: "\ud83d\udce6", label: "New product vertical", value: "Non-grocery" },
+        { icon: "\ud83d\ude80", label: "Time to market", value: "3 months" },
+      ],
+      resultsNote: "Launched as new tab in Lisek app.",
+      learnings: [
+        { text: "Marketplace inside a grocery app works \u2014 if delivery expectations are set clearly." },
+        { text: "Category browsing beats search for discovery in a new vertical." },
       ],
     },
     pl: {
-      subtitle: "Redesign landing page pod konwersj\u0119",
-      description: "Wzrost sprzeda\u017cy i zaanga\u017cowania dzi\u0119ki redesignowi landing page",
-      tag: "Web Design",
-      role: "Web Designer",
-      services: "Web Design, Optymalizacja Konwersji",
+      subtitle: "Ekspansja Marketplace \u2014 Od Zakup\u00f3w Spo\u017cywczych do Wszystkiego",
+      description: "Marketplace non-grocery wewn\u0105trz wiod\u0105cej polskiej aplikacji q-commerce. Nowe \u017ar\u00f3d\u0142o przychodu, ta sama obietnica dostawy.",
+      tag: "Aplikacja mobilna",
+      role: "Product Designer",
+      services: "Product Design, Mobile Design",
+      platform: "iOS & Android",
       problemStatement:
-        "Landing page Olimpii mia\u0142 du\u017cy ruch, ale nisk\u0105 konwersj\u0119 \u2014 odwiedzaj\u0105cy nie zapisywali si\u0119 na cz\u0142onkostwo.",
-      problemMetrics: "Konwersja: 1.8%  \u00b7  Bounce rate: 72%",
+        "Przychody Liska zale\u017ca\u0142y wy\u0142\u0105cznie od zakup\u00f3w spo\u017cywczych. U\u017cytkownicy chcieli wi\u0119cej, konkurencja si\u0119 rozwija\u0142a. W aplikacji nie istnia\u0142a infrastruktura marketplace.",
       designQuestion:
-        "Jak zamieni\u0107 odwiedzaj\u0105cych stron\u0119 w cz\u0142onk\u00f3w si\u0142owni?",
-      process: [
-        { label: "Discovery", text: "Analiza heatmap + audyt test\u00f3w A/B istniej\u0105cej strony" },
-        { label: "Insight", text: "U\u017cytkownicy scrollowali obok cennika \u2014 CTA by\u0142o ukryte poni\u017cej foldu" },
-        { label: "Iteracja", text: "Testowanie CTA w hero vs sticky pricing bar" },
-        { label: "Decyzja", text: "Sticky pricing bar + sekcja social proof powy\u017cej foldu" },
+        "Zamieni\u0107 aplikacj\u0119 spo\u017cywcz\u0105 w marketplace bez psucia g\u0142\u00f3wnego do\u015bwiadczenia.",
+      iterations: [
+        {
+          version: "V1",
+          title: "Przegl\u0105danie po kategoriach",
+          description: "Siatka kategorii produkt\u00f3w jako g\u0142\u00f3wny punkt wej\u015bcia. Znany wz\u00f3r e-commerce zaadaptowany do j\u0119zyka wizualnego Liska.",
+          wins: [],
+          fails: [],
+        },
+        {
+          version: "V2",
+          title: "Flow zam\u00f3wienia i dostawy",
+          description: "Oddzielne terminy dostawy dla produkt\u00f3w marketplace. U\u017cytkownicy widz\u0105 zam\u00f3wienia spo\u017cywcze i non-grocery rozdzielone \u2014 zero zamieszania.",
+          wins: [],
+          fails: [],
+        },
       ],
       solutions: [
-        { image: "/assets/images/project-olimpia.webp", alt: "Nowa sekcja hero", caption: "Nowe hero \u2014 czytelna propozycja warto\u015bci z natychmiastowym CTA" },
-        { image: "/assets/images/project-olimpia.webp", alt: "Sekcja cennika", caption: "Sticky pricing bar \u2014 zawsze widoczny, redukuje tarcie" },
-        { image: "/assets/images/project-olimpia.webp", alt: "Social proof", caption: "Social proof \u2014 opinie cz\u0142onk\u00f3w powy\u017cej foldu" },
+        { image: "/assets/images/lisek-cover.png", alt: "Przegl\u0105danie kategorii Bazaar", caption: "Siatka kategorii \u2014 znajome przegl\u0105danie zaadaptowane do design systemu Liska" },
+        { image: "/assets/images/lisek-cover.png", alt: "Potwierdzenie zam\u00f3wienia Bazaar", caption: "Widok podzielonej dostawy \u2014 produkty marketplace z oddzielnym terminem dostawy" },
       ],
       results: [
-        { icon: "\ud83d\udcc8", label: "Konwersja", value: "1.8% \u2192 4.2%" },
-        { icon: "\ud83d\udcc9", label: "Bounce rate", value: "72% \u2192 48%" },
-        { icon: "\u23f1\ufe0f", label: "Czas do CTA", value: "-60%" },
+        { icon: "\ud83d\uded2", label: "Uruchomione kategorie", value: "20+" },
+        { icon: "\ud83d\udce6", label: "Nowa wertykala produkt\u00f3w", value: "Non-grocery" },
+        { icon: "\ud83d\ude80", label: "Time to market", value: "3 miesi\u0105ce" },
+      ],
+      resultsNote: "Uruchomione jako nowa zak\u0142adka w aplikacji Lisek.",
+      learnings: [
+        { text: "Marketplace wewn\u0105trz aplikacji spo\u017cywczej dzia\u0142a \u2014 je\u015bli oczekiwania dostawcze s\u0105 jasno ustawione." },
+        { text: "Przegl\u0105danie kategorii bije wyszukiwanie przy odkrywaniu nowej wertykali." },
       ],
     },
   },
 
-  roomzilla: {
-    en: {
-      subtitle: "Room booking system redesign",
-      description: "Streamlining meeting room reservations for large offices",
-      tag: "Web App",
-      role: "Product Designer",
-      services: "Product Design, Web Design",
-      problemStatement:
-        "Booking a meeting room in a large office takes too many clicks. Employees default to ad-hoc room grabs, causing conflicts.",
-      designQuestion:
-        "How to make room booking as fast as sending a message?",
-      process: [
-        { label: "Discovery", text: "Shadowed 12 employees booking rooms over 1 week" },
-        { label: "Insight", text: "Most bookings are recurring \u2014 same room, same time, every week" },
-        { label: "Iteration", text: "Tested calendar-first vs map-first booking flow" },
-        { label: "Decision", text: "Map-first with quick-repeat \u2014 visual + fast" },
-      ],
-      solutions: [
-        { image: "/assets/images/project-roomzilla.webp", alt: "Map view", caption: "Map view \u2014 see available rooms at a glance" },
-        { image: "/assets/images/project-roomzilla.webp", alt: "Quick booking", caption: "Quick booking \u2014 2-tap reservation from floor plan" },
-        { image: "/assets/images/project-roomzilla.webp", alt: "Recurring meetings", caption: "Recurring setup \u2014 one-time config, auto-books weekly" },
-      ],
-      results: [
-        { icon: "\u23f1\ufe0f", label: "Booking time", value: "3 min \u2192 15s" },
-        { icon: "\ud83d\udcc9", label: "Room conflicts", value: "-80%" },
-        { icon: "\ud83d\udcc8", label: "Adoption rate", value: "92%" },
-      ],
-    },
-    pl: {
-      subtitle: "Redesign systemu rezerwacji sal",
-      description: "Usprawnienie rezerwacji sal konferencyjnych w du\u017cych biurach",
-      tag: "Aplikacja webowa",
-      role: "Product Designer",
-      services: "Product Design, Web Design",
-      problemStatement:
-        "Rezerwacja sali w du\u017cym biurze wymaga zbyt wielu klikni\u0119\u0107. Pracownicy domy\u015blnie zajmuj\u0105 sale ad-hoc, co powoduje konflikty.",
-      designQuestion:
-        "Jak sprawi\u0107, \u017ceby rezerwacja sali by\u0142a tak szybka jak wys\u0142anie wiadomo\u015bci?",
-      process: [
-        { label: "Discovery", text: "Obserwacja 12 pracownik\u00f3w rezerwuj\u0105cych sale przez 1 tydzie\u0144" },
-        { label: "Insight", text: "Wi\u0119kszo\u015b\u0107 rezerwacji jest cykliczna \u2014 ta sama sala, ta sama godzina, co tydzie\u0144" },
-        { label: "Iteracja", text: "Testowanie kalendarz-first vs mapa-first" },
-        { label: "Decyzja", text: "Mapa-first z quick-repeat \u2014 wizualny + szybki" },
-      ],
-      solutions: [
-        { image: "/assets/images/project-roomzilla.webp", alt: "Widok mapy", caption: "Widok mapy \u2014 dost\u0119pne sale na pierwszy rzut oka" },
-        { image: "/assets/images/project-roomzilla.webp", alt: "Szybka rezerwacja", caption: "Szybka rezerwacja \u2014 2 tapi\u0119cia z planu pi\u0119tra" },
-        { image: "/assets/images/project-roomzilla.webp", alt: "Spotkania cykliczne", caption: "Cykliczne spotkania \u2014 jednorazowa konfiguracja, automatyczna rezerwacja co tydzie\u0144" },
-      ],
-      results: [
-        { icon: "\u23f1\ufe0f", label: "Czas rezerwacji", value: "3 min \u2192 15s" },
-        { icon: "\ud83d\udcc9", label: "Konflikty sal", value: "-80%" },
-        { icon: "\ud83d\udcc8", label: "Wska\u017anik adopcji", value: "92%" },
-      ],
-    },
-  },
 };
