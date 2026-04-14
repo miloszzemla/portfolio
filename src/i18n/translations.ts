@@ -145,7 +145,7 @@ export const translations = {
     },
     // Hero
     hero: {
-      greeting: "Cze\u015b\u0107, jestem Milosz",
+      greeting: "Cześć, tu Miłosz",
       role1: "Product Designer",
       role2: "& Builder.",
       badge: "AI-native",
