@@ -46,14 +46,14 @@ export default function About() {
             transition={{ duration: 0.6, delay: 0.15 }}
             className="w-full lg:w-[30%]"
           >
-            <div className="relative h-[350px] md:h-[450px] lg:h-[580px] w-full overflow-hidden">
+            <div className="relative h-[420px] md:h-[450px] lg:h-[580px] w-full overflow-hidden">
               <Image
                 src="/assets/images/milosz-zemla.webp"
                 alt="Milosz Zemla"
                 fill
                 sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 40vw"
                 quality={100}
-                className="object-cover"
+                className="object-cover object-top"
               />
             </div>
           </motion.div>

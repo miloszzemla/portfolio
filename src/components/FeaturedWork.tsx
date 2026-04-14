@@ -44,7 +44,7 @@ export default function FeaturedWork() {
                 className="group flex flex-col w-full overflow-hidden"
               >
                 {/* Image — full width */}
-                <div className="relative w-full aspect-[4/3] md:aspect-[16/9] overflow-hidden">
+                <div className="relative w-full aspect-[16/10] md:aspect-[16/9] overflow-hidden">
                   {project.thumbnail ? (
                     <Image
                       src={project.thumbnail}
@@ -52,7 +52,7 @@ export default function FeaturedWork() {
                       fill
                       sizes="92vw"
                       quality={100}
-                      className="object-cover object-center transition-transform duration-700 group-hover:scale-[1.02]"
+                      className="object-cover object-top md:object-center transition-transform duration-700 group-hover:scale-[1.02]"
                     />
                   ) : (
                     <div className="absolute inset-0 bg-dark/5 border-2 border-dashed border-dark/15 flex items-center justify-center">
