@@ -1,6 +1,7 @@
 "use client";
 
 import { useRef } from "react";
+import Image from "next/image";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { useLanguage } from "@/i18n/LanguageContext";
@@ -117,10 +118,23 @@ export default function HeroAlt() {
           </div>
         </div>
 
-        {/* Right column: description — aligned to bottom of heading on desktop */}
-        <p className="hero-alt-desc max-w-[360px] lg:max-w-[400px] text-[16px] md:text-[18px] lg:text-[20px] font-medium leading-[1.55] tracking-[-0.3px] text-dark/65 mt-6 md:mt-0 md:pb-2 lg:pb-3">
-          {t.hero.description}
-        </p>
+        {/* Right column: description + side projects — aligned to bottom of heading on desktop */}
+        <div className="hero-alt-desc flex flex-col gap-4 md:gap-5 max-w-[360px] lg:max-w-[400px] mt-6 md:mt-0 md:pb-2 lg:pb-3">
+          <p className="text-[16px] md:text-[18px] lg:text-[20px] font-medium leading-[1.55] tracking-[-0.3px] text-dark/65">
+            {t.hero.description}
+          </p>
+          <p className="text-[15px] md:text-[16px] lg:text-[17px] font-medium leading-[1.6] tracking-[-0.2px] text-dark/65 flex flex-wrap items-center gap-x-1.5 gap-y-1">
+            Side projects:
+            <a href="https://wishdrop.pl" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1.5 bg-white text-dark rounded-full pl-1.5 pr-3 py-1 text-[13px] md:text-[14px] font-semibold tracking-[-0.2px] shadow-[0_1px_4px_rgba(0,0,0,0.12)] transition-opacity hover:opacity-80">
+              <Image src="/assets/images/wishdrop-icon.png" alt="Wishdrop" width={20} height={20} className="rounded-full" />
+              Wishdrop.pl
+            </a>
+            <span className="inline-flex items-center gap-1.5 bg-[#161616] text-white rounded-full pl-1.5 pr-3 py-1 text-[13px] md:text-[14px] font-semibold tracking-[-0.2px] shadow-[0_1px_4px_rgba(0,0,0,0.12)]">
+              <Image src="/assets/images/topdraw-icon.svg" alt="TopDraw" width={20} height={20} className="rounded-full invert" />
+              TopDraw <span className="text-[11px] font-medium opacity-60 leading-none translate-y-[0.5px]">soon</span>
+            </span>
+          </p>
+        </div>
       </div>
     </section>
   );

@@ -70,13 +70,11 @@ export default function Hero() {
             ref={logoRef}
             className="h-[40px] w-[40px] md:h-[80px] md:w-[80px] lg:h-[110px] lg:w-[110px] flex-shrink-0 overflow-hidden flex items-center justify-center"
           >
-            <svg viewBox="0 0 110 110" className="h-full w-full">
-              <path d="M 0 0 L 110 0 L 110 110 L 0 110 Z" fill="transparent" />
-              <path
-                d="M 58.929 0 L 51.071 0 L 51.071 45.516 L 18.887 13.331 L 13.332 18.887 L 45.516 51.071 L 0 51.071 L 0 58.929 L 45.515 58.929 L 13.332 91.113 L 18.888 96.669 L 51.072 64.484 L 51.072 110 L 58.929 110 L 58.929 64.484 L 91.114 96.669 L 96.669 91.113 L 64.485 58.929 L 110 58.929 L 110 51.071 L 64.484 51.071 L 96.669 18.887 L 91.113 13.331 L 58.929 45.515 Z"
-                fill="rgb(21, 21, 21)"
-              />
-            </svg>
+            <img
+              src="/assets/wishdrop-logo.png"
+              alt="WishDrop"
+              className="h-full w-full object-contain rounded-[20%]"
+            />
           </div>
           <div className="overflow-hidden">
             <h1
