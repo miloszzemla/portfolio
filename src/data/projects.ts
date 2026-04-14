@@ -123,7 +123,7 @@ export const projects: Project[] = [
     ],
     timeline: "~4 miesiące",
     platform: "iOS, Android & Web",
-    services: "Product Design, Loyalty System Design",
+    services: "Product Design, UI, UX, User Research, Competitive Analysis",
     // Problem
     problemStatement:
       "Most users ordered sporadically — 1.4x/month. No loyalty mechanism. Price decided, not brand relationship.",
