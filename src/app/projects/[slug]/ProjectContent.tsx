@@ -47,7 +47,7 @@ export default function ProjectContent({ project: rawProject, nextProject: rawNe
         <div className="grid-bg" />
         <div className="relative z-10 mx-auto w-[92%] max-w-[1400px]">
           <motion.div {...fadeUp}>
-            <div className="relative aspect-[4/3] md:aspect-[16/9] w-full overflow-hidden">
+            <div className="relative aspect-[16/10] md:aspect-[16/9] w-full overflow-hidden">
               <Image src={project.heroImage} alt={project.title} fill sizes="92vw" quality={100} className="object-cover" style={{ objectFit: "cover" }} priority />
             </div>
           </motion.div>
@@ -328,7 +328,7 @@ export default function ProjectContent({ project: rawProject, nextProject: rawNe
           <div className="grid-bg" />
           <div className="relative z-10 mx-auto w-[92%] max-w-[1400px]">
             <motion.div {...fadeUp} className="flex flex-col gap-4">
-              <div className="relative aspect-[4/3] md:aspect-[16/9] w-full overflow-hidden" style={{ overflow: "hidden" }}>
+              <div className="relative aspect-[16/10] md:aspect-[16/9] w-full overflow-hidden" style={{ overflow: "hidden" }}>
                 <Image src={project.solutions[0].image} alt={project.solutions[0].alt} fill sizes="92vw" quality={100} className="object-cover" style={{ objectFit: "cover" }} />
               </div>
               <p className="text-[15px] md:text-[16px] font-dm font-medium text-dark/65">{project.solutions[0].caption}</p>
@@ -451,7 +451,7 @@ export default function ProjectContent({ project: rawProject, nextProject: rawNe
             className="group flex flex-col lg:flex-row lg:h-[400px] xl:h-[500px] w-full lg:items-end justify-between overflow-hidden"
           >
             {/* Image - mobile */}
-            <div className="relative w-full lg:hidden aspect-[4/3] md:aspect-[16/9] overflow-hidden">
+            <div className="relative w-full lg:hidden aspect-[16/10] md:aspect-[16/9] overflow-hidden">
               {nextProject.thumbnail ? (
                 <Image src={nextProject.thumbnail} alt={nextProject.title} fill sizes="100vw" quality={100} className="object-cover object-center transition-transform duration-700 group-hover:scale-[1.02]" />
               ) : (
