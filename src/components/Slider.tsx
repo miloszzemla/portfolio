@@ -30,6 +30,7 @@ export default function Slider() {
                 width={600}
                 height={403}
                 sizes="(max-width: 768px) 300px, (max-width: 1024px) 400px, 600px"
+                quality={95}
                 className="h-full w-full object-cover"
                 style={slide.position ? { objectPosition: slide.position } : undefined}
               />

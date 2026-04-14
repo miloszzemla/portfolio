@@ -47,7 +47,7 @@ export default function ProjectContent({ project: rawProject, nextProject: rawNe
         <div className="grid-bg" />
         <div className="relative z-10 mx-auto w-[92%] max-w-[1400px]">
           <motion.div {...fadeUp} className="relative aspect-[4/3] md:aspect-[16/9] w-full overflow-hidden">
-            <Image src={project.heroImage} alt={project.title} fill sizes="92vw" className="object-cover" priority />
+            <Image src={project.heroImage} alt={project.title} fill sizes="92vw" quality={95} className="object-cover" priority />
           </motion.div>
         </div>
       </section>
@@ -229,7 +229,7 @@ export default function ProjectContent({ project: rawProject, nextProject: rawNe
           <div className="relative z-10 mx-auto w-[92%] max-w-[1400px]">
             <motion.div {...fadeUp} className="flex flex-col gap-4">
               <div className="relative aspect-[4/3] md:aspect-[16/9] w-full overflow-hidden">
-                <Image src={project.solutions[0].image} alt={project.solutions[0].alt} fill className="object-cover" />
+                <Image src={project.solutions[0].image} alt={project.solutions[0].alt} fill sizes="92vw" quality={95} className="object-cover" />
               </div>
               <p className="text-[15px] md:text-[16px] font-dm font-medium text-dark/65">{project.solutions[0].caption}</p>
             </motion.div>
@@ -246,7 +246,7 @@ export default function ProjectContent({ project: rawProject, nextProject: rawNe
               {project.solutions.slice(1).map((screen, i) => (
                 <div key={i} className="flex flex-col gap-4">
                   <div className="relative aspect-square w-full overflow-hidden">
-                    <Image src={screen.image} alt={screen.alt} fill className="object-cover object-top" />
+                    <Image src={screen.image} alt={screen.alt} fill sizes="(max-width: 768px) 92vw, 46vw" quality={95} className="object-cover object-top" />
                   </div>
                   <p className="text-[15px] md:text-[16px] font-dm font-medium text-dark/65">{screen.caption}</p>
                 </div>
@@ -375,7 +375,7 @@ export default function ProjectContent({ project: rawProject, nextProject: rawNe
             {/* Image - mobile */}
             <div className="relative w-full lg:hidden aspect-[4/3] md:aspect-[16/9] overflow-hidden">
               {nextProject.thumbnail ? (
-                <Image src={nextProject.thumbnail} alt={nextProject.title} fill className="object-cover object-center transition-transform duration-700 group-hover:scale-[1.02]" />
+                <Image src={nextProject.thumbnail} alt={nextProject.title} fill sizes="100vw" quality={95} className="object-cover object-center transition-transform duration-700 group-hover:scale-[1.02]" />
               ) : (
                 <div className="absolute inset-0 bg-dark/5 border-2 border-dashed border-dark/15 flex items-center justify-center">
                   <span className="text-[16px] font-medium text-dark/30">Coming soon</span>
@@ -403,7 +403,7 @@ export default function ProjectContent({ project: rawProject, nextProject: rawNe
             {/* Image - desktop */}
             <div className="relative hidden lg:block h-full w-[70%] overflow-hidden">
               {nextProject.thumbnail ? (
-                <Image src={nextProject.thumbnail} alt={nextProject.title} fill className="object-contain object-center transition-transform duration-700 group-hover:scale-[1.02]" />
+                <Image src={nextProject.thumbnail} alt={nextProject.title} fill sizes="70vw" quality={95} className="object-contain object-center transition-transform duration-700 group-hover:scale-[1.02]" />
               ) : (
                 <div className="absolute inset-0 bg-dark/5 border-2 border-dashed border-dark/15 flex items-center justify-center">
                   <span className="text-[18px] font-medium text-dark/30">Coming soon</span>

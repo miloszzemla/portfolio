@@ -50,7 +50,7 @@ export default function BeforeAfter({ before, after, alt = "Before and after com
     >
       {/* After image (full) */}
       {hasAfter ? (
-        <Image src={after} alt={`${alt} — after`} fill draggable={false} className="object-cover md:object-contain md:object-top pointer-events-none" />
+        <Image src={after} alt={`${alt} — after`} fill quality={95} draggable={false} className="object-cover md:object-contain md:object-top pointer-events-none" />
       ) : (
         <div className="absolute inset-0 bg-dark/5 border-2 border-dashed border-dark/15 flex items-center justify-center">
           <span className="text-[18px] font-medium text-dark/30">After — add image</span>
