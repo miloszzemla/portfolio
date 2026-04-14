@@ -66,7 +66,7 @@ export default function FeaturedWork() {
                       {project.title}
                     </h3>
                     <p className="text-[18px] md:text-[20px] lg:text-[22px] font-medium leading-[1.5] tracking-[-0.6px] text-dark/65">
-                      {project.description}
+                      {project.subtitle}
                     </p>
                     <div className="flex flex-wrap gap-2">
                       {(Array.isArray(project.tag) ? project.tag : [project.tag]).map((t) => (

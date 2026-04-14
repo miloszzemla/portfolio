@@ -10,12 +10,12 @@ type ProjectOverride = DeepPartial<TranslatableProject>;
 export const projectTranslations: Record<string, { en: ProjectOverride; pl: ProjectOverride }> = {
   lisek: {
     en: {
-      subtitle: "End-to-end redesign of a q-commerce app with 5M+ orders.",
-      description: "End-to-end redesign of a q-commerce app with 5M+ orders.",
+      subtitle: "End-to-end redesign of a q-commerce app that has surpassed 5 million orders.",
+      description: "Redesigned Lisek\u2019s app end to end \u2014 from home feed and search to product pages, cart, and checkout \u2014 lifting order frequency, retention, and average order value across iOS, Android, and web.",
       tag: ["Mobile App", "Web App"],
       meta: "Lisek  \u00b7  Q-Commerce  \u00b7  2026  \u00b7  Product Design",
       role: "Product Designer",
-      services: "Product Design, Loyalty System Design",
+      services: "Product Design, UI, UX, User Research, Competitive Analysis",
       problemStatement:
         "Most users ordered sporadically \u2014 1.4x/month. No loyalty mechanism. Price decided, not brand relationship.",
       problemMetrics: "Order frequency: 1.4/mo  \u00b7  60d churn: 41%",
@@ -65,6 +65,16 @@ export const projectTranslations: Record<string, { en: ProjectOverride; pl: Proj
           alt: "Lisek design system \u2014 global color tokens and color palette",
           caption: "Design system foundations \u2014 global color tokens ensuring consistency across the entire product",
         },
+        {
+          image: "/assets/images/lisek-typography.webp",
+          alt: "Lisek design system \u2014 typography and font styles",
+          caption: "Typography system \u2014 Inter font with consistent sizing across all platforms",
+        },
+        {
+          image: "/assets/images/lisek-components.webp",
+          alt: "Lisek design system \u2014 component states and variants",
+          caption: "Component library \u2014 all states, sizes, and variants documented in Figma",
+        },
       ],
       results: [
         { icon: "\ud83d\udcc8", label: "Order frequency", value: "+64%" },
@@ -79,12 +89,12 @@ export const projectTranslations: Record<string, { en: ProjectOverride; pl: Proj
       resultsNote: undefined,
     },
     pl: {
-      subtitle: "Kompleksowy redesign aplikacji q-commerce z 5M+ zam\u00f3wie\u0144.",
-      description: "Kompleksowy redesign aplikacji q-commerce z 5M+ zam\u00f3wie\u0144.",
+      subtitle: "Kompleksowy redesign aplikacji q-commerce, kt\u00f3ra przekroczy\u0142a 5 milion\u00f3w zam\u00f3wie\u0144.",
+      description: "Przeprojektowanie aplikacji Liska od pocz\u0105tku do ko\u0144ca \u2014 od home feedu i wyszukiwarki po karty produkt\u00f3w, koszyk i checkout \u2014 podnosz\u0105c cz\u0119stotliwo\u015b\u0107 zam\u00f3wie\u0144, retencj\u0119 i \u015bredni\u0105 warto\u015b\u0107 koszyka na iOS, Android i web.",
       tag: ["Aplikacja mobilna", "Aplikacja webowa"],
       meta: "Lisek  \u00b7  Q-Commerce  \u00b7  2026  \u00b7  Product Design",
       role: "Product Designer",
-      services: "Product Design, Loyalty System Design",
+      services: "Product Design, UI, UX, User Research, Competitive Analysis",
       problemStatement:
         "Wi\u0119kszo\u015b\u0107 u\u017cytkownik\u00f3w zamawia\u0142a sporadycznie \u2014 1.4x/mies. Brak mechanizmu lojalno\u015bciowego. Decydowa\u0142a cena, nie relacja z mark\u0105.",
       problemMetrics: "Cz\u0119stotliwo\u015b\u0107: 1.4/mies.  \u00b7  Churn 60d: 41%",
@@ -133,6 +143,16 @@ export const projectTranslations: Record<string, { en: ProjectOverride; pl: Proj
           image: "/assets/images/lisek-design-system.webp",
           alt: "Design system Liska \u2014 globalne tokeny kolor\u00f3w i paleta",
           caption: "Fundamenty design systemu \u2014 globalne tokeny kolor\u00f3w zapewniaj\u0105ce sp\u00f3jno\u015b\u0107 w ca\u0142ym produkcie",
+        },
+        {
+          image: "/assets/images/lisek-screen.png",
+          alt: "Aplikacja Lisek \u2014 przeprojektowane ekrany",
+          caption: "Przeprojektowane kluczowe ekrany \u2014 czystsza hierarchia, sp\u00f3jne wzorce",
+        },
+        {
+          image: "/assets/images/lisek-hero.png",
+          alt: "Aplikacja Lisek \u2014 nowy home feed",
+          caption: "Nowy home feed \u2014 spersonalizowany, czytelny, nastawiony na konwersj\u0119",
         },
       ],
       results: [

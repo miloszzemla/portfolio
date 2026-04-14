@@ -107,8 +107,8 @@ export const projects: Project[] = [
   {
     slug: "lisek",
     title: "Lisek Q-Commerce",
-    subtitle: "End-to-end redesign of a q-commerce app with 5M+ orders.",
-    description: "End-to-end redesign of a q-commerce app with 5M+ orders.",
+    subtitle: "End-to-end redesign of a q-commerce app that has surpassed 5 million orders.",
+    description: "Redesigned Lisek's app end to end — from home feed and search to product pages, cart, and checkout — lifting order frequency, retention, and average order value across iOS, Android, and web.",
     tag: ["Mobile App", "Web App"],
     thumbnail: "/assets/images/lisek_cover.webp",
     heroImage: "/assets/images/lisek_cover.webp",
@@ -199,6 +199,16 @@ export const projects: Project[] = [
         image: "/assets/images/lisek-design-system.webp",
         alt: "Lisek design system — global color tokens and color palette",
         caption: "Design system foundations — global color tokens ensuring consistency across the entire product",
+      },
+      {
+        image: "/assets/images/lisek-typography.webp",
+        alt: "Lisek design system — typography and font styles",
+        caption: "Typography system — Inter font with consistent sizing across all platforms",
+      },
+      {
+        image: "/assets/images/lisek-components.webp",
+        alt: "Lisek design system — component states and variants",
+        caption: "Component library — all states, sizes, and variants documented in Figma",
       },
     ],
     results: [

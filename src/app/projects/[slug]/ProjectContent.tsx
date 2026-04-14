@@ -137,7 +137,7 @@ export default function ProjectContent({ project: rawProject, nextProject: rawNe
                 {project.description}
               </p>
             </div>
-            <div className="hidden md:flex w-full md:w-[45%] bg-white border-2 border-dark p-6 md:p-8 flex-col gap-5">
+            <div className="hidden md:flex w-full md:w-[45%] bg-white border-2 border-dark p-6 md:p-8 flex-col gap-5 self-start">
               {[
                 { label: t.project.role, value: project.role },
                 { label: t.project.service, value: project.services },
@@ -170,29 +170,6 @@ export default function ProjectContent({ project: rawProject, nextProject: rawNe
                 </div>
               )}
             </div>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* ===== CHALLENGE ===== */}
-      <section className="relative w-full bg-cream overflow-hidden pb-[60px] md:pb-[100px] lg:pb-[120px]">
-        <div className="grid-bg" />
-        <div className="relative z-10 mx-auto w-[92%] max-w-[1400px]">
-          <motion.div {...fadeUp} className="max-w-[800px] flex flex-col gap-4 md:gap-6">
-            <h2 className="text-[16px] md:text-[18px] font-medium tracking-[-0.3px] text-dark/70">
-              {t.project.problem}
-            </h2>
-            <p className="font-space text-[24px] md:text-[28px] lg:text-[32px] font-medium leading-[1.4] tracking-[-0.5px] md:tracking-[-1px] text-dark">
-              {project.designQuestion}
-            </p>
-            <p className="text-[17px] md:text-[18px] font-dm font-medium leading-[1.7] text-dark/65">
-              {project.problemStatement}
-            </p>
-            {project.problemMetrics && (
-              <p className="text-[15px] font-dm font-medium text-dark/65">
-                {project.problemMetrics}
-              </p>
-            )}
           </motion.div>
         </div>
       </section>
@@ -260,6 +237,25 @@ export default function ProjectContent({ project: rawProject, nextProject: rawNe
         </section>
       )}
 
+      {/* ===== SOLUTION IMAGES (remaining — 2-up grid) ===== */}
+      {project.solutions.length > 1 && (
+        <section className="relative w-full bg-cream overflow-hidden pb-[60px] md:pb-[100px] lg:pb-[120px]">
+          <div className="grid-bg" />
+          <div className="relative z-10 mx-auto w-[92%] max-w-[1400px]">
+            <motion.div {...fadeUp} className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+              {project.solutions.slice(1).map((screen, i) => (
+                <div key={i} className="flex flex-col gap-4">
+                  <div className="relative aspect-square w-full overflow-hidden">
+                    <Image src={screen.image} alt={screen.alt} fill className="object-cover object-top" />
+                  </div>
+                  <p className="text-[15px] md:text-[16px] font-dm font-medium text-dark/65">{screen.caption}</p>
+                </div>
+              ))}
+            </motion.div>
+          </div>
+        </section>
+      )}
+
       {/* ===== ITERATIONS ===== */}
       {project.iterations && project.iterations.length > 0 && (
         <section className="relative w-full bg-cream overflow-hidden pb-[60px] md:pb-[100px] lg:pb-[120px]">
@@ -284,24 +280,28 @@ export default function ProjectContent({ project: rawProject, nextProject: rawNe
         </section>
       )}
 
-      {/* ===== SOLUTION IMAGES (remaining) ===== */}
-      {project.solutions.length > 1 && (
-        <section className="relative w-full bg-cream overflow-hidden pb-[60px] md:pb-[100px] lg:pb-[120px]">
-          <div className="grid-bg" />
-          <div className="relative z-10 mx-auto w-[92%] max-w-[1400px]">
-            <div className="flex flex-col gap-10 md:gap-16">
-              {project.solutions.slice(1).map((screen, i) => (
-                <motion.div key={i} {...fadeUp} className="flex flex-col gap-4">
-                  <div className="relative aspect-[4/3] md:aspect-[16/9] w-full overflow-hidden">
-                    <Image src={screen.image} alt={screen.alt} fill className="object-cover" />
-                  </div>
-                  <p className="text-[15px] md:text-[16px] font-dm font-medium text-dark/65">{screen.caption}</p>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </section>
-      )}
+      {/* ===== CHALLENGE ===== */}
+      <section className="relative w-full bg-cream overflow-hidden pb-[60px] md:pb-[100px] lg:pb-[120px]">
+        <div className="grid-bg" />
+        <div className="relative z-10 mx-auto w-[92%] max-w-[1400px]">
+          <motion.div {...fadeUp} className="max-w-[800px] flex flex-col gap-4 md:gap-6">
+            <h2 className="text-[16px] md:text-[18px] font-medium tracking-[-0.3px] text-dark/70">
+              {t.project.problem}
+            </h2>
+            <p className="font-space text-[24px] md:text-[28px] lg:text-[32px] font-medium leading-[1.4] tracking-[-0.5px] md:tracking-[-1px] text-dark">
+              {project.designQuestion}
+            </p>
+            <p className="text-[17px] md:text-[18px] font-dm font-medium leading-[1.7] text-dark/65">
+              {project.problemStatement}
+            </p>
+            {project.problemMetrics && (
+              <p className="text-[15px] font-dm font-medium text-dark/65">
+                {project.problemMetrics}
+              </p>
+            )}
+          </motion.div>
+        </div>
+      </section>
 
       {/* ===== IMPACT ===== */}
       <section className="relative w-full bg-dark overflow-hidden py-[60px] md:py-[100px] lg:py-[120px]">
