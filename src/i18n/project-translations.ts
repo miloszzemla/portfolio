@@ -194,16 +194,17 @@ export const projectTranslations: Record<string, { en: ProjectOverride; pl: Proj
 
   playmaker: {
     en: {
-      subtitle: "Platform connecting talent with opportunities",
-      description: "An app that matches job seekers with relevant postings",
+      title: "Playmaker.pro",
+      subtitle: "+38% User Engagement After Full Redesign.",
+      description: "Complete redesign of a virtual transfer market for football players — from legacy platform to a modern product connecting players, clubs and agents.",
       tag: "Web App",
       role: "Product Designer",
-      services: "UX/UI Design, Product Strategy",
+      services: "Wireframes, UX Research, UX Design, UI Design",
       problemStatement:
-        "Job seekers spend hours scrolling irrelevant listings. Matching accuracy was low, leading to high bounce rates and poor engagement.",
-      problemMetrics: "Avg. session: 2.1 min  \u00b7  Match rate: 12%",
+        "Playmaker operated on a legacy platform that looked and felt like 2015. Player profiles lacked key stats and performance data, making it hard for clubs to evaluate talent. No filtering, no comparison tools, no trust signals — scouts had to rely on gut feeling instead of data. Mobile experience was nonexistent, and user engagement was dropping quarter over quarter.",
+      problemMetrics: "Bounce rate: 68%  ·  Avg. session: 1.8 min  ·  Profile completion: 34%",
       designQuestion:
-        "How might we surface the right opportunities faster to keep users engaged?",
+        "How do we turn an outdated listing board into a data-driven transfer market that both players and clubs actually trust?",
       process: [
         { label: "Discovery", text: "Competitor audit + 6 user interviews with active job seekers" },
         { label: "Insight", text: "Users want fewer, better matches \u2014 not more listings" },
@@ -211,9 +212,9 @@ export const projectTranslations: Record<string, { en: ProjectOverride; pl: Proj
         { label: "Decision", text: "Filtered feed with smart tags won \u2014 users felt more in control" },
       ],
       solutions: [
-        { image: "/assets/images/project-playmaker.webp", alt: "Smart matching feed", caption: "Smart matching feed \u2014 AI-powered relevance sorting" },
-        { image: "/assets/images/project-playmaker.webp", alt: "Profile builder", caption: "Profile builder \u2014 skills-first approach for better matches" },
-        { image: "/assets/images/project-playmaker.webp", alt: "Quick apply", caption: "Quick apply \u2014 1-tap application with saved profile data" },
+        { image: "/assets/images/playmaker-old.webp", alt: "Playmaker wireframes — early-stage layout exploration", caption: "Early wireframes — mapping out the information architecture and core user flows before visual design." },
+        { image: "/assets/images/project-playmaker.webp", alt: "Profile builder", caption: "Profile builder — skills-first approach for better matches" },
+        { image: "/assets/images/project-playmaker.webp", alt: "Quick apply", caption: "Quick apply — 1-tap application with saved profile data" },
       ],
       results: [
         { icon: "\ud83d\udcc8", label: "Match rate", value: "+45%" },
@@ -227,16 +228,17 @@ export const projectTranslations: Record<string, { en: ProjectOverride; pl: Proj
       },
     },
     pl: {
-      subtitle: "Platforma \u0142\u0105cz\u0105ca talenty z mo\u017cliwo\u015bciami",
-      description: "Aplikacja dopasowuj\u0105ca kandydat\u00f3w do ofert pracy",
+      title: "Playmaker.pro",
+      subtitle: "+38% User Engagement po pełnym redesignie.",
+      description: "Kompletny redesign wirtualnego rynku transferowego dla piłkarzy — od przestarzałej platformy do nowoczesnego produktu łączącego zawodników, kluby i agentów.",
       tag: "Aplikacja webowa",
       role: "Product Designer",
-      services: "UX/UI Design, Strategia Produktu",
+      services: "Wireframes, UX Research, UX Design, UI Design",
       problemStatement:
-        "Osoby szukaj\u0105ce pracy sp\u0119dzaj\u0105 godziny na przegl\u0105daniu nieistotnych ofert. Niska trafno\u015b\u0107 dopasowa\u0144 prowadzi\u0142a do wysokiego bounce rate i s\u0142abego zaanga\u017cowania.",
-      problemMetrics: "\u015ar. sesja: 2.1 min  \u00b7  Trafno\u015b\u0107 dopasowa\u0144: 12%",
+        "Playmaker działał na przestarzałej platformie rodem z 2015 roku. Profile zawodników nie miały kluczowych statystyk i danych o wydajności, co utrudniało klubom ocenę talentu. Brak filtrowania, narzędzi porównawczych i sygnałów zaufania — skauci musieli polegać na intuicji zamiast na danych. Brak wersji mobilnej, a zaangażowanie użytkowników spadało kwartał do kwartału.",
+      problemMetrics: "Bounce rate: 68%  ·  Śr. sesja: 1.8 min  ·  Wypełnienie profilu: 34%",
       designQuestion:
-        "Jak szybciej pokazywa\u0107 trafne oferty, \u017ceby u\u017cytkownicy byli zaanga\u017cowani?",
+        "Jak zmienić przestarzałą tablicę ogłoszeń w oparty na danych rynek transferowy, któremu ufają zarówno zawodnicy, jak i kluby?",
       process: [
         { label: "Discovery", text: "Audyt konkurencji + 6 wywiad\u00f3w z aktywnie szukaj\u0105cymi pracy" },
         { label: "Insight", text: "U\u017cytkownicy chc\u0105 mniej, ale lepszych dopasowa\u0144 \u2014 nie wi\u0119cej ofert" },
@@ -244,9 +246,9 @@ export const projectTranslations: Record<string, { en: ProjectOverride; pl: Proj
         { label: "Decyzja", text: "Filtrowany feed ze smart tagami wygra\u0142 \u2014 u\u017cytkownicy czuli wi\u0119ksz\u0105 kontrol\u0119" },
       ],
       solutions: [
-        { image: "/assets/images/project-playmaker.webp", alt: "Smart matching feed", caption: "Smart matching feed \u2014 sortowanie AI wed\u0142ug trafno\u015bci" },
-        { image: "/assets/images/project-playmaker.webp", alt: "Kreator profilu", caption: "Kreator profilu \u2014 podej\u015bcie skills-first dla lepszych dopasowa\u0144" },
-        { image: "/assets/images/project-playmaker.webp", alt: "Szybka aplikacja", caption: "Szybka aplikacja \u2014 1 tap z zapisanymi danymi profilu" },
+        { image: "/assets/images/playmaker-old.webp", alt: "Wireframes Playmaker — wczesna eksploracja layoutu", caption: "Wczesne wireframes — mapowanie architektury informacji i kluczowych user flows przed visual designem." },
+        { image: "/assets/images/project-playmaker.webp", alt: "Kreator profilu", caption: "Kreator profilu — podejście skills-first dla lepszych dopasowań" },
+        { image: "/assets/images/project-playmaker.webp", alt: "Szybka aplikacja", caption: "Szybka aplikacja — 1 tap z zapisanymi danymi profilu" },
       ],
       results: [
         { icon: "\ud83d\udcc8", label: "Trafno\u015b\u0107 dopasowa\u0144", value: "+45%" },

@@ -41,61 +41,45 @@ export default function FeaturedWork() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-100px" }}
                 transition={{ duration: 0.6 }}
-                className="group flex flex-col lg:flex-row lg:h-[400px] xl:h-[500px] w-full lg:items-end justify-between overflow-hidden"
+                className="group flex flex-col w-full overflow-hidden"
               >
-                {/* Image - on top for mobile, right side for desktop */}
-                <div className="relative w-full lg:hidden aspect-[4/3] md:aspect-[16/9] overflow-hidden">
+                {/* Image — full width */}
+                <div className="relative w-full aspect-[4/3] md:aspect-[16/9] overflow-hidden">
                   {project.thumbnail ? (
                     <Image
                       src={project.thumbnail}
                       alt={project.title}
                       fill
-                      sizes="(max-width: 1024px) 100vw, 70vw"
-                      quality={95}
+                      sizes="92vw"
+                      quality={100}
                       className="object-cover object-center transition-transform duration-700 group-hover:scale-[1.02]"
-                    />
-                  ) : (
-                    <div className="absolute inset-0 bg-dark/5 border-2 border-dashed border-dark/15 flex items-center justify-center">
-                      <span className="text-[16px] font-medium text-dark/30">Coming soon</span>
-                    </div>
-                  )}
-                </div>
-
-                {/* Details */}
-                <div className="flex w-full lg:w-[30%] flex-col justify-between pt-4 lg:pr-12 lg:h-full gap-4 lg:gap-0">
-                  <div className="flex flex-col items-start gap-4 lg:gap-6">
-                    <h3 className="text-[28px] md:text-[36px] lg:text-[44px] font-medium leading-[1.4] tracking-[-1px] lg:tracking-[-2px] text-dark">
-                      {project.title}
-                    </h3>
-                    <p className="text-[18px] md:text-[20px] lg:text-[22px] font-medium leading-[1.5] tracking-[-0.6px] text-dark/65">
-                      {project.subtitle}
-                    </p>
-                    <div className="flex flex-wrap gap-2">
-                      {(Array.isArray(project.tag) ? project.tag : [project.tag]).map((t) => (
-                        <span key={t} className="rounded bg-dark/8 px-3 py-2 md:px-4 md:py-2.5 text-[16px] md:text-[18px] font-medium leading-[1.5] tracking-[-0.4px] text-dark">
-                          {t}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-
-                {/* Image - hidden on mobile, visible on desktop */}
-                <div className="relative hidden lg:block h-full w-[70%] overflow-hidden">
-                  {project.thumbnail ? (
-                    <Image
-                      src={project.thumbnail}
-                      alt={project.title}
-                      fill
-                      sizes="70vw"
-                      quality={95}
-                      className="object-contain object-center transition-transform duration-700 group-hover:scale-[1.02]"
                     />
                   ) : (
                     <div className="absolute inset-0 bg-dark/5 border-2 border-dashed border-dark/15 flex items-center justify-center">
                       <span className="text-[18px] font-medium text-dark/30">Coming soon</span>
                     </div>
                   )}
+                </div>
+
+                {/* Title + Description row */}
+                <div className="flex flex-col lg:flex-row gap-4 lg:gap-12 pt-6 md:pt-8 lg:pt-10 max-w-[700px] lg:max-w-none">
+                  <div className="flex flex-col gap-3 lg:w-[55%]">
+                    <h3 className="text-[24px] md:text-[28px] lg:text-[32px] xl:text-[36px] font-medium leading-[1.2] tracking-[-0.5px] lg:tracking-[-1px] xl:tracking-[-1.5px] text-dark max-w-[500px]">
+                      {project.title}. {project.subtitle}
+                    </h3>
+                  </div>
+                  <div className="flex flex-col gap-4 lg:w-[40%] lg:pt-2">
+                    <p className="text-[16px] md:text-[17px] lg:text-[18px] font-dm font-medium leading-[1.6] tracking-[-0.3px] text-dark/55 max-w-[500px]">
+                      {project.description}
+                    </p>
+                    <div className="flex flex-wrap gap-2">
+                      {(Array.isArray(project.tag) ? project.tag : [project.tag]).map((t) => (
+                        <span key={t} className="rounded bg-dark/8 px-3 py-2 md:px-4 md:py-2.5 text-[15px] md:text-[16px] font-medium leading-[1.5] tracking-[-0.4px] text-dark">
+                          {t}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
                 </div>
               </motion.div>
             </Link>

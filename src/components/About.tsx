@@ -52,7 +52,7 @@ export default function About() {
                 alt="Milosz Zemla"
                 fill
                 sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 40vw"
-                quality={95}
+                quality={100}
                 className="object-cover"
               />
             </div>

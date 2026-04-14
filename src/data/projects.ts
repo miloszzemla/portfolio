@@ -386,20 +386,29 @@ export const projects: Project[] = [
   {
     slug: "playmaker",
     title: "Playmaker.pro",
-    subtitle: "Platform connecting talent with opportunities",
-    description: "An app that matches job seekers with relevant postings",
+    subtitle: "+38% User Engagement After Full Redesign.",
+    description: "Complete redesign of a virtual transfer market for football players — from legacy platform to a modern product connecting players, clubs and agents.",
     tag: "Web App",
     thumbnail: "/assets/images/playmaker_cover.webp",
     heroImage: "/assets/images/playmaker_cover.webp",
     meta: "Playmaker  ·  HR Tech  ·  2025  ·  Product Design",
     liveUrl: "#",
     role: "Product Designer",
-    services: "UX/UI Design, Product Strategy",
+    team: [
+      { name: "Miłosz", role: "Me" },
+      { name: "UI", role: "UI" },
+      { name: "UX", role: "UX" },
+      { name: "BE", role: "BE" },
+      { name: "FE", role: "FE" },
+    ],
+    timeline: "~3 months",
+    platform: "Web (Responsive)",
+    services: "Wireframes, UX Research, UX Design, UI Design",
     problemStatement:
-      "Job seekers spend hours scrolling irrelevant listings. Matching accuracy was low, leading to high bounce rates and poor engagement.",
-    problemMetrics: "Avg. session: 2.1 min  ·  Match rate: 12%",
+      "Playmaker operated on a legacy platform that looked and felt like 2015. Player profiles lacked key stats and performance data, making it hard for clubs to evaluate talent. No filtering, no comparison tools, no trust signals — scouts had to rely on gut feeling instead of data. Mobile experience was nonexistent, and user engagement was dropping quarter over quarter.",
+    problemMetrics: "Bounce rate: 68%  ·  Avg. session: 1.8 min  ·  Profile completion: 34%",
     designQuestion:
-      "How might we surface the right opportunities faster to keep users engaged?",
+      "How do we turn an outdated listing board into a data-driven transfer market that both players and clubs actually trust?",
     process: [
       { label: "Discovery", text: "Competitor audit + 6 user interviews with active job seekers" },
       { label: "Insight", text: "Users want fewer, better matches — not more listings" },
@@ -408,9 +417,9 @@ export const projects: Project[] = [
     ],
     solutions: [
       {
-        image: "/assets/images/project-playmaker.webp",
-        alt: "Smart matching feed",
-        caption: "Smart matching feed — AI-powered relevance sorting",
+        image: "/assets/images/playmaker-old.webp",
+        alt: "Playmaker wireframes — early-stage layout exploration",
+        caption: "Early wireframes — mapping out the information architecture and core user flows before visual design.",
       },
       {
         image: "/assets/images/project-playmaker.webp",

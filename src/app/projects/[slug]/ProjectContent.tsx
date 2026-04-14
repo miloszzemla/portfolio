@@ -46,8 +46,10 @@ export default function ProjectContent({ project: rawProject, nextProject: rawNe
       <section className="relative w-full bg-cream overflow-hidden">
         <div className="grid-bg" />
         <div className="relative z-10 mx-auto w-[92%] max-w-[1400px]">
-          <motion.div {...fadeUp} className="relative aspect-[4/3] md:aspect-[16/9] w-full overflow-hidden">
-            <Image src={project.heroImage} alt={project.title} fill sizes="92vw" quality={95} className="object-cover" priority />
+          <motion.div {...fadeUp}>
+            <div className="relative aspect-[4/3] md:aspect-[16/9] w-full overflow-hidden">
+              <Image src={project.heroImage} alt={project.title} fill sizes="92vw" quality={100} className="object-cover" style={{ objectFit: "cover" }} priority />
+            </div>
           </motion.div>
         </div>
       </section>
@@ -83,7 +85,7 @@ export default function ProjectContent({ project: rawProject, nextProject: rawNe
                             <span className="text-[15px] font-semibold text-cream">{member.role}</span>
                           </div>
                         )}
-                        <span data-tooltip className="pointer-events-none absolute -bottom-8 left-1/2 -translate-x-1/2 translate-y-1 text-[12px] font-medium text-dark/70 bg-white border border-dark/10 rounded px-2 py-1 whitespace-nowrap opacity-0 group-hover/tip:opacity-100 group-hover/tip:translate-y-0 transition-all duration-200 shadow-sm">{{ "Me": "Product Designer", "PM": "Project Manager", "FE": "Frontend Developer", "BE": "Backend Developer" }[member.role] || member.role}</span>
+                        <span data-tooltip className="pointer-events-none absolute -bottom-8 left-1/2 -translate-x-1/2 translate-y-1 text-[12px] font-medium text-dark/70 bg-white border border-dark/10 rounded px-2 py-1 whitespace-nowrap opacity-0 group-hover/tip:opacity-100 group-hover/tip:translate-y-0 transition-all duration-200 shadow-sm">{{ "Me": "Product Designer", "PM": "Project Manager", "FE": "Frontend Developer", "BE": "Backend Developer", "UI": "UI Designer", "UX": "UX Designer" }[member.role] || member.role}</span>
                       </button>
                     ))}
                   </div>
@@ -163,13 +165,36 @@ export default function ProjectContent({ project: rawProject, nextProject: rawNe
                             <span className="text-[15px] font-semibold text-cream">{member.role}</span>
                           </div>
                         )}
-                        <span data-tooltip className="pointer-events-none absolute -bottom-8 left-1/2 -translate-x-1/2 translate-y-1 text-[12px] font-medium text-dark/70 bg-white border border-dark/10 rounded px-2 py-1 whitespace-nowrap opacity-0 group-hover/tip:opacity-100 group-hover/tip:translate-y-0 transition-all duration-200 shadow-sm">{{ "Me": "Product Designer", "PM": "Project Manager", "FE": "Frontend Developer", "BE": "Backend Developer" }[member.role] || member.role}</span>
+                        <span data-tooltip className="pointer-events-none absolute -bottom-8 left-1/2 -translate-x-1/2 translate-y-1 text-[12px] font-medium text-dark/70 bg-white border border-dark/10 rounded px-2 py-1 whitespace-nowrap opacity-0 group-hover/tip:opacity-100 group-hover/tip:translate-y-0 transition-all duration-200 shadow-sm">{{ "Me": "Product Designer", "PM": "Project Manager", "FE": "Frontend Developer", "BE": "Backend Developer", "UI": "UI Designer", "UX": "UX Designer" }[member.role] || member.role}</span>
                       </button>
                     ))}
                   </div>
                 </div>
               )}
             </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* ===== CHALLENGE ===== */}
+      <section className="relative w-full bg-cream overflow-hidden pb-[60px] md:pb-[100px] lg:pb-[120px]">
+        <div className="grid-bg" />
+        <div className="relative z-10 mx-auto w-[92%] max-w-[1400px]">
+          <motion.div {...fadeUp} className="max-w-[800px] flex flex-col gap-4 md:gap-6">
+            <h2 className="text-[16px] md:text-[18px] font-medium tracking-[-0.3px] text-dark/70">
+              {t.project.problem}
+            </h2>
+            <p className="font-space text-[24px] md:text-[28px] lg:text-[32px] font-medium leading-[1.4] tracking-[-0.5px] md:tracking-[-1px] text-dark">
+              {project.designQuestion}
+            </p>
+            <p className="text-[17px] md:text-[18px] font-dm font-medium leading-[1.7] text-dark/65">
+              {project.problemStatement}
+            </p>
+            {project.problemMetrics && (
+              <p className="text-[15px] font-dm font-medium text-dark/65">
+                {project.problemMetrics}
+              </p>
+            )}
           </motion.div>
         </div>
       </section>
@@ -228,8 +253,8 @@ export default function ProjectContent({ project: rawProject, nextProject: rawNe
           <div className="grid-bg" />
           <div className="relative z-10 mx-auto w-[92%] max-w-[1400px]">
             <motion.div {...fadeUp} className="flex flex-col gap-4">
-              <div className="relative aspect-[4/3] md:aspect-[16/9] w-full overflow-hidden">
-                <Image src={project.solutions[0].image} alt={project.solutions[0].alt} fill sizes="92vw" quality={95} className="object-cover" />
+              <div className="relative aspect-[4/3] md:aspect-[16/9] w-full overflow-hidden" style={{ overflow: "hidden" }}>
+                <Image src={project.solutions[0].image} alt={project.solutions[0].alt} fill sizes="92vw" quality={100} className="object-cover" style={{ objectFit: "cover" }} />
               </div>
               <p className="text-[15px] md:text-[16px] font-dm font-medium text-dark/65">{project.solutions[0].caption}</p>
             </motion.div>
@@ -245,8 +270,8 @@ export default function ProjectContent({ project: rawProject, nextProject: rawNe
             <motion.div {...fadeUp} className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
               {project.solutions.slice(1).map((screen, i) => (
                 <div key={i} className="flex flex-col gap-4">
-                  <div className="relative aspect-square w-full overflow-hidden">
-                    <Image src={screen.image} alt={screen.alt} fill sizes="(max-width: 768px) 92vw, 46vw" quality={95} className="object-cover object-top" />
+                  <div className="relative aspect-square w-full overflow-hidden" style={{ overflow: "hidden" }}>
+                    <Image src={screen.image} alt={screen.alt} fill sizes="(max-width: 768px) 92vw, 46vw" quality={100} className="object-cover object-top" style={{ objectFit: "cover", objectPosition: "top" }} />
                   </div>
                   <p className="text-[15px] md:text-[16px] font-dm font-medium text-dark/65">{screen.caption}</p>
                 </div>
@@ -280,28 +305,6 @@ export default function ProjectContent({ project: rawProject, nextProject: rawNe
         </section>
       )}
 
-      {/* ===== CHALLENGE ===== */}
-      <section className="relative w-full bg-cream overflow-hidden pb-[60px] md:pb-[100px] lg:pb-[120px]">
-        <div className="grid-bg" />
-        <div className="relative z-10 mx-auto w-[92%] max-w-[1400px]">
-          <motion.div {...fadeUp} className="max-w-[800px] flex flex-col gap-4 md:gap-6">
-            <h2 className="text-[16px] md:text-[18px] font-medium tracking-[-0.3px] text-dark/70">
-              {t.project.problem}
-            </h2>
-            <p className="font-space text-[24px] md:text-[28px] lg:text-[32px] font-medium leading-[1.4] tracking-[-0.5px] md:tracking-[-1px] text-dark">
-              {project.designQuestion}
-            </p>
-            <p className="text-[17px] md:text-[18px] font-dm font-medium leading-[1.7] text-dark/65">
-              {project.problemStatement}
-            </p>
-            {project.problemMetrics && (
-              <p className="text-[15px] font-dm font-medium text-dark/65">
-                {project.problemMetrics}
-              </p>
-            )}
-          </motion.div>
-        </div>
-      </section>
 
       {/* ===== IMPACT ===== */}
       <section className="relative w-full bg-dark overflow-hidden py-[60px] md:py-[100px] lg:py-[120px]">
@@ -375,7 +378,7 @@ export default function ProjectContent({ project: rawProject, nextProject: rawNe
             {/* Image - mobile */}
             <div className="relative w-full lg:hidden aspect-[4/3] md:aspect-[16/9] overflow-hidden">
               {nextProject.thumbnail ? (
-                <Image src={nextProject.thumbnail} alt={nextProject.title} fill sizes="100vw" quality={95} className="object-cover object-center transition-transform duration-700 group-hover:scale-[1.02]" />
+                <Image src={nextProject.thumbnail} alt={nextProject.title} fill sizes="100vw" quality={100} className="object-cover object-center transition-transform duration-700 group-hover:scale-[1.02]" />
               ) : (
                 <div className="absolute inset-0 bg-dark/5 border-2 border-dashed border-dark/15 flex items-center justify-center">
                   <span className="text-[16px] font-medium text-dark/30">Coming soon</span>
@@ -403,7 +406,7 @@ export default function ProjectContent({ project: rawProject, nextProject: rawNe
             {/* Image - desktop */}
             <div className="relative hidden lg:block h-full w-[70%] overflow-hidden">
               {nextProject.thumbnail ? (
-                <Image src={nextProject.thumbnail} alt={nextProject.title} fill sizes="70vw" quality={95} className="object-contain object-center transition-transform duration-700 group-hover:scale-[1.02]" />
+                <Image src={nextProject.thumbnail} alt={nextProject.title} fill sizes="70vw" quality={100} className="object-contain object-center transition-transform duration-700 group-hover:scale-[1.02]" />
               ) : (
                 <div className="absolute inset-0 bg-dark/5 border-2 border-dashed border-dark/15 flex items-center justify-center">
                   <span className="text-[18px] font-medium text-dark/30">Coming soon</span>
