@@ -126,7 +126,7 @@ export default function HeroAlt() {
           <p className="text-[15px] md:text-[16px] lg:text-[17px] font-medium leading-[1.6] tracking-[-0.2px] text-dark/65 flex flex-wrap items-center gap-x-1.5 gap-y-1">
             Side projects:
             <a href="https://wishdrop.pl" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1.5 bg-white text-dark rounded-full pl-1.5 pr-3 py-1 text-[13px] md:text-[14px] font-semibold tracking-[-0.2px] shadow-[0_1px_4px_rgba(0,0,0,0.12)] transition-opacity hover:opacity-80">
-              <Image src="/assets/images/wishdrop-icon.png" alt="Wishdrop" width={20} height={20} className="rounded-full" />
+              <Image src="/assets/images/wishdrop-icon.webp" alt="Wishdrop" width={20} height={20} className="rounded-full" />
               Wishdrop.pl
             </a>
             <span className="inline-flex items-center gap-1.5 bg-[#161616] text-white rounded-full pl-1.5 pr-3 py-1 text-[13px] md:text-[14px] font-semibold tracking-[-0.2px] shadow-[0_1px_4px_rgba(0,0,0,0.12)]">

@@ -47,7 +47,7 @@ export default function ProjectContent({ project: rawProject, nextProject: rawNe
         <div className="grid-bg" />
         <div className="relative z-10 mx-auto w-[92%] max-w-[1400px]">
           <motion.div {...fadeUp} className="relative aspect-[4/3] md:aspect-[16/9] w-full overflow-hidden">
-            <Image src={project.heroImage} alt={project.title} fill className="object-cover" priority />
+            <Image src={project.heroImage} alt={project.title} fill sizes="92vw" className="object-cover" priority />
           </motion.div>
         </div>
       </section>

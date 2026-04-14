@@ -50,7 +50,7 @@ export default function Navbar() {
           <div className="flex justify-start md:w-1/3">
             <a href="/" className="flex items-center gap-2.5">
               <div className="h-[28px] w-[28px] md:h-[32px] md:w-[32px] overflow-hidden rounded-[4px] hover:rounded-full transition-all duration-500 ease-out hover:rotate-[360deg]">
-                <Image src="/assets/images/milosz-zemla.png" alt="Milosz Zemla" width={32} height={32} className="h-full w-full object-cover object-top scale-100 hover:scale-110 transition-transform duration-500" />
+                <Image src="/assets/images/milosz-zemla.webp" alt="Milosz Zemla" width={32} height={32} className="h-full w-full object-cover object-top scale-100 hover:scale-110 transition-transform duration-500" />
               </div>
               <span className="text-[18px] md:text-[20px] lg:text-[22px] font-bold leading-[1.5] tracking-[-0.6px] text-dark">Milosz Zemla</span>
             </a>

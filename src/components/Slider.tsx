@@ -3,22 +3,11 @@
 import Image from "next/image";
 
 const slides = [
-  {
-    type: "video" as const,
-    src: "https://framerusercontent.com/modules/assets/sdw2MiwfX8kE86eVM9cS85drJqo~jByeSC37unBqQHViiwWbauXo7_4XbguqlMgSaBNqdjs.mp4",
-  },
-  {
-    type: "image" as const,
-    src: "/assets/images/about-photo.webp",
-  },
-  {
-    type: "image" as const,
-    src: "/assets/images/logo.png",
-  },
-  {
-    type: "image" as const,
-    src: "/assets/images/hero-bg.webp",
-  },
+  { src: "/assets/images/slider-mallorca.webp" },
+  { src: "/assets/images/slider-porto.webp" },
+  { src: "/assets/images/slider-sailboat.webp", position: "50% 60%" },
+  { src: "/assets/images/slider-sunset.webp" },
+  { src: "/assets/images/slider-silhouette.webp" },
 ];
 
 export default function Slider() {
@@ -35,24 +24,15 @@ export default function Slider() {
               className="h-[200px] w-[300px] md:h-[268px] md:w-[400px] lg:h-[403px] lg:w-[600px] flex-shrink-0 overflow-hidden"
               style={{ aspectRatio: "1.488" }}
             >
-              {slide.type === "video" ? (
-                <video
-                  src={slide.src}
-                  autoPlay
-                  loop
-                  muted
-                  playsInline
-                  className="h-full w-full object-cover"
-                />
-              ) : (
-                <Image
-                  src={slide.src}
-                  alt=""
-                  width={600}
-                  height={403}
-                  className="h-full w-full object-cover"
-                />
-              )}
+              <Image
+                src={slide.src}
+                alt=""
+                width={600}
+                height={403}
+                sizes="(max-width: 768px) 300px, (max-width: 1024px) 400px, 600px"
+                className="h-full w-full object-cover"
+                style={slide.position ? { objectPosition: slide.position } : undefined}
+              />
             </div>
           ))}
         </div>

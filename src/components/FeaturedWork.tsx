@@ -50,6 +50,7 @@ export default function FeaturedWork() {
                       src={project.thumbnail}
                       alt={project.title}
                       fill
+                      sizes="(max-width: 1024px) 100vw, 70vw"
                       className="object-cover object-center transition-transform duration-700 group-hover:scale-[1.02]"
                     />
                   ) : (
@@ -85,6 +86,7 @@ export default function FeaturedWork() {
                       src={project.thumbnail}
                       alt={project.title}
                       fill
+                      sizes="70vw"
                       className="object-contain object-center transition-transform duration-700 group-hover:scale-[1.02]"
                     />
                   ) : (

@@ -288,22 +288,22 @@ export const projects: Project[] = [
     process: [],
     solutions: [
       {
-        image: "/assets/images/project-lisek.png",
+        image: "/assets/images/project-lisek.webp",
         alt: "Home z progress barem streaka",
         caption: "Pasek streaka na home — zawsze widoczny, w kontekście decyzji zakupowej. Nie ukryty w zakładce.",
       },
       {
-        image: "/assets/images/project-lisek.png",
+        image: "/assets/images/project-lisek.webp",
         alt: "Profil lojalnościowy z tierami",
         caption: "Profil lojalnościowy — aktualny tier, benefity, historia nagród. Zero zbędnych animacji.",
       },
       {
-        image: "/assets/images/project-lisek.png",
+        image: "/assets/images/project-lisek.webp",
         alt: "Moment nagrody po checkout",
         caption: "Natychmiastowa nagroda po zamówieniu — 'Darmowy sok dodany!' Namacalna, nie abstrakcyjne punkty.",
       },
       {
-        image: "/assets/images/project-lisek.png",
+        image: "/assets/images/project-lisek.webp",
         alt: "Streak recovery",
         caption: "Drugie życie zamiast kary — 'Złóż zamówienie do piątku i streak wraca'. Fair play.",
       },
@@ -362,12 +362,12 @@ export const projects: Project[] = [
     ],
     solutions: [
       {
-        image: "/assets/images/lisek-cover.png",
+        image: "/assets/images/lisek-cover.webp",
         alt: "Bazaar category browsing",
         caption: "Category grid — familiar browsing adapted to Lisek's design system",
       },
       {
-        image: "/assets/images/lisek-cover.png",
+        image: "/assets/images/lisek-cover.webp",
         alt: "Bazaar order confirmation",
         caption: "Split delivery view — marketplace items with separate delivery timeline",
       },
@@ -496,17 +496,17 @@ export const projects: Project[] = [
     ],
     solutions: [
       {
-        image: "/assets/images/project-wishdrop.png",
+        image: "/assets/images/project-wishdrop.webp",
         alt: "Wishlist creation",
         caption: "Wishlist creation — add from any store with browser extension",
       },
       {
-        image: "/assets/images/project-wishdrop.png",
+        image: "/assets/images/project-wishdrop.webp",
         alt: "Social sharing",
         caption: "Social sharing — share lists with friends or drop hints",
       },
       {
-        image: "/assets/images/project-wishdrop.png",
+        image: "/assets/images/project-wishdrop.webp",
         alt: "Gift coordination",
         caption: "Gift coordination — group gifting without spoiling the surprise",
       },

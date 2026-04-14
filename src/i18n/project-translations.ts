@@ -145,12 +145,12 @@ export const projectTranslations: Record<string, { en: ProjectOverride; pl: Proj
           caption: "Fundamenty design systemu \u2014 globalne tokeny kolor\u00f3w zapewniaj\u0105ce sp\u00f3jno\u015b\u0107 w ca\u0142ym produkcie",
         },
         {
-          image: "/assets/images/lisek-screen.png",
+          image: "/assets/images/lisek-screen.webp",
           alt: "Aplikacja Lisek \u2014 przeprojektowane ekrany",
           caption: "Przeprojektowane kluczowe ekrany \u2014 czystsza hierarchia, sp\u00f3jne wzorce",
         },
         {
-          image: "/assets/images/lisek-hero.png",
+          image: "/assets/images/lisek-hero.webp",
           alt: "Aplikacja Lisek \u2014 nowy home feed",
           caption: "Nowy home feed \u2014 spersonalizowany, czytelny, nastawiony na konwersj\u0119",
         },
@@ -279,9 +279,9 @@ export const projectTranslations: Record<string, { en: ProjectOverride; pl: Proj
         { label: "Decision", text: "Hybrid approach \u2014 public lists + private \u2018nudge\u2019 feature" },
       ],
       solutions: [
-        { image: "/assets/images/project-wishdrop.png", alt: "Wishlist creation", caption: "Wishlist creation \u2014 add from any store with browser extension" },
-        { image: "/assets/images/project-wishdrop.png", alt: "Social sharing", caption: "Social sharing \u2014 share lists with friends or drop hints" },
-        { image: "/assets/images/project-wishdrop.png", alt: "Gift coordination", caption: "Gift coordination \u2014 group gifting without spoiling the surprise" },
+        { image: "/assets/images/project-wishdrop.webp", alt: "Wishlist creation", caption: "Wishlist creation \u2014 add from any store with browser extension" },
+        { image: "/assets/images/project-wishdrop.webp", alt: "Social sharing", caption: "Social sharing \u2014 share lists with friends or drop hints" },
+        { image: "/assets/images/project-wishdrop.webp", alt: "Gift coordination", caption: "Gift coordination \u2014 group gifting without spoiling the surprise" },
       ],
       results: [
         { icon: "\ud83d\udcc8", label: "User signups (month 1)", value: "2.4k" },
@@ -307,9 +307,9 @@ export const projectTranslations: Record<string, { en: ProjectOverride; pl: Proj
         { label: "Decyzja", text: "Podej\u015bcie hybrydowe \u2014 publiczne listy + prywatna funkcja \u2018nudge\u2019" },
       ],
       solutions: [
-        { image: "/assets/images/project-wishdrop.png", alt: "Tworzenie listy", caption: "Tworzenie listy \u2014 dodawanie z dowolnego sklepu przez rozszerzenie przegl\u0105darki" },
-        { image: "/assets/images/project-wishdrop.png", alt: "Udost\u0119pnianie", caption: "Udost\u0119pnianie \u2014 dzielenie si\u0119 listami z przyjaci\u00f3\u0142mi lub podsuwanie pomys\u0142\u00f3w" },
-        { image: "/assets/images/project-wishdrop.png", alt: "Koordynacja prezent\u00f3w", caption: "Koordynacja prezent\u00f3w \u2014 grupowe kupowanie bez psowania niespodzianki" },
+        { image: "/assets/images/project-wishdrop.webp", alt: "Tworzenie listy", caption: "Tworzenie listy \u2014 dodawanie z dowolnego sklepu przez rozszerzenie przegl\u0105darki" },
+        { image: "/assets/images/project-wishdrop.webp", alt: "Udost\u0119pnianie", caption: "Udost\u0119pnianie \u2014 dzielenie si\u0119 listami z przyjaci\u00f3\u0142mi lub podsuwanie pomys\u0142\u00f3w" },
+        { image: "/assets/images/project-wishdrop.webp", alt: "Koordynacja prezent\u00f3w", caption: "Koordynacja prezent\u00f3w \u2014 grupowe kupowanie bez psowania niespodzianki" },
       ],
       results: [
         { icon: "\ud83d\udcc8", label: "Rejestracje (miesi\u0105c 1)", value: "2.4k" },
@@ -419,10 +419,10 @@ export const projectTranslations: Record<string, { en: ProjectOverride; pl: Proj
         },
       ],
       solutions: [
-        { image: "/assets/images/project-lisek.png", alt: "Home with streak progress bar", caption: "Streak bar on home \u2014 always visible, in context of purchase decision. Not hidden in a tab." },
-        { image: "/assets/images/project-lisek.png", alt: "Loyalty profile with tiers", caption: "Loyalty profile \u2014 current tier, benefits, reward history. Zero unnecessary animations." },
-        { image: "/assets/images/project-lisek.png", alt: "Post-checkout reward moment", caption: "Instant reward after order \u2014 \u2018Free juice added!\u2019 Tangible, not abstract points." },
-        { image: "/assets/images/project-lisek.png", alt: "Streak recovery", caption: "Second life instead of punishment \u2014 \u2018Place an order by Friday and your streak is back\u2019. Fair play." },
+        { image: "/assets/images/project-lisek.webp", alt: "Home with streak progress bar", caption: "Streak bar on home \u2014 always visible, in context of purchase decision. Not hidden in a tab." },
+        { image: "/assets/images/project-lisek.webp", alt: "Loyalty profile with tiers", caption: "Loyalty profile \u2014 current tier, benefits, reward history. Zero unnecessary animations." },
+        { image: "/assets/images/project-lisek.webp", alt: "Post-checkout reward moment", caption: "Instant reward after order \u2014 \u2018Free juice added!\u2019 Tangible, not abstract points." },
+        { image: "/assets/images/project-lisek.webp", alt: "Streak recovery", caption: "Second life instead of punishment \u2014 \u2018Place an order by Friday and your streak is back\u2019. Fair play." },
       ],
       results: [
         { icon: "\ud83d\udcc8", label: "Order frequency", value: "+64%" },
@@ -475,8 +475,8 @@ export const projectTranslations: Record<string, { en: ProjectOverride; pl: Proj
         },
       ],
       solutions: [
-        { image: "/assets/images/lisek-cover.png", alt: "Bazaar category browsing", caption: "Category grid \u2014 familiar browsing adapted to Lisek\u2019s design system" },
-        { image: "/assets/images/lisek-cover.png", alt: "Bazaar order confirmation", caption: "Split delivery view \u2014 marketplace items with separate delivery timeline" },
+        { image: "/assets/images/lisek-cover.webp", alt: "Bazaar category browsing", caption: "Category grid \u2014 familiar browsing adapted to Lisek\u2019s design system" },
+        { image: "/assets/images/lisek-cover.webp", alt: "Bazaar order confirmation", caption: "Split delivery view \u2014 marketplace items with separate delivery timeline" },
       ],
       results: [
         { icon: "\ud83d\uded2", label: "Categories launched", value: "20+" },
@@ -517,8 +517,8 @@ export const projectTranslations: Record<string, { en: ProjectOverride; pl: Proj
         },
       ],
       solutions: [
-        { image: "/assets/images/lisek-cover.png", alt: "Przegl\u0105danie kategorii Bazaar", caption: "Siatka kategorii \u2014 znajome przegl\u0105danie zaadaptowane do design systemu Liska" },
-        { image: "/assets/images/lisek-cover.png", alt: "Potwierdzenie zam\u00f3wienia Bazaar", caption: "Widok podzielonej dostawy \u2014 produkty marketplace z oddzielnym terminem dostawy" },
+        { image: "/assets/images/lisek-cover.webp", alt: "Przegl\u0105danie kategorii Bazaar", caption: "Siatka kategorii \u2014 znajome przegl\u0105danie zaadaptowane do design systemu Liska" },
+        { image: "/assets/images/lisek-cover.webp", alt: "Potwierdzenie zam\u00f3wienia Bazaar", caption: "Widok podzielonej dostawy \u2014 produkty marketplace z oddzielnym terminem dostawy" },
       ],
       results: [
         { icon: "\ud83d\uded2", label: "Uruchomione kategorie", value: "20+" },

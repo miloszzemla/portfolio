@@ -71,7 +71,7 @@ export default function Hero() {
             className="h-[40px] w-[40px] md:h-[80px] md:w-[80px] lg:h-[110px] lg:w-[110px] flex-shrink-0 overflow-hidden flex items-center justify-center"
           >
             <img
-              src="/assets/wishdrop-logo.png"
+              src="/assets/wishdrop-logo.webp"
               alt="WishDrop"
               className="h-full w-full object-contain rounded-[20%]"
             />

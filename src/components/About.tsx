@@ -48,9 +48,10 @@ export default function About() {
           >
             <div className="relative h-[350px] md:h-[450px] lg:h-[580px] w-full overflow-hidden">
               <Image
-                src="/assets/images/milosz-zemla.png"
+                src="/assets/images/milosz-zemla.webp"
                 alt="Milosz Zemla"
                 fill
+                sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 40vw"
                 className="object-cover"
               />
             </div>
