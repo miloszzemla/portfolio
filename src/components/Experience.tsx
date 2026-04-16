@@ -52,7 +52,7 @@ export default function Experience() {
                   <span className="md:w-2/5 text-[16px] md:text-[20px] lg:text-[22px] font-medium leading-[1.5] tracking-[-0.4px] md:tracking-[-0.6px] text-dark">
                     {item.role}
                   </span>
-                  <span className="md:w-1/4 md:text-right text-[14px] md:text-[20px] lg:text-[22px] font-medium leading-[1.5] tracking-[-0.4px] md:tracking-[-0.6px] text-dark/60 md:text-dark">
+                  <span className="md:w-1/4 md:text-right text-[14px] md:text-[20px] lg:text-[22px] font-medium leading-[1.5] tracking-[-0.4px] md:tracking-[-0.6px] text-dark/65 md:text-dark">
                     {item.period}
                   </span>
                 </div>

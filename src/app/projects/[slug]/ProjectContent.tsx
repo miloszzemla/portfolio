@@ -66,13 +66,13 @@ export default function ProjectContent({ project: rawProject, nextProject: rawNe
                 { label: t.project.platform, value: project.platform },
               ].filter(group => group.value).map((group) => (
                 <div key={group.label} className="flex flex-col gap-1">
-                  <span className="text-[13px] font-medium text-dark/55">{group.label}</span>
+                  <span className="text-[13px] font-medium text-dark/65">{group.label}</span>
                   <span className="text-[16px] font-medium text-dark">{group.value}</span>
                 </div>
               ))}
               {project.team && project.team.length > 0 && (
                 <div className="flex flex-col gap-2">
-                  <span className="text-[13px] font-medium text-dark/55">{t.project.team}</span>
+                  <span className="text-[13px] font-medium text-dark/65">{t.project.team}</span>
                   <div className="flex flex-wrap" style={{ gap: "6px" }}>
                     {project.team.map((member, i) => (
                       <button key={i} className="group/tip relative focus:outline-none" onClick={(e) => { e.preventDefault(); e.stopPropagation(); const el = e.currentTarget.querySelector('[data-tooltip]') as HTMLElement; if (el) { el.classList.toggle('!opacity-100'); el.classList.toggle('!translate-y-0'); setTimeout(() => { el.classList.remove('!opacity-100', '!translate-y-0'); }, 2000); } }}>
@@ -146,13 +146,13 @@ export default function ProjectContent({ project: rawProject, nextProject: rawNe
                 { label: t.project.platform, value: project.platform },
               ].filter(group => group.value).map((group) => (
                 <div key={group.label} className="flex flex-col gap-1">
-                  <span className="text-[13px] font-medium text-dark/55">{group.label}</span>
+                  <span className="text-[13px] font-medium text-dark/65">{group.label}</span>
                   <span className="text-[16px] font-medium text-dark">{group.value}</span>
                 </div>
               ))}
               {project.team && project.team.length > 0 && (
                 <div className="flex flex-col gap-2">
-                  <span className="text-[13px] font-medium text-dark/55">{t.project.team}</span>
+                  <span className="text-[13px] font-medium text-dark/65">{t.project.team}</span>
                   <div className="flex flex-wrap" style={{ gap: "6px" }}>
                     {project.team.map((member, i) => (
                       <button key={i} className="group/tip relative focus:outline-none" onClick={(e) => { e.preventDefault(); e.stopPropagation(); const el = e.currentTarget.querySelector('[data-tooltip]') as HTMLElement; if (el) { el.classList.toggle('!opacity-100'); el.classList.toggle('!translate-y-0'); setTimeout(() => { el.classList.remove('!opacity-100', '!translate-y-0'); }, 2000); } }}>

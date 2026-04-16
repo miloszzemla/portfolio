@@ -10,16 +10,16 @@ export default function LanguageSwitcher() {
       <button
         onClick={() => setLang("en")}
         className={`text-[20px] font-medium leading-[1.5] tracking-[-0.6px] transition-opacity ${
-          lang === "en" ? "text-dark" : "text-dark/30 hover:text-dark/60"
+          lang === "en" ? "text-dark" : "text-dark/50 hover:text-dark/70"
         }`}
       >
         EN
       </button>
-      <span className="text-[20px] font-medium text-dark/30">/</span>
+      <span className="text-[20px] font-medium text-dark/50">/</span>
       <button
         onClick={() => setLang("pl")}
         className={`text-[20px] font-medium leading-[1.5] tracking-[-0.6px] transition-opacity ${
-          lang === "pl" ? "text-dark" : "text-dark/30 hover:text-dark/60"
+          lang === "pl" ? "text-dark" : "text-dark/50 hover:text-dark/70"
         }`}
       >
         PL

@@ -58,23 +58,15 @@ export default function Navbar() {
           </div>
 
           {/* Desktop nav */}
-          <div className="hidden md:flex md:w-1/3 items-center justify-center gap-6 lg:gap-8">
+          <div className="hidden md:flex items-center justify-center gap-4 lg:gap-7">
             {navLinks.map((link) => (
               <a
                 key={link.href}
                 href={link.href}
                 {...(link.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
-                className={`text-[18px] lg:text-[20px] font-medium leading-[1.5] tracking-[-0.6px] text-dark transition-opacity hover:opacity-60 ${link.external ? "group/photo relative" : ""}`}
+                className="text-[18px] lg:text-[20px] font-medium leading-[1.5] tracking-[-0.6px] text-dark transition-opacity hover:opacity-60"
               >
                 {link.label}
-                {link.external && (
-                  <span className="inline-block ml-1.5 opacity-0 -translate-y-1 group-hover/photo:opacity-100 group-hover/photo:translate-y-0 transition-all duration-300 ease-out">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="inline-block">
-                      <circle cx="12" cy="13" r="4" />
-                      <path d="M9 2L7.17 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2h-3.17L15 2H9z" />
-                    </svg>
-                  </span>
-                )}
               </a>
             ))}
           </div>

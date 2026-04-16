@@ -91,10 +91,10 @@ export default function ComingSoon() {
       <div className="relative z-10 w-[92%] max-w-[1400px] mx-auto">
         <div className="h-[2px] w-full bg-dark" />
         <div className="flex items-center justify-between py-4">
-          <span className="font-dm text-[14px] md:text-[16px] font-medium text-dark/50">
+          <span className="font-dm text-[14px] md:text-[16px] font-medium text-dark/65">
             Warsaw, Poland
           </span>
-          <span className="font-dm text-[14px] md:text-[16px] font-medium text-dark/50">
+          <span className="font-dm text-[14px] md:text-[16px] font-medium text-dark/65">
             &copy; {new Date().getFullYear()}
           </span>
         </div>

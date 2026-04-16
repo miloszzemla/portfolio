@@ -69,7 +69,7 @@ export default function FeaturedWork() {
                     </h3>
                   </div>
                   <div className="flex flex-col gap-4 lg:w-[40%] lg:pt-2">
-                    <p className="text-[16px] md:text-[17px] lg:text-[18px] font-dm font-medium leading-[1.6] tracking-[-0.3px] text-dark/55 max-w-[500px]">
+                    <p className="text-[16px] md:text-[17px] lg:text-[18px] font-dm font-medium leading-[1.6] tracking-[-0.3px] text-dark/65 max-w-[500px]">
                       {project.description}
                     </p>
                     <div className="flex flex-wrap gap-2">

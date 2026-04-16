@@ -123,17 +123,25 @@ export default function HeroAlt() {
           <p className="text-[16px] md:text-[18px] lg:text-[20px] font-medium leading-[1.55] tracking-[-0.3px] text-dark/65">
             {t.hero.description}
           </p>
-          <p className="text-[15px] md:text-[16px] lg:text-[17px] font-medium leading-[1.6] tracking-[-0.2px] text-dark/65 flex flex-wrap items-center gap-x-1.5 gap-y-1">
-            Side projects:
-            <a href="https://wishdrop.pl" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1.5 bg-white text-dark rounded-full pl-1.5 pr-3 py-1 text-[13px] md:text-[14px] font-semibold tracking-[-0.2px] shadow-[0_1px_4px_rgba(0,0,0,0.12)] transition-opacity hover:opacity-80">
-              <Image src="/assets/images/wishdrop-icon.webp" alt="Wishdrop" width={20} height={20} className="rounded-full" />
-              Wishdrop.pl
-            </a>
-            <span className="inline-flex items-center gap-1.5 bg-[#161616] text-white rounded-full pl-1.5 pr-3 py-1 text-[13px] md:text-[14px] font-semibold tracking-[-0.2px] shadow-[0_1px_4px_rgba(0,0,0,0.12)]">
-              <Image src="/assets/images/topdraw-icon.svg" alt="TopDraw" width={20} height={20} className="rounded-full invert" />
-              TopDraw <span className="text-[11px] font-medium opacity-60 leading-none translate-y-[0.5px]">soon</span>
+          <div className="flex flex-col gap-2">
+            <span className="text-[15px] md:text-[16px] lg:text-[17px] font-medium tracking-[-0.2px] text-dark/65">
+              Side projects:
             </span>
-          </p>
+            <div className="flex flex-wrap gap-1.5">
+              <a href="https://wishdrop.pl" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1.5 bg-white text-dark rounded-full pl-1.5 pr-3 py-1 text-[13px] md:text-[14px] font-semibold tracking-[-0.2px] shadow-[0_1px_4px_rgba(0,0,0,0.12)] transition-opacity hover:opacity-80">
+                <Image src="/assets/images/wishdrop-icon.webp" alt="Wishdrop" width={20} height={20} className="rounded-full" />
+                Wishdrop.pl
+              </a>
+              <a href="https://letters-world.vercel.app" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1.5 bg-white text-dark rounded-full pl-1.5 pr-3 py-1 text-[13px] md:text-[14px] font-semibold tracking-[-0.2px] shadow-[0_1px_4px_rgba(0,0,0,0.12)] transition-opacity hover:opacity-80">
+                <Image src="/assets/images/letters-world-icon.svg" alt="Letters World" width={20} height={20} className="rounded-full" />
+                Letters World
+              </a>
+              <span className="inline-flex items-center gap-1.5 bg-dark/5 text-dark/40 rounded-full pl-1.5 pr-3 py-1 text-[13px] md:text-[14px] font-semibold tracking-[-0.2px]">
+                <Image src="/assets/images/topdraw-icon.svg" alt="TopDraw" width={20} height={20} className="rounded-full opacity-40" />
+                TopDraw <span className="text-[11px] font-medium opacity-60 leading-none translate-y-[0.5px]">soon</span>
+              </span>
+            </div>
+          </div>
         </div>
       </div>
     </section>
